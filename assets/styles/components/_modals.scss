@@ -1,0 +1,98 @@
+.modal {
+    background-color: color-mix(in srgb, var(--gray-1000) 90%, var(--transparent));
+    padding: 2rem;
+    display: none;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    z-index: 500;
+
+    .modal-content-img {
+        background-color: var(--transparent);
+        position: relative;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        img {
+            -webkit-animation-name: zoom;
+            -webkit-animation-duration: 0.3s;
+            animation-name: zoom;
+            animation-duration: 0.3s;
+            width: 100%;
+
+            @media (576px <= width <= 768px) {
+                width: 90%;
+            }
+
+            @media (768px <= width <= 992px) {
+                width: 70%;
+            }
+
+            @media (width >= 992px) {
+                width: 50%;
+            }
+        }
+    }
+
+    .modal-content {
+        background-color: var(--bg-color);
+        border-radius: var(--border-radius);
+        position: relative;
+        animation-name: animate-from-top;
+        animation-duration: 0.3s;
+        width: 100%;
+
+        @media (576px <= width <= 768px) {
+            width: 90%;
+        }
+
+        @media (768px <= width <= 992px) {
+            width: 70%;
+        }
+
+        @media (width >= 992px) {
+            width: 50%;
+        }
+
+        .modal-header {
+            border-radius: var(--border-radius) var(--border-radius) 0 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0.5rem 1rem;
+        }
+
+        .modal-body {
+            padding: 0.5rem 1rem;
+        }
+
+        .modal-footer {
+            border-radius: 0 0 var(--border-radius) var(--border-radius);
+            padding: 0.5rem 1rem;
+        }
+
+        &.modal-bordered {
+            border: 1px solid var(--border-color-light);
+
+            .modal-header {
+                border: none;
+            }
+
+            .modal-body {
+                border-top: 1px solid var(--border-color-light);
+                border-bottom: 1px solid var(--border-color-light);
+            }
+
+            .modal-footer {
+                border: none;
+            }
+        }
+    }
+}

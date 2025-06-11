@@ -1,0 +1,107 @@
+$spacings-margin: (
+        0: 0,
+        half: 0.5rem,
+        1: 1rem,
+        2: 2rem,
+        3: 3rem,
+        4: 4rem,
+        5: 5rem,
+        auto: auto
+);
+// Margin
+@each $key, $value in $spacings-margin {
+    .m-#{$key} {
+        margin: $value;
+    }
+}
+// Margin top
+@each $key, $value in $spacings-margin {
+    .mt-#{$key} {
+        margin-top: $value;
+    }
+}
+// Margin bottom
+@each $key, $value in $spacings-margin {
+    .mb-#{$key} {
+        margin-bottom: $value;
+    }
+}
+// Margin start
+@each $key, $value in $spacings-margin {
+    .ms-#{$key} {
+        margin-left: $value;
+    }
+}
+// Margin end
+@each $key, $value in $spacings-margin {
+    .me-#{$key} {
+        margin-right: $value;
+    }
+}
+// Margin horizontal
+@each $key, $value in $spacings-margin {
+    .mx-#{$key} {
+        margin-left: $value;
+        margin-right: $value;
+    }
+}
+// Margin vertical
+@each $key, $value in $spacings-margin {
+    .my-#{$key} {
+        margin-top: $value;
+        margin-bottom: $value;
+    }
+}
+$spacings-padding: (
+        0: 0,
+        half: 0.5rem,
+        1: 1rem,
+        2: 2rem,
+        3: 3rem,
+        4: 4rem,
+        5: 5rem,
+);
+// Padding
+@each $key, $value in $spacings-padding {
+    .p-#{$key} {
+        padding: $value;
+    }
+}
+// Padding top
+@each $key, $value in $spacings-padding {
+    .pt-#{$key} {
+        padding-top: $value;
+    }
+}
+// Padding bottom
+@each $key, $value in $spacings-padding {
+    .pb-#{$key} {
+        padding-bottom: $value;
+    }
+}
+// Padding start
+@each $key, $value in $spacings-padding {
+    .ps-#{$key} {
+        padding-left: $value;
+    }
+}
+// Padding end
+@each $key, $value in $spacings-padding {
+    .pe-#{$key} {
+        padding-right: $value;
+    }
+}
+// Padding horizontal
+@each $key, $value in $spacings-padding {
+    .px-#{$key} {
+        padding-left: $value;
+        padding-right: $value;
+    }
+}
+// Padding vertical
+@each $key, $value in $spacings-padding {
+    .py-#{$key} {
+        padding-top: $value;
+        padding-bottom: $value;
+    }
+}

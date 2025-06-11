@@ -1,0 +1,84 @@
+// Text alignment
+.text-start { text-align: left; }
+.text-center { text-align: center; }
+.text-end { text-align: right; }
+.text-nowrap { white-space: nowrap; }
+
+// Cursor
+.cursor-pointer { cursor: pointer; }
+
+// Border
+.border-0 { border: 0 !important; }
+.border-1 { border-width: .1rem; }
+.border-2 { border-width: .2rem; }
+.border-3 { border-width: .3rem; }
+.border-radius { border-radius: var(--border-radius); }
+.border-radius-0 { border-radius: 0 !important; }
+
+// Opacity
+.opacity-0 { opacity: 0 !important; }
+.opacity-25 { opacity: 0.25 !important; }
+.opacity-50 { opacity: 0.5 !important; }
+.opacity-75 { opacity: 0.75 !important; }
+.opacity-100 { opacity: 1 !important; }
+
+// Overflow / Resize
+.no-scroll { overflow: hidden; }
+.no-resize { resize: none; }
+
+// Position
+.position-relative { position: relative !important; }
+.position-absolute { position: absolute !important; }
+.position-fixed { position: fixed !important; }
+.position-sticky { position: sticky !important; }
+
+.position-top-left {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.position-top-right {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+.position-bottom-left {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+.position-bottom-right {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+
+// Flex column spacing
+.vertical-space-between,
+.vertical-space-around,
+.vertical-space-evenly,
+.vertical-center {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.vertical-space-between { justify-content: space-between; }
+.vertical-space-around { justify-content: space-around; }
+.vertical-space-evenly { justify-content: space-evenly; }
+.vertical-center { justify-content: center; }
+
+// Width
+.fit-content { width: fit-content; }
+
+// Transitions
+.transition-theme {
+  transition: color 0.3s ease, background-color 0.3s ease, border-color 0.3s ease;
+}
+
+// Box shadow
+.box-shadow { box-shadow: var(--box-shadow); }
+
+// Inheritance
+.inherit { all: inherit; }
+.initial { all: initial; }

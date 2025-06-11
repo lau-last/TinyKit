@@ -1,0 +1,26 @@
+button,
+.btn {
+    /*margin: .15rem;*/
+    //display: inline-block;
+    //width: fit-content;
+    border-radius: var(--border-radius);
+    padding: var(--button-padding-md);
+    border: none;
+    cursor: pointer;
+    white-space: nowrap;
+
+    &:focus {
+        outline: none;
+        box-shadow: none;
+    }
+
+    &.btn-sm {padding: var(--button-padding-sm);}
+    &.btn-md {padding: var(--button-padding-md);}
+    &.btn-lg {padding: var(--button-padding-lg);}
+    &.btn-pill {border-radius: 10rem;}
+}
+
+// Button Theme
+[data-btn-theme] {
+    cursor: pointer;
+}

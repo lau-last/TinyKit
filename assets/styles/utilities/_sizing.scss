@@ -1,0 +1,82 @@
+$size-scale: (
+        0: 0,
+        25: 25%,
+        50: 50%,
+        75: 75%,
+        100: 100%,
+        auto: auto,
+);
+
+// Width and Height
+@each $key, $val in $size-scale {
+  .w-#{$key} {
+    width: $val !important;
+  }
+
+  .min-w-#{$key} {
+    min-width: $val !important;
+  }
+
+  .max-w-#{$key} {
+    max-width: $val !important;
+  }
+
+  .h-#{$key} {
+    height: $val !important;
+  }
+
+  .min-h-#{$key} {
+    min-height: $val !important;
+  }
+
+  .max-h-#{$key} {
+    max-height: $val !important;
+  }
+}
+
+$size-view-height: (
+        0: 0,
+        25: 25vh,
+        50: 50vh,
+        75: 75vh,
+        100: 100vh,
+        auto: auto,
+);
+// Height VH
+@each $key, $val in $size-view-height {
+  .vh-#{$key} {
+    height: $val !important;
+  }
+
+  .min-vh-#{$key} {
+    min-height: $val !important;
+  }
+
+  .max-vh-#{$key} {
+    max-height: $val !important;
+  }
+}
+
+$size-view-width: (
+        0: 0,
+        25: 25vw,
+        50: 50vw,
+        75: 75vw,
+        100: 100vw,
+        auto: auto,
+);
+
+// Width VW
+@each $key, $val in $size-view-width {
+  .vw-#{$key} {
+    width: $val !important;
+  }
+
+  .min-vw-#{$key} {
+    min-width: $val !important;
+  }
+
+  .max-vw-#{$key} {
+    max-width: $val !important;
+  }
+}

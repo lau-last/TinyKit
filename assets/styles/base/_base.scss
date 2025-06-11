@@ -1,0 +1,372 @@
+:root {
+  // Shades of gray
+  --gray-0: #ffffff;
+  --gray-50: #fafafa;
+  --gray-100: #f5f5f5;
+  --gray-150: #efefef;
+  --gray-200: #e5e5e5;
+  --gray-250: #d9d9d9;
+  --gray-300: #d4d4d4;
+  --gray-350: #bbbbbb;
+  --gray-400: #a3a3a3;
+  --gray-450: #8b8b8b;
+  --gray-500: #737373;
+  --gray-550: #636363;
+  --gray-600: #525252;
+  --gray-650: #494949;
+  --gray-700: #404040;
+  --gray-750: #333333;
+  --gray-800: #262626;
+  --gray-850: #1e1e1e;
+  --gray-900: #171717;
+  --gray-950: #0b0b0b;
+  --gray-1000: #000000;
+
+  // Colors palette
+  --primary-color: #6098f5;
+  --secondary-color: #10B981;
+  --tertiary-color: #8A4F7D;
+  --success-color: #7BAE7F;
+  --info-color: #6BAACD;
+  --warning-color: #D9B74A;
+  --danger-color: #C96A6A;
+  --neutral-color: #BBBBBB;
+  --dark-color: #262626;
+  --light-color: #DDDDDD;
+
+  // red
+  --red: #FF0000FF;
+
+  // Transparency
+  --transparent: transparent;
+  --transparent-white: rgba(255, 255, 255, 0.1);
+  --transparent-black: rgba(0, 0, 0, 0.1);
+  --transparent-theme: var(--transparent-black);
+
+  // Shadow
+  --box-shadow: 0 .5rem 1rem #00000026, inset 0 -1px #ffffff26;
+
+  // Mix colors
+  --color-mix-dark: var(--gray-1000);
+  --color-mix-light: var(--gray-0);
+
+  // Text colors
+  --text-white: var(--gray-0);
+  --text-black: var(--gray-1000);
+  --text-light: var(--light-color);
+  --text-dark: var(--dark-color);
+  --text-color: var(--text-dark);
+  --text-on-primay: var(--text-white);
+  --text-on-secondary: var(--text-white);
+  --text-on-tertiary: var(--text-white);
+  --text-on-success: var(--text-white);
+  --text-on-info: var(--text-white);
+  --text-on-warning: var(--text-black);
+  --text-on-danger: var(--text-white);
+  --text-on-neutral: var(--text-black);
+  --text-on-light: var(--text-black);
+  --text-on-dark: var(--text-white);
+  --text-on-surface-footer: var(--text-white);
+
+  // Links colors
+  --link-color: var(--text-color);
+  --link-hover-color: brightness(0.8);
+
+  // Borders
+  --border-color-whisper: color-mix(in srgb, var(--gray-300) 50%, var(--transparent));
+  --border-color-light: var(--gray-200);
+  --border-color-medium: var(--gray-300);
+  --border-color-dark: var(--gray-500);
+
+  // Tables
+  --table-primary-color: color-mix(in srgb, var(--primary-color) 30%, var(--color-mix-light));
+  --table-tertiary-color: color-mix(in srgb, var(--tertiary-color) 30%, var(--color-mix-light));
+  --table-secondary-color: color-mix(in srgb, var(--secondary-color) 30%, var(--color-mix-light));
+  --table-success-color: color-mix(in srgb, var(--success-color) 30%, var(--color-mix-light));
+  --table-info-color: color-mix(in srgb, var(--info-color) 30%, var(--color-mix-light));
+  --table-warning-color: color-mix(in srgb, var(--warning-color) 30%, var(--color-mix-light));
+  --table-danger-color: color-mix(in srgb, var(--danger-color) 30%, var(--color-mix-light));
+  --table-neutral-color: color-mix(in srgb, var(--neutral-color) 30%, var(--color-mix-light));
+  --table-dark-color: color-mix(in srgb, var(--dark-color) 30%, var(--color-mix-light));
+  --table-light-color: color-mix(in srgb, var(--light-color) 30%, var(--color-mix-light));
+  --table-striped-bg-color: rgba(128, 128, 128, 0.2);
+  --table-border-color: var(--gray-100);
+  --table-border-divider-color: var(--gray-1000);
+  --table-bg-hover-color: rgba(0, 0, 0, 0.2);
+
+  // Inputs
+  --input-border-color: var(--gray-300);
+  --input-bg-color: var(--gray-0);
+  --input-placeholder-color: var(--gray-1000);
+  --input-color: var(--gray-1000);
+  --switch-bg-color: var(--gray-0);
+  --switch-btn-color: var(--gray-300);
+  --switch-border-color: var(--gray-300);
+
+  // State
+  --hover-color: color-mix(in srgb, var(--gray-300) 25%, var(--transparent));
+  --active-color: var(--gray-500);
+  --bg-color: var(--gray-0);
+  --button-color: var(--gray-100);
+
+  // Components
+  --surface-footer-color: var(--gray-100);
+
+  // Carousel
+  --carousel-dot-bg-color: var(--gray-300);
+  --carousel-dot-bg-color-active: var(--gray-500);
+  --carousel-dot-bg-color-hover: var(--gray-500);
+  --carousel-control-color: var(--gray-0);
+  --carousel-control-color-hover: color-mix(in srgb, var(--gray-1000) 50%, var(--transparent));
+  --carousel-text-number-color: var(--gray-0);
+
+  // Code
+  --bg-color-code: color-mix(in srgb, var(--primary-color) 5%, var(--gray-0));
+  --highlight-tag-color: color-mix(in srgb, var(--primary-color) 50%, var(--gray-1000));
+  --highlight-tag-name-color: var(--primary-color);
+  --highlight-attribute-name-color: color-mix(in srgb, var(--primary-color) 50%, var(--gray-0));
+  --highlight-attribute-value-color: color-mix(in srgb, var(--primary-color) 50%, var(--gray-500));
+  --highlight-text-color: var(--text-color);
+  --highlight-comment-color: #86878B;
+  --highlight-equal-sign-color: #D4CED7;
+
+  // Border Radius
+  --border-radius: .3rem;
+
+  // Spacing gap
+  --gap-base: 2.5rem;
+  --gap-grid: 1.5rem;
+
+  // Inputs height
+  --input-height-sm: 2.5rem;
+  --input-height-md: 3rem;
+  --input-height-lg: 3.5rem;
+
+  // Buttons padding
+  --button-padding-sm: .55rem 1.1rem;
+  --button-padding-md: 0.8rem 1.6rem;
+  --button-padding-lg: 1.05rem 2.1rem;
+
+  // Badges padding
+  --badge-padding-sm: .2rem .4rem;
+  --badge-padding-md: .4rem .8rem;
+  --badge-padding-lg: .5rem 1rem;
+
+  // Table padding
+  --table-padding-sm: .6rem;
+  --table-padding-md: .8rem;
+  --table-padding-lg: 1rem;
+
+  // Font weights
+  --font-weight-light: 300;
+  --font-weight-regular: 400;
+  --font-weight-medium: 500;
+  --font-weight-bold: 700;
+  --font-weight-black: 900;
+
+  // Font sizes titles
+  --font-size-h1: 4rem;
+  --font-size-h2: 3.5rem;
+  --font-size-h3: 3rem;
+  --font-size-h4: 2.5rem;
+  --font-size-h5: 2rem;
+  --font-size-h6: 1.5rem;
+
+  // Font sizes text
+  --font-size-base: 1.2rem;
+  --font-size-sm: 1rem;
+  --font-size-md: var(--font-size-base);
+  --font-size-lg: 1.4rem;
+  --font-size-xl: 1.6rem;
+  --font-size-xxl: 1.8rem;
+
+  // Font sizes display
+  --display-font-sizes-1: 5rem;
+  --display-font-sizes-2: 4.5rem;
+  --display-font-sizes-3: 4rem;
+  --display-font-sizes-4: 3.5rem;
+  --display-font-sizes-5: 3rem;
+  --display-font-sizes-6: 2.5rem;
+  --display-font-weight: var(--font-weight-light);
+
+  // Font families
+  --font-family-titre: "Montserrat", sans-serif;
+  --font-family-text: "Open Sans", sans-serif;
+}
+
+[prefers-color-scheme="dark"] {
+  // Colors palette
+  --primary-color: #6287D6;
+  --secondary-color: #4CA478;
+  --tertiary-color: #744A6D;
+  --success-color: #789B75;
+  --info-color: #6D98B5;
+  --warning-color: #BEA653;
+  --danger-color: #AA6362;
+  --neutral-color: #A8A8A8;
+  --dark-color: #262626;
+  --light-color: #DDDDDD;
+
+  // red
+  --red: #FF0000FF;
+
+  // Transparency
+  --transparent: transparent;
+  --transparent-white: rgba(255, 255, 255, 0.1);
+  --transparent-black: rgba(0, 0, 0, 0.1);
+  --transparent-theme: var(--transparent-white);
+
+  // Shadow
+  --box-shadow: 0 .5rem 1rem #00000026, inset 0 -1px #ffffff26;
+
+  // Mix colors
+  --color-mix-dark: var(--gray-1000);
+  --color-mix-light: var(--gray-0);
+
+  // Text
+  --text-white: var(--gray-0);
+  --text-black: var(--gray-1000);
+  --text-light: var(--light-color);
+  --text-dark: var(--dark-color);
+  --text-color: var(--text-light);
+  --text-on-primay: var(--text-black);
+  --text-on-secondary: var(--text-black);
+  --text-on-tertiary: var(--text-black);
+  --text-on-success: var(--text-black);
+  --text-on-info: var(--text-black);
+  --text-on-warning: var(--text-black);
+  --text-on-danger: var(--text-black);
+  --text-on-neutral: var(--text-black);
+  --text-on-light: var(--text-black);
+  --text-on-dark: var(--text-white);
+  --text-on-surface-footer: var(--text-white);
+
+  // Links colors
+  --link-color: var(--text-color);
+  --link-hover-color: brightness(0.8);
+
+  // Borders
+  --border-color-whisper: color-mix(in srgb, var(--gray-500) 50%, var(--transparent));
+  --border-color-light: var(--gray-200);
+  --border-color-medium: var(--gray-400);
+  --border-color-dark: var(--gray-600);
+
+  // Tables
+  --table-primary-color: var(--primary-color);
+  --table-secondary-color: var(--secondary-color);
+  --table-tertiary-color: var(--tertiary-color);
+  --table-success-color: var(--success-color);
+  --table-info-color: var(--info-color);
+  --table-warning-color: var(--warning-color);
+  --table-danger-color: var(--danger-color);
+  --table-neutral-color: var(--neutral-color);
+  --table-dark-color: var(--dark-color);
+  --table-light-color: var(--light-color);
+  --table-striped-bg-color: rgba(0, 0, 0, 0.2);
+  --table-border-color: var(--gray-600);
+  --table-border-divider-color: var(--gray-0);
+  --table-bg-hover-color: rgba(0, 0, 0, 0.4);
+
+  // Inputs
+  --input-border-color: var(--gray-600);
+  --input-bg-color: var(--gray-600);
+  --input-placeholder-color: var(--gray-0);
+  --input-color: var(--gray-200);
+  --switch-bg-color: var(--gray-600);
+  --switch-btn-color: var(--gray-0);
+  --switch-border-color: var(--gray-450);
+
+  // State
+  --hover-color: color-mix(in srgb, var(--gray-400) 25%, var(--transparent));
+  --active-color: var(--gray-600);
+  --bg-color: var(--gray-800);
+  --button-color: var(--gray-200);
+
+  // Components
+  --surface-footer-color: var(--gray-600);
+
+  // Carousel
+  --carousel-dot-bg-color: var(--gray-400);
+  --carousel-dot-bg-color-active: var(--primary-color);
+  --carousel-dot-bg-color-hover: var(--gray-600);
+  --carousel-control-color: var(--gray-0);
+  --carousel-control-color-hover: color-mix(in srgb, var(--gray-1000) 50%, var(--transparent));
+  --carousel-text-number-color: var(--gray-0);
+
+  // Code
+  --bg-color-code: color-mix(in srgb, var(--primary-color) 5%, var(--gray-850));
+  --highlight-tag-color: #D4CED7;
+  --highlight-tag-name-color: var(--primary-color);
+  --highlight-attribute-name-color: color-mix(in srgb, var(--primary-color) 50%, var(--gray-500));
+  --highlight-attribute-value-color: color-mix(in srgb, var(--primary-color) 50%, var(--gray-0));
+  --highlight-text-color: var(--text-color);
+  --highlight-comment-color: #86878B;
+  --highlight-equal-sign-color: #D4CED7;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 62.5%; /* 62.5% de 16px = 10px */
+  scroll-behavior: smooth;
+  height: 100%;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+
+
+  body {
+    font-family: var(--font-family-text), sans-serif;
+    font-size: var(--font-size-base);
+    font-weight: var(--font-weight-regular);
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    height: 100%;
+    transition: margin-left 0.3s ease, margin-right 0.3s ease;
+    container-type: inline-size;
+    container-name: body;
+
+    img, picture, video, canvas, svg {
+      display: block;
+      max-width: 100%;
+    }
+
+    button, input, select, textarea {
+      font: inherit;
+      color: inherit;
+      font-family: var(--font-family-text), sans-serif;
+      font-size: var(--font-size-base);
+      font-weight: var(--font-weight-regular);
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+      font-family: var(--font-family-titre), sans-serif;
+      font-weight: var(--font-weight-medium);
+    }
+
+    h1 {font-size: var(--font-size-h1);}
+    h2 {font-size: var(--font-size-h2);}
+    h3 {font-size: var(--font-size-h3);}
+    h4 {font-size: var(--font-size-h4);}
+    h5 {font-size: var(--font-size-h5);}
+    h6 {font-size: var(--font-size-h6);}
+
+
+    img {
+      border-radius: var(--border-radius);
+    }
+
+    ::selection {
+      background-color: var(--primary-color);
+      color: var(--text-light);
+      -webkit-text-fill-color: var(--text-light);
+    }
+
+    pre {
+      overflow-x: auto;
+    }
+  }
+}

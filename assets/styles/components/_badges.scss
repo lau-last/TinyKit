@@ -1,0 +1,12 @@
+/* Badge */
+.badge {
+    padding: var(--badge-padding-md);
+    border-radius: var(--border-radius);
+    white-space: nowrap;
+
+    &.badge-sm {padding: var(--badge-padding-sm);}
+    &.badge-md {padding: var(--badge-padding-md);}
+    &.badge-lg {padding: var(--badge-padding-lg);}
+    &.badge-pill {border-radius: 10rem;}
+
+}
