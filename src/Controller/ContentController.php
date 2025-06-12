@@ -11,8 +11,6 @@ final class ContentController extends AbstractController
     #[Route('/content', name: 'app_content')]
     public function index(): Response
     {
-        return $this->render('content/index.html.twig', [
-            'controller_name' => 'ContentController',
-        ]);
+        return $this->render('content/index.html.twig');
     }
 }

@@ -1,3 +1,6 @@
+import LocalStorageManager from "./local_storage.js";
+import BurgerManager from "./burger.js";
+
 export default class NavbarSideManager {
     init() {
         this.initSideNavbar();
@@ -5,10 +8,50 @@ export default class NavbarSideManager {
 
 
     initSideNavbar() {
+        this.onlyOneSideBarOpenInLocalStorage();
+        this.initSidebarStates();
         this.handleOpenButton();
         this.handleCloseButton();
     };
 
+
+    initSidebarStates() {
+        const states = LocalStorageManager.getStates('sidebar_state');
+        const body = document.body;
+        const contents = [];
+
+        body.style.transition = 'none';
+
+        for (const sidebar in states) {
+            if (states[sidebar] === 'open') {
+                const content = document.getElementById(sidebar);
+                if (!content) continue;
+
+                content.style.transition = 'none';
+                contents.push(content);
+
+                this.handleToggleClass(content);
+                this.handlePushMode(content);
+
+                BurgerManager.updateBurger(sidebar, 'sidebar');
+            }
+        }
+
+        void body.offsetWidth;
+        body.style.transition = '';
+        contents.forEach(content => {
+            content.style.transition = '';
+        });
+    };
+
+    handleStateOfSidebar(content) {
+        if (!content) return;
+        const state = (content.classList.contains('show-aside-start') || content.classList.contains('show-aside-end'))
+            ? 'open'
+            : 'close';
+
+        LocalStorageManager.setState('sidebar_state', content.id, state)
+    }
 
     removeClass(currentButton) {
         const openButtons = document.querySelectorAll('[data-action="toggle-sidebar"]');
@@ -20,12 +63,12 @@ export default class NavbarSideManager {
                 const target = button.getAttribute('data-target');
                 const content = document.querySelector(target);
 
-                // content.style.transition = 'none';
+                LocalStorageManager.setState('sidebar_state', content.id, 'close')
 
                 button.classList.remove('animate-burger');
                 content.classList.remove('show-aside-start');
                 content.classList.remove('show-aside-end');
-            };
+            }
         });
     };
 
@@ -43,9 +86,12 @@ export default class NavbarSideManager {
                 this.removeClass(button);
                 this.handleToggleClass(content);
                 this.handlePushMode(content);
+
+                this.handleStateOfSidebar(content);
             });
         });
     };
+
 
     handleCloseButton() {
         const closeButtons = document.querySelectorAll('[data-action="close-sidebar"]');
@@ -57,6 +103,8 @@ export default class NavbarSideManager {
                 const content = document.querySelector(target);
 
                 if (!content) return;
+
+                LocalStorageManager.setState('sidebar_state', content.id, close)
 
                 this.handleToggleClass(content);
                 this.handlePushMode(content);
@@ -83,7 +131,7 @@ export default class NavbarSideManager {
         } else if (side === 'end') {
             document.body.style.marginRight = isVisibleEnd ? '300px' : '0';
         }
-    }
+    };
 
 
     getMode(content) {
@@ -95,12 +143,25 @@ export default class NavbarSideManager {
         return content.getAttribute('data-position') || 'start';
     };
 
+    onlyOneSideBarOpenInLocalStorage() {
+        const states = LocalStorageManager.getStates('sidebar_state');
+        const lastStateUpdate = LocalStorageManager.getLastUpdated('sidebar_state');
 
-    toggleBurger(button) {
-        const shouldAnimate = button.getAttribute('data-animated') === 'true';
-        if (shouldAnimate) {
-            button.classList.toggle('animate-burger');
+        let count = 0;
+        for (const sidebar in states) {
+            if (states[sidebar] === 'open') {
+                count++;
+            }
         }
-    };
+
+        if (count > 1 && lastStateUpdate) {
+            for (const sidebar in states) {
+                if (sidebar !== lastStateUpdate.id && states[sidebar] === 'open') {
+                    LocalStorageManager.setState('sidebar_state', sidebar, 'closed');
+                }
+            }
+        }
+    }
+
 
 };

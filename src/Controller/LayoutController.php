@@ -11,8 +11,6 @@ final class LayoutController extends AbstractController
     #[Route('/layout', name: 'app_layout')]
     public function index(): Response
     {
-        return $this->render('layout/index.html.twig', [
-            'controller_name' => 'LayoutController',
-        ]);
+        return $this->render('layout/index.html.twig');
     }
 }

@@ -4,13 +4,14 @@ import BurgerManager from './js/burger.js';
 import TabsManager from './js/tab.js';
 import ModalManager from './js/modal.js';
 import DropdownManager from './js/dropdown.js';
-import CarouselManager from "./js/carousel.js";
-import ThemeManager from "./js/theme.js";
-import InputManager from "./js/input.js";
-import CopyToClipboardManager from "./js/clipboard.js";
-import SyntaxHighlighterManager from "./js/highlighter.js";
-import ToggleManager from "./js/toggle.js";
-import TextContrastManager from "./js/text_contrast.js";
+import CarouselManager from './js/carousel.js';
+import ThemeManager from './js/theme.js';
+import InputManager from './js/input.js';
+import CopyToClipboardManager from './js/clipboard.js';
+import SyntaxHighlighterManager from './js/highlighter.js';
+import ToggleManager from './js/toggle.js';
+import TextContrastManager from './js/text_contrast.js';
+
 
 
 const navbar = new NavbarManager();

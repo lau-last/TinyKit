@@ -1,6 +1,22 @@
-export default class DropdownManager  {
+import LocalStorageManager from "./local_storage.js";
+import CollapseEffectManager from "./collapse_effect.js";
+
+export default class DropdownManager {
+
     init() {
+        this.initDropdownStates();
         this.initDropdownButtons();
+    };
+
+    initDropdownStates() {
+        const states = LocalStorageManager.getStates('dropdown_state');
+        for (const dropdown in states) {
+            if (states[dropdown] === 'open') {
+                const content = document.getElementById(dropdown);
+                if (!content) continue;
+                this.expand(content, false);
+            }
+        }
     };
 
     initDropdownButtons() {
@@ -19,6 +35,7 @@ export default class DropdownManager  {
         });
     };
 
+
     toggleArrow(button) {
         const arrow = button.querySelector('[data-arrow]');
         if (!arrow) return;
@@ -26,34 +43,33 @@ export default class DropdownManager  {
         arrow.setAttribute('data-arrow', current === 'up' ? 'down' : 'up');
     };
 
-    expand(content) {
-        const startHeight = 0;
-        const endHeight = content.scrollHeight;
 
-        content.setAttribute('data-expanded', 'true');
+    updateArrow(content) {
+        const button = document.querySelector('[data-action="toggle-dropdown"][data-target="#' + content.id + '"]');
+        if (button) {
+            const arrow = button.querySelector('[data-arrow]');
+            if (arrow) {
+                arrow.style.transition = 'none';
+                arrow.setAttribute('data-arrow', 'up');
+                arrow.offsetHeight;
+                arrow.style.transition = '';
+            }
+        }
+    };
 
-        content.animate([
-            { height: `${startHeight}px` },
-            { height: `${endHeight}px` }
-        ], {
-            duration: 300,
-            easing: 'ease'
-        });
+
+    expand(content, animate = true) {
+        if (!content) return;
+        LocalStorageManager.setState('dropdown_state', content.id, 'open');
+        CollapseEffectManager.expand(content, animate, () => this.updateArrow(content));
     };
 
     collapse(content) {
-        const startHeight = content.scrollHeight;
-
-        const animation = content.animate([
-            { height: `${startHeight}px` },
-            { height: '0px' }
-        ], {
-            duration: 300,
-            easing: 'ease'
-        });
-
-        animation.onfinish = () => {
-            content.setAttribute('data-expanded', 'false');
-        };
+        if (!content) return;
+        LocalStorageManager.setState('dropdown_state', content.id, 'close');
+        CollapseEffectManager.collapse(content);
     };
+
+
+
 };

@@ -38,4 +38,21 @@ export default class BurgerManager {
             });
         });
     };
+
+    static updateBurger(target, type) {
+        const button = document.querySelector(`[data-action="toggle-${type}"][data-target="#${target}"]`);
+        if (button) {
+            if (button.getAttribute('data-animated') !== 'true') return;
+            const bars = button.querySelectorAll('.bar1, .bar2, .bar3');
+            if (!bars) return;
+            bars.forEach(bar => {
+                bar.style.transition = 'none';
+            });
+            button.classList.add('animate-burger');
+            void button.offsetHeight;
+            bars.forEach(bar => {
+                bar.style.transition = '';
+            });
+        }
+    }
 }

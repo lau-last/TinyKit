@@ -743,7 +743,7 @@ tbody.table-primary,
 tfoot.table-primary {
   background-color: var(--table-primary-color);
   & * {
-    color: var(--text-on-primary);
+    color: var(--text-on-table-primary);
   }
 }
 
@@ -753,7 +753,7 @@ tbody.table-secondary,
 tfoot.table-secondary {
   background-color: var(--table-secondary-color);
   & * {
-    color: var(--text-on-secondary);
+    color: var(--text-on-table-secondary);
   }
 }
 
@@ -763,7 +763,7 @@ tbody.table-tertiary,
 tfoot.table-tertiary {
   background-color: var(--table-tertiary-color);
   & * {
-    color: var(--text-on-tertiary);
+    color: var(--text-on-table-tertiary);
   }
 }
 
@@ -773,7 +773,7 @@ tbody.table-success,
 tfoot.table-success {
   background-color: var(--table-success-color);
   & * {
-    color: var(--text-on-success);
+    color: var(--text-on-table-success);
   }
 }
 
@@ -783,7 +783,7 @@ tbody.table-info,
 tfoot.table-info {
   background-color: var(--table-info-color);
   & * {
-    color: var(--text-on-info);
+    color: var(--text-on-table-info);
   }
 }
 
@@ -793,7 +793,7 @@ tbody.table-warning,
 tfoot.table-warning {
   background-color: var(--table-warning-color);
   & * {
-    color: var(--text-on-warning);
+    color: var(--text-on-table-warning);
   }
 }
 
@@ -803,7 +803,7 @@ tbody.table-danger,
 tfoot.table-danger {
   background-color: var(--table-danger-color);
   & * {
-    color: var(--text-on-danger);
+    color: var(--text-on-table-danger);
   }
 }
 
@@ -813,7 +813,7 @@ tbody.table-neutral,
 tfoot.table-neutral {
   background-color: var(--table-neutral-color);
   & * {
-    color: var(--text-on-neutral);
+    color: var(--text-on-table-neutral);
   }
 }
 
@@ -823,7 +823,7 @@ tbody.table-dark,
 tfoot.table-dark {
   background-color: var(--table-dark-color);
   & * {
-    color: var(--text-on-dark);
+    color: var(--text-on-table-dark);
   }
 }
 
@@ -833,7 +833,7 @@ tbody.table-light,
 tfoot.table-light {
   background-color: var(--table-light-color);
   & * {
-    color: var(--text-on-light);
+    color: var(--text-on-table-light);
   }
 }
 

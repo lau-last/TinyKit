@@ -1,8 +1,24 @@
+import LocalStorageManager from "./local_storage.js";
+import CollapseEffectManager from "./collapse_effect.js";
+import BurgerManager from "./burger.js";
+
 export default class NavbarManager {
     init() {
+        this.initNavbarStates();
         this.initToggleNavbar();
     };
 
+    initNavbarStates() {
+        const states = LocalStorageManager.getStates('navbar_state');
+        for (const navbar in states) {
+            if (states[navbar] === 'open') {
+                const content = document.getElementById(navbar);
+                if (!content) continue;
+                this.expand(content, false);
+                BurgerManager.updateBurger(navbar, 'navbar');
+            }
+        }
+    };
 
     initToggleNavbar() {
         const buttons = document.querySelectorAll('[data-action="toggle-navbar"]');
@@ -18,33 +34,14 @@ export default class NavbarManager {
         });
     };
 
-    expand(content) {
-        const startHeight = 0;
-        const endHeight = content.scrollHeight;
 
-        content.setAttribute('data-expanded', 'true');
-        content.animate([
-            { height: `${startHeight}px` },
-            { height: `${endHeight}px` }
-        ], {
-            duration: 300,
-            easing: 'ease'
-        });
+    expand(content, animate = true) {
+        LocalStorageManager.setState('navbar_state', content.id, 'open');
+        CollapseEffectManager.expand(content, animate);
     };
 
     collapse(content) {
-        const startHeight = content.scrollHeight;
-
-        const animation = content.animate([
-            { height: `${startHeight}px` },
-            { height: '0px' }
-        ], {
-            duration: 300,
-            easing: 'ease'
-        });
-
-        animation.onfinish = () => {
-            content.setAttribute('data-expanded', 'false');
-        };
+        LocalStorageManager.setState('navbar_state', content.id, 'close');
+        CollapseEffectManager.collapse(content);
     };
 };

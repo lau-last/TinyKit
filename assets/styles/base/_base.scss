@@ -56,7 +56,7 @@
   --text-light: var(--light-color);
   --text-dark: var(--dark-color);
   --text-color: var(--text-dark);
-  --text-on-primay: var(--text-white);
+  --text-on-primary: var(--text-white);
   --text-on-secondary: var(--text-white);
   --text-on-tertiary: var(--text-white);
   --text-on-success: var(--text-white);
@@ -66,6 +66,16 @@
   --text-on-neutral: var(--text-black);
   --text-on-light: var(--text-black);
   --text-on-dark: var(--text-white);
+  --text-on-table-primary: var(--text-white);
+  --text-on-table-secondary: var(--text-white);
+  --text-on-table-tertiary: var(--text-white);
+  --text-on-table-success: var(--text-white);
+  --text-on-table-info: var(--text-white);
+  --text-on-table-warning: var(--text-black);
+  --text-on-table-danger: var(--text-white);
+  --text-on-table-neutral: var(--text-black);
+  --text-on-table-light: var(--text-black);
+  --text-on-table-dark: var(--text-white);
   --text-on-surface-footer: var(--text-white);
 
   // Links colors
@@ -229,7 +239,7 @@
   --text-light: var(--light-color);
   --text-dark: var(--dark-color);
   --text-color: var(--text-light);
-  --text-on-primay: var(--text-black);
+  --text-on-primary: var(--text-black);
   --text-on-secondary: var(--text-black);
   --text-on-tertiary: var(--text-black);
   --text-on-success: var(--text-black);
@@ -239,6 +249,16 @@
   --text-on-neutral: var(--text-black);
   --text-on-light: var(--text-black);
   --text-on-dark: var(--text-white);
+  --text-on-table-primary: var(--text-black);
+  --text-on-table-secondary: var(--text-black);
+  --text-on-table-tertiary: var(--text-black);
+  --text-on-table-success: var(--text-black);
+  --text-on-table-info: var(--text-black);
+  --text-on-table-warning: var(--text-black);
+  --text-on-table-danger: var(--text-black);
+  --text-on-table-neutral: var(--text-black);
+  --text-on-table-light: var(--text-black);
+  --text-on-table-dark: var(--text-white);
   --text-on-surface-footer: var(--text-white);
 
   // Links colors

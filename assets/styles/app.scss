@@ -10,6 +10,7 @@
 @use 'layout/grid';
 @use 'layout/spacing';
 // Utilities
+@use 'utilities/colors';
 @use 'utilities/helpers';
 @use 'utilities/sizing';
 @use 'utilities/utilities';
@@ -19,7 +20,6 @@
 @use 'components/cards';
 @use 'components/carousels';
 @use 'components/clipboard';
-@use 'components/colors';
 @use 'components/dropdowns';
 @use 'components/forms';
 @use 'components/highlight';
