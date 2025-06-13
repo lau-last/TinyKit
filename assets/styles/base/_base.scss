@@ -53,9 +53,7 @@
   // Text colors
   --text-white: var(--gray-0);
   --text-black: var(--gray-1000);
-  --text-light: var(--light-color);
-  --text-dark: var(--dark-color);
-  --text-color: var(--text-dark);
+  --text-color: var(--text-black);
   --text-on-primary: var(--text-white);
   --text-on-secondary: var(--text-white);
   --text-on-tertiary: var(--text-white);
@@ -147,32 +145,66 @@
   --gap-base: 2.5rem;
   --gap-grid: 1.5rem;
 
-  // Inputs height
+  // Inputs
+  --input-height-xs: 2rem;
   --input-height-sm: 2.5rem;
   --input-height-md: 3rem;
   --input-height-lg: 3.5rem;
+  --input-height-xl: 4rem;
+  // Input size for checkbox and radio
+  --input-size-xs: 1rem;
+  --input-size-sm: 1.2rem;
+  --input-size-md: 1.4rem;
+  --input-size-lg: 1.6rem;
+  --input-size-xl: 1.8rem;
+  // Input size for switch
+  --input-size-switch-xs: 1rem;
+  --input-size-switch-sm: 1.2rem;
+  --input-size-switch-md: 1.4rem;
+  --input-size-switch-lg: 1.6rem;
+  --input-size-switch-xl: 1.8rem;
 
-  // Buttons padding
-  --button-padding-sm: .55rem 1.1rem;
-  --button-padding-md: 0.8rem 1.6rem;
-  --button-padding-lg: 1.05rem 2.1rem;
+  // nav links
+  --nav-link-padding-xs: .25rem .5rem;
+  --nav-link-padding-sm: .5rem 1rem;
+  --nav-link-padding-md: .75rem 1.5rem;
+  --nav-link-padding-lg: 1rem 2rem;
+  --nav-link-padding-xl: 1.5rem 3rem;
 
-  // Badges padding
+  // Buttons
+  --button-group-gap-xs: .25rem;
+  --button-group-gap-sm: .5rem;
+  --button-group-gap-md: .75rem;
+  --button-group-gap-lg: 1rem;
+  --button-group-gap-xl: 2rem;
+
+  --button-padding-xs: .25rem .5rem;
+  --button-padding-sm: .5rem 1rem;
+  --button-padding-md: .75rem 1.5rem;
+  --button-padding-lg: 1rem 2rem;
+  --button-padding-xl: 1.5rem 3rem;
+
+  // Badges
   --badge-padding-sm: .2rem .4rem;
   --badge-padding-md: .4rem .8rem;
   --badge-padding-lg: .5rem 1rem;
 
-  // Table padding
+  // Table
   --table-padding-sm: .6rem;
   --table-padding-md: .8rem;
   --table-padding-lg: 1rem;
 
   // Font weights
-  --font-weight-light: 300;
-  --font-weight-regular: 400;
-  --font-weight-medium: 500;
-  --font-weight-bold: 700;
-  --font-weight-black: 900;
+  --font-weight-base: 200;
+  --font-weight-100: 100;
+  --font-weight-200: 200;
+  --font-weight-300: 300;
+  --font-weight-400: 400;
+  --font-weight-500: 500;
+  --font-weight-600: 600;
+  --font-weight-700: 700;
+  --font-weight-800: 800;
+  --font-weight-900: 900;
 
   // Font sizes titles
   --font-size-h1: 4rem;
@@ -185,19 +217,10 @@
   // Font sizes text
   --font-size-base: 1.2rem;
   --font-size-sm: 1rem;
-  --font-size-md: var(--font-size-base);
+  --font-size-md: 1.2rem;
   --font-size-lg: 1.4rem;
   --font-size-xl: 1.6rem;
   --font-size-xxl: 1.8rem;
-
-  // Font sizes display
-  --display-font-sizes-1: 5rem;
-  --display-font-sizes-2: 4.5rem;
-  --display-font-sizes-3: 4rem;
-  --display-font-sizes-4: 3.5rem;
-  --display-font-sizes-5: 3rem;
-  --display-font-sizes-6: 2.5rem;
-  --display-font-weight: var(--font-weight-light);
 
   // Font families
   --font-family-titre: "Montserrat", sans-serif;
@@ -236,9 +259,7 @@
   // Text
   --text-white: var(--gray-0);
   --text-black: var(--gray-1000);
-  --text-light: var(--light-color);
-  --text-dark: var(--dark-color);
-  --text-color: var(--text-light);
+  --text-color: var(--text-white);
   --text-on-primary: var(--text-black);
   --text-on-secondary: var(--text-black);
   --text-on-tertiary: var(--text-black);
@@ -341,7 +362,7 @@ html {
   body {
     font-family: var(--font-family-text), sans-serif;
     font-size: var(--font-size-base);
-    font-weight: var(--font-weight-regular);
+    font-weight: var(--font-weight-base);
     background-color: var(--bg-color);
     color: var(--text-color);
     height: 100%;
@@ -359,20 +380,37 @@ html {
       color: inherit;
       font-family: var(--font-family-text), sans-serif;
       font-size: var(--font-size-base);
-      font-weight: var(--font-weight-regular);
+      font-weight: var(--font-weight-base);
     }
 
     h1, h2, h3, h4, h5, h6 {
       font-family: var(--font-family-titre), sans-serif;
-      font-weight: var(--font-weight-medium);
+      font-weight: var(--font-weight-500);
     }
 
-    h1 {font-size: var(--font-size-h1);}
-    h2 {font-size: var(--font-size-h2);}
-    h3 {font-size: var(--font-size-h3);}
-    h4 {font-size: var(--font-size-h4);}
-    h5 {font-size: var(--font-size-h5);}
-    h6 {font-size: var(--font-size-h6);}
+    h1 {
+      font-size: var(--font-size-h1);
+    }
+
+    h2 {
+      font-size: var(--font-size-h2);
+    }
+
+    h3 {
+      font-size: var(--font-size-h3);
+    }
+
+    h4 {
+      font-size: var(--font-size-h4);
+    }
+
+    h5 {
+      font-size: var(--font-size-h5);
+    }
+
+    h6 {
+      font-size: var(--font-size-h6);
+    }
 
 
     img {
@@ -381,8 +419,8 @@ html {
 
     ::selection {
       background-color: var(--primary-color);
-      color: var(--text-light);
-      -webkit-text-fill-color: var(--text-light);
+      color: var(--text-white);
+      -webkit-text-fill-color: var(--text-white);
     }
 
     pre {

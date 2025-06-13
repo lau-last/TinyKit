@@ -1,0 +1,19 @@
+.nav-link {
+  border-radius: var(--border-radius);
+  width: 100%;
+  color: inherit;
+  text-wrap: nowrap;
+  display: inline-flex;
+  text-decoration: none;
+  padding: var(--nav-link-padding-md);
+
+  &.extra-small   { padding: var(--nav-link-padding-xs); }
+  &.small         { padding: var(--nav-link-padding-sm); }
+  &.medium        { padding: var(--nav-link-padding-md); }
+  &.large         { padding: var(--nav-link-padding-lg); }
+  &.extra-large   { padding: var(--nav-link-padding-xl); }
+
+  &:hover {background-color: var(--hover-color);}
+}
+
+.nav-link-fit {width: fit-content;}

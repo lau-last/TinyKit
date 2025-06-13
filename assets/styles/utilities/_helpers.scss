@@ -1,50 +1,3 @@
-// Lists
-.list-style-none { list-style: none; }
-
-.list-group-item {
-  list-style: none;
-  display: flex;
-  flex-direction: column;
-
-  &:has(.nav-link) { gap: 0; }
-  &:not(:has(.nav-link)) { gap: var(--gap-base); }
-}
-
-.list-inline {
-  list-style: none;
-
-  .list-inline-item {
-    display: inline-block;
-    margin-right: 0.5rem;
-  }
-
-  .list-inline-item:last-child {
-    margin-right: 0;
-  }
-}
-
-// Nav links
-.nav-link,
-.nav-link-fit {
-  color: inherit;
-  text-wrap: nowrap;
-  display: inline-flex;
-  padding: 1rem 2rem;
-  border-radius: var(--border-radius);
-  text-decoration: none;
-
-  &:hover {
-    color: inherit;
-    background-color: var(--hover-color);
-  }
-}
-
-.nav-link { width: 100%; }
-.nav-link-fit { width: fit-content; }
-
-.no-underline { text-decoration: none; }
-
-// Images
 .img-fluid {
   max-width: 100%;
   height: auto;
@@ -67,6 +20,40 @@
   }
 }
 
-// Floats
-.float-start { float: left; }
-.float-end { float: right; }
+.position-top-left {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.position-top-right {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+.position-bottom-left {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+.position-bottom-right {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+
+// Flex column spacing
+.vertical-space-between,
+.vertical-space-around,
+.vertical-space-evenly,
+.vertical-center {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.vertical-space-between { justify-content: space-between; }
+.vertical-space-around { justify-content: space-around; }
+.vertical-space-evenly { justify-content: space-evenly; }
+.vertical-center { justify-content: center; }
+
+.transition-theme {transition: color 0.3s ease, background-color 0.3s ease, border-color 0.3s ease;}

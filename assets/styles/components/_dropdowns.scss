@@ -1,4 +1,4 @@
-.btn-dropdown {
+.button-dropdown {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -44,12 +44,12 @@
   position: relative;
 
 
-  .dropdown {
+  [data-mode="hover"] {
     position: absolute;
   }
 
-  .dropdown,
-  .dropdown-push {
+  [data-mode="hover"],
+  [data-mode="push"] {
     background-color: var(--bg-color);
     border-radius: var(--border-radius);
     overflow: hidden;

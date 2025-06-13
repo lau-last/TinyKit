@@ -1,8 +1,18 @@
+.group-button {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--button-group-gap-md);
+
+    &.extra-small {gap: var(--button-group-gap-xs);}
+    &.small {gap: var(--button-group-gap-sm);}
+    &.medium {gap: var(--button-group-gap-md);}
+    &.large {gap: var(--button-group-gap-lg);}
+    &.extra-large {gap: var(--button-group-gap-xl);}
+}
+
+
 button,
-.btn {
-    /*margin: .15rem;*/
-    //display: inline-block;
-    //width: fit-content;
+.button {
     border-radius: var(--border-radius);
     padding: var(--button-padding-md);
     border: none;
@@ -14,10 +24,12 @@ button,
         box-shadow: none;
     }
 
-    &.btn-sm {padding: var(--button-padding-sm);}
-    &.btn-md {padding: var(--button-padding-md);}
-    &.btn-lg {padding: var(--button-padding-lg);}
-    &.btn-pill {border-radius: 10rem;}
+    &.extra-small {padding: var(--button-padding-xs);}
+    &.small {padding: var(--button-padding-sm);}
+    &.medium {padding: var(--button-padding-md);}
+    &.large {padding: var(--button-padding-lg);}
+    &.extra-large {padding: var(--button-padding-xl);}
+    &.round {border-radius: 10rem;}
 }
 
 // Button Theme

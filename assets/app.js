@@ -10,8 +10,7 @@ import InputManager from './js/input.js';
 import CopyToClipboardManager from './js/clipboard.js';
 import SyntaxHighlighterManager from './js/highlighter.js';
 import ToggleManager from './js/toggle.js';
-import TextContrastManager from './js/text_contrast.js';
-
+import SettingManager  from "./js/setting.js";
 
 
 const navbar = new NavbarManager();
@@ -26,7 +25,7 @@ const input = new InputManager();
 const copyToClipboard = new CopyToClipboardManager();
 const syntaxHighlighter = new SyntaxHighlighterManager();
 const toggle = new ToggleManager();
-const textContrast = new TextContrastManager();
+const setting = new SettingManager();
 
 document.addEventListener('DOMContentLoaded', function () {
     navbar.init();
@@ -41,5 +40,5 @@ document.addEventListener('DOMContentLoaded', function () {
     copyToClipboard.init();
     syntaxHighlighter.init();
     toggle.init();
-    textContrast.init();
+    setting.init();
 });

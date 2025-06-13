@@ -1,5 +1,4 @@
 export default class LocalStorageManager {
-
     static setState(prefix, elementId, state) {
         const data = {
             value: state,
@@ -7,58 +6,71 @@ export default class LocalStorageManager {
         };
         localStorage.setItem(`${prefix}#${elementId}`, JSON.stringify(data));
     }
-
+    ;
     static getState(prefix, elementId) {
+        var _a;
         const item = localStorage.getItem(`${prefix}#${elementId}`);
-        if (!item) return null;
-
+        if (!item)
+            return null;
         try {
             const parsed = JSON.parse(item);
-            return parsed.value ?? null;
-        } catch {
+            return (_a = parsed.value) !== null && _a !== void 0 ? _a : null;
+        }
+        catch (_b) {
             return null;
         }
     }
-
+    ;
     static getStates(prefix) {
+        var _a;
         const states = {};
         for (let i = 0; i < localStorage.length; i++) {
             const key = localStorage.key(i);
-            if (key.startsWith(`${prefix}#`)) {
+            if (key && key.startsWith(`${prefix}#`)) {
                 const trimmedKey = key.substring(`${prefix}#`.length);
                 try {
-                    const item = JSON.parse(localStorage.getItem(key));
-                    states[trimmedKey] = item.value ?? null;
-                } catch {
+                    const itemStr = localStorage.getItem(key);
+                    if (!itemStr) {
+                        states[trimmedKey] = null;
+                        continue;
+                    }
+                    const item = JSON.parse(itemStr);
+                    states[trimmedKey] = (_a = item.value) !== null && _a !== void 0 ? _a : null;
+                }
+                catch (_b) {
                     states[trimmedKey] = null;
                 }
             }
         }
         return states;
     }
-
+    ;
     static getLastUpdated(prefix) {
         let lastKey = null;
         let lastTimestamp = 0;
         let lastValue = null;
-
         for (let i = 0; i < localStorage.length; i++) {
             const key = localStorage.key(i);
-            if (key.startsWith(`${prefix}#`)) {
+            if (key && key.startsWith(`${prefix}#`)) {
                 try {
-                    const item = JSON.parse(localStorage.getItem(key));
+                    const itemStr = localStorage.getItem(key);
+                    if (!itemStr)
+                        continue;
+                    const item = JSON.parse(itemStr);
                     if (item.updatedAt && item.updatedAt > lastTimestamp) {
                         lastTimestamp = item.updatedAt;
                         lastKey = key.substring(`${prefix}#`.length);
                         lastValue = item.value;
                     }
-                } catch (e) {
-                    console.log(e);
+                }
+                catch (_a) {
                     continue;
                 }
             }
         }
-
-        return lastKey ? {id: lastKey, value: lastValue, updatedAt: lastTimestamp} : null;
+        if (lastKey === null)
+            return null;
+        return { id: lastKey, value: lastValue, updatedAt: lastTimestamp };
     }
+    ;
 }

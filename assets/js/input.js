@@ -1,21 +1,21 @@
 export default class InputManager {
-
     init() {
         this.handleSwitchLabelClick();
-    };
-
+    }
+    ;
     handleSwitchLabelClick() {
         const containersSwitch = document.querySelectorAll('.switch');
         containersSwitch.forEach(container => {
-            let inputSelector = container.querySelector('input').id;
-            let labelsSelector = document.querySelectorAll(`[data-label="${inputSelector}"]`);
+            const input = container.querySelector('input');
+            if (!input || !input.id)
+                return;
+            const labelsSelector = document.querySelectorAll(`[data-label="${input.id}"]`);
             labelsSelector.forEach(label => {
                 label.addEventListener('click', () => {
-                    container.querySelector('input').click();
+                    input.click();
                 });
             });
         });
     }
-
-
+    ;
 }

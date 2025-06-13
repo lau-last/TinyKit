@@ -1,95 +1,81 @@
 // Font weights
-.fw-light {
-    font-weight: var(--font-weight-light);
+.fw-100 {
+  font-weight: var(--font-weight-100);
 }
 
-.fw-regular {
-    font-weight: var(--font-weight-regular);
+.fw-200 {
+  font-weight: var(--font-weight-200);
 }
 
-.fw-medium {
-    font-weight: var(--font-weight-medium);
+.fw-300 {
+  font-weight: var(--font-weight-300);
 }
 
-.fw-bold {
-    font-weight: var(--font-weight-bold);
+.fw-400 {
+  font-weight: var(--font-weight-400);
 }
 
-.fw-black {
-    font-weight: var(--font-weight-black);
+.fw-500 {
+  font-weight: var(--font-weight-500);
+}
+
+.fw-600 {
+  font-weight: var(--font-weight-600);
+}
+
+.fw-700 {
+  font-weight: var(--font-weight-700);
+}
+
+.fw-800 {
+  font-weight: var(--font-weight-800);
+}
+
+.fw-900 {
+  font-weight: var(--font-weight-900);
 }
 
 /* Font sizes */
 .fs-1 {
-    font-size: var(--font-size-h1);
+  font-size: var(--font-size-h1);
 }
 
 .fs-2 {
-    font-size: var(--font-size-h2);
+  font-size: var(--font-size-h2);
 }
 
 .fs-3 {
-    font-size: var(--font-size-h3);
+  font-size: var(--font-size-h3);
 }
 
 .fs-4 {
-    font-size: var(--font-size-h4);
+  font-size: var(--font-size-h4);
 }
 
 .fs-5 {
-    font-size: var(--font-size-h5);
+  font-size: var(--font-size-h5);
 }
 
 .fs-6 {
-    font-size: var(--font-size-h6);
+  font-size: var(--font-size-h6);
 }
 
 .fs-sm {
-    font-size: var(--font-size-sm);
+  font-size: var(--font-size-sm);
 }
 
 .fs-md {
-    font-size: var(--font-size-md);
+  font-size: var(--font-size-md);
 }
 
 .fs-lg {
-    font-size: var(--font-size-lg);
+  font-size: var(--font-size-lg);
 }
 
 .fs-xl {
-    font-size: var(--font-size-xl);
+  font-size: var(--font-size-xl);
 }
 
 .fs-xxl {
-    font-size: var(--font-size-xxl);
-}
-
-.display-1 {
-    font-size: var(--display-font-sizes-1);
-    font-weight: var(--display-font-weight);
-}
-
-.display-2 {
-    font-size: var(--display-font-sizes-2);
-    font-weight: var(--display-font-weight);
-}
-
-.display-3 {
-    font-size: var(--display-font-sizes-3);
-    font-weight: var(--display-font-weight);
-}
-
-.display-4 {
-    font-size: var(--display-font-sizes-4);
-    font-weight: var(--display-font-weight);
-}
-
-.display-5 {
-    font-size: var(--display-font-sizes-5);
-    font-weight: var(--display-font-weight);
-}
-
-.display-6 {
-    font-size: var(--display-font-sizes-6);
-    font-weight: var(--display-font-weight);
+  font-size: var(--font-size-xxl);
 }

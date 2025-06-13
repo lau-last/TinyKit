@@ -1,74 +1,177 @@
 // Background
-
-.bg-primary {
+.background-primary {
   background-color: var(--primary-color);
+
+  &.text-contrast {
+    color: var(--text-on-primary);
+
+    * {
+      color: var(--text-on-primary);
+    }
+  }
 }
 
-.bg-secondary {
+.background-secondary {
   background-color: var(--secondary-color);
+
+  &.text-contrast {
+    color: var(--text-on-secondary);
+
+    * {
+      color: var(--text-on-secondary);
+    }
+  }
 }
 
-.bg-success {
+.background-success {
   background-color: var(--success-color);
+
+  &.text-contrast {
+    color: var(--text-on-success);
+
+    * {
+      color: var(--text-on-success);
+    }
+  }
 }
 
-.bg-tertiary {
+.background-tertiary {
   background-color: var(--tertiary-color);
+
+  &.text-contrast {
+    color: var(--text-on-tertiary);
+
+    * {
+      color: var(--text-on-tertiary);
+    }
+  }
 }
 
-.bg-danger {
+.background-danger {
   background-color: var(--danger-color);
+
+  &.text-contrast {
+    color: var(--text-on-danger);
+
+    * {
+      color: var(--text-on-danger);
+    }
+  }
 }
 
-.bg-warning {
+.background-warning {
   background-color: var(--warning-color);
+
+  &.text-contrast {
+    color: var(--text-on-warning);
+
+    * {
+      color: var(--text-on-warning);
+    }
+  }
 }
 
-.bg-info {
+.background-info {
   background-color: var(--info-color);
+
+  &.text-contrast {
+    color: var(--text-on-info);
+
+    * {
+      color: var(--text-on-info);
+    }
+  }
 }
 
-.bg-light {
+.background-light {
   background-color: var(--light-color);
+
+  &.text-contrast {
+    color: var(--text-on-light);
+
+    * {
+      color: var(--text-on-light);
+    }
+  }
 }
 
-.bg-dark {
+.background-dark {
   background-color: var(--dark-color);
+
+  &.text-contrast {
+    color: var(--text-on-dark);
+
+    * {
+      color: var(--text-on-dark);
+    }
+  }
 }
 
-.bg-neutral {
+.background-neutral {
   background-color: var(--neutral-color);
+
+  &.text-contrast {
+    color: var(--text-on-neutral);
+
+    * {
+      color: var(--text-on-neutral);
+    }
+  }
 }
 
-.bg-white {
+.background-white {
   background-color: var(--gray-0);
+
+  &.text-contrast {
+    color: var(--text-on-white);
+
+    * {
+      color: var(--text-on-white);
+    }
+  }
 }
 
-.bg-black {
+.background-black {
   background-color: var(--gray-1000);
+
+  &.text-contrast {
+    color: var(--text-on-black);
+
+    * {
+      color: var(--text-on-black);
+    }
+  }
 }
 
-.bg-transparent {
+.background-surface-footer {
+  background-color: var(--surface-footer-color);
+
+  &.text-contrast {
+    color: var(--text-on-surface-footer);
+
+    * {
+      color: var(--text-on-surface-footer);
+    }
+  }
+}
+
+.background-transparent {
   background-color: var(--transparent);
 }
 
-.bg-transparent-white {
+.background-transparent-white {
   background-color: var(--transparent-white);
 }
 
-.bg-transparent-black {
+.background-transparent-black {
   background-color: var(--transparent-black);
 }
 
-.bg-transparent-theme {
+.background-transparent-theme {
   background-color: var(--transparent-theme);
 }
 
-.bg-surface-footer {
-  background-color: var(--surface-footer-color);
-}
-
-.bg-code-theme {
+.background-code-theme {
   background-color: var(--bg-color-code);
 }
 
@@ -234,129 +337,11 @@
   color: var(--text-color);
 }
 
-// Background and text fill color
-
-.bg-primary-fill {
-  background-color: var(--primary-color);
-  color: var(--text-on-primary);
-
-  & * {
-    color: var(--text-on-primary);
-  }
-}
-
-.bg-secondary-fill {
-  background-color: var(--secondary-color);
-  color: var(--text-on-secondary);
-
-  & * {
-    color: var(--text-on-secondary);
-  }
-}
-
-.bg-tertiary-fill {
-  background-color: var(--tertiary-color);
-  color: var(--text-on-tertiary);
-
-  & * {
-    color: var(--text-on-tertiary);
-  }
-}
-
-.bg-success-fill {
-  background-color: var(--success-color);
-  color: var(--text-on-success);
-
-  & * {
-    color: var(--text-on-success);
-  }
-}
-
-.bg-info-fill {
-  background-color: var(--info-color);
-  color: var(--text-on-info);
-
-  & * {
-    color: var(--text-on-info);
-  }
-}
-
-.bg-warning-fill {
-  background-color: var(--warning-color);
-  color: var(--text-on-warning);
-
-  & * {
-    color: var(--text-on-warning);
-  }
-}
-
-.bg-danger-fill {
-  background-color: var(--danger-color);
-  color: var(--text-on-danger);
-
-  & * {
-    color: var(--text-on-danger);
-  }
-}
-
-.bg-neutral-fill {
-  background-color: var(--neutral-color);
-  color: var(--text-on-neutral);
-
-  & * {
-    color: var(--text-on-neutral);
-  }
-}
-
-.bg-light-fill {
-  background-color: var(--light-color);
-  color: var(--text-on-light);
-
-  & * {
-    color: var(--text-on-light);
-  }
-}
-
-.bg-dark-fill {
-  background-color: var(--dark-color);
-  color: var(--text-on-dark);
-
-  & * {
-    color: var(--text-on-dark);
-  }
-}
-
-.bg-white-fill {
-  background-color: var(--gray-0);
-  color: var(--text-on-white);
-
-  & * {
-    color: var(--text-on-white);
-  }
-}
-
-.bg-black-fill {
-  background-color: var(--gray-1000);
-  color: var(--text-on-black);
-
-  & * {
-    color: var(--text-on-black);
-  }
-}
-
-.bg-surface-footer-fill {
-  background-color: var(--surface-footer-color);
-  color: var(--text-on-surface-footer);
-
-  & * {
-    color: var(--text-on-surface-footer);
-  }
-}
 
 // Badges and buttons
 
 .badge-primary,
-.btn-primary {
+.button-primary {
   background-color: var(--primary-color);
   color: var(--text-on-primary);
 
@@ -366,7 +351,7 @@
 }
 
 .badge-secondary,
-.btn-secondary {
+.button-secondary {
   background-color: var(--secondary-color);
   color: var(--text-on-secondary);
 
@@ -376,7 +361,7 @@
 }
 
 .badge-tertiary,
-.btn-tertiary {
+.button-tertiary {
   background-color: var(--tertiary-color);
   color: var(--text-on-tertiary);
 
@@ -386,7 +371,7 @@
 }
 
 .badge-success,
-.btn-success {
+.button-success {
   background-color: var(--success-color);
   color: var(--text-on-success);
 
@@ -396,7 +381,7 @@
 }
 
 .badge-info,
-.btn-info {
+.button-info {
   background-color: var(--info-color);
   color: var(--text-on-info);
 
@@ -406,9 +391,9 @@
 }
 
 .badge-warning,
-.btn-warning {
+.button-warning {
   background-color: var(--warning-color);
-  color: var(text-on-warning);
+  color: var(--text-on-warning);
 
   &.active {
     background-color: color-mix(in srgb, var(--warning-color) 75%, var(--color-mix-dark));
@@ -416,7 +401,7 @@
 }
 
 .badge-danger,
-.btn-danger {
+.button-danger {
   background-color: var(--danger-color);
   color: var(--text-on-danger);
 
@@ -426,7 +411,7 @@
 }
 
 .badge-neutral,
-.btn-neutral {
+.button-neutral {
   background-color: var(--neutral-color);
   color: var(--text-on-neutral);
 
@@ -436,7 +421,7 @@
 }
 
 .badge-light,
-.btn-light {
+.button-light {
   background-color: var(--light-color);
   color: var(--text-on-light);
 
@@ -446,9 +431,9 @@
 }
 
 .badge-dark,
-.btn-dark {
+.button-dark {
   background-color: var(--dark-color);
-  color: var(text-on-dark);
+  color: var(--text-on-dark);
 
   &.active {
     background-color: color-mix(in srgb, var(--dark-color) 75%, var(--color-mix-dark));
@@ -456,135 +441,113 @@
 }
 
 // Outline, badge-outline, and button-outline
-
-.outline-primary,
 .badge-outline-primary,
-.btn-outline-primary {
+.button-outline-primary {
   background-color: var(--transparent);
   border: 1px solid var(--primary-color);
   color: var(--primary-color);
-
-  &.active {
-    background-color: var(--primary-color);
-    color: var(--text-on-primary);
-  }
 }
 
-.outline-secondary,
 .badge-outline-secondary,
-.btn-outline-secondary {
+.button-outline-secondary {
   background-color: var(--transparent);
   border: 1px solid var(--secondary-color);
-  color: var(--text-on-secondary);
-
-  &.active {
-    background-color: var(--secondary-color);
-    color: var(--text-dark);
-  }
-
+  color: var(--secondary-color);
 }
 
-.outline-tertiary,
 .badge-outline-tertiary,
-.btn-outline-tertiary {
+.button-outline-tertiary {
   background-color: var(--transparent);
   border: 1px solid var(--tertiary-color);
-  color: var(--text-on-tertiary);
+  color: var(--tertiary-color);
 
   &.active {
     background-color: var(--tertiary-color);
-    color: var(--text-dark);
+    color: var(--text-black);
   }
 }
 
-.outline-success,
 .badge-outline-success,
-.btn-outline-success {
+.button-outline-success {
   background-color: var(--transparent);
   border: 1px solid var(--success-color);
-  color: var(--text-on-success);
+  color: var(--success-color);
 
   &.active {
     background-color: var(--success-color);
-    color: var(--text-dark);
+    color: var(--text-black);
   }
 }
 
-.outline-info,
 .badge-outline-info,
-.btn-outline-info {
+.button-outline-info {
   background-color: var(--transparent);
   border: 1px solid var(--info-color);
-  color: var(--text-on-info);
+  color: var(--info-color);
 
   &.active {
     background-color: var(--info-color);
-    color: var(--text-dark);
+    color: var(--text-black);
   }
 }
 
-.outline-warning,
 .badge-outline-warning,
-.btn-outline-warning {
+.button-outline-warning {
   background-color: var(--transparent);
   border: 1px solid var(--warning-color);
-  color: var(--text-on-warning);
+  color: var(--warning-color);
 
   &.active {
     background-color: var(--warning-color);
-    color: var(--text-dark);
+    color: var(--text-black);
   }
 }
 
-.outline-danger,
 .badge-outline-danger,
-.btn-outline-danger {
+.button-outline-danger {
   background-color: var(--transparent);
   border: 1px solid var(--danger-color);
-  color: var(--text-on-danger);
+  color: var(--danger-color);
 
   &.active {
     background-color: var(--danger-color);
-    color: var(--text-dark);
+    color: var(--text-black);
   }
 }
 
-.outline-neutral,
 .badge-outline-neutral,
-.btn-outline-neutral {
+.button-outline-neutral {
   background-color: var(--transparent);
   border: 1px solid var(--neutral-color);
-  color: var(--text-on-neutral);
+  color: var(--neutral-color);
 
   &.active {
     background-color: var(--neutral-color);
-    color: var(--text-dark);
+    color: var(--text-black);
   }
 }
 
-.outline-light,
 .badge-outline-light,
-.btn-outline-light {
+.button-outline-light {
   background-color: var(--transparent);
   border: 1px solid var(--light-color);
-  color: var(--text-on-light);
+  color: var(--light-color);
 
   &.active {
     background-color: var(--light-color);
-    color: var(--text-dark);
+    color: var(--text-black);
   }
 }
 
-.outline-dark,
 .badge-outline-dark,
-.btn-outline-dark {
+.button-outline-dark {
   background-color: var(--transparent);
   border: 1px solid var(--dark-color);
-  color: var(--text-on-dark);
+  color: var(--dark-color);
 
   &.active {
     background-color: var(--dark-color);
-    color: var(--text-light);
+    color: var(--text-white);
   }
 }
 
@@ -592,144 +555,123 @@
 
 a,
 button,
-.btn {
-  &.bg-primary:hover,
+.button {
   &.badge-primary:hover,
-  &.btn-primary:hover {
+  &.button-primary:hover {
     background-color: color-mix(in srgb, var(--primary-color) 75%, var(--color-mix-dark));
-    color: var(--text-on-primay);
+    color: var(--text-on-primary);
   }
 
-  &.bg-secondary:hover,
   &.badge-secondary:hover,
-  &.btn-secondary:hover {
+  &.button-secondary:hover {
     background-color: color-mix(in srgb, var(--secondary-color) 75%, var(--color-mix-dark));
     color: var(--text-on-secondary);
   }
 
-  &.bg-tertiary:hover,
   &.badge-tertiary:hover,
-  &.btn-tertiary:hover {
+  &.button-tertiary:hover {
     background-color: color-mix(in srgb, var(--tertiary-color) 75%, var(--color-mix-dark));
     color: var(--text-on-tertiary);
   }
 
-  &.bg-success:hover,
   &.badge-success:hover,
-  &.btn-success:hover {
+  &.button-success:hover {
     background-color: color-mix(in srgb, var(--success-color) 75%, var(--color-mix-dark));
     color: var(--text-on-success);
   }
 
-  &.bg-info:hover,
   &.badge-info:hover,
-  &.btn-info:hover {
+  &.button-info:hover {
     background-color: color-mix(in srgb, var(--info-color) 75%, var(--color-mix-dark));
     color: var(--text-on-info);
   }
 
-  &.bg-warning:hover,
   &.badge-warning:hover,
-  &.btn-warning:hover {
+  &.button-warning:hover {
     background-color: color-mix(in srgb, var(--warning-color) 75%, var(--color-mix-dark));
     color: var(--text-on-warning);
   }
 
-  &.bg-danger:hover,
   &.badge-danger:hover,
-  &.btn-danger:hover {
+  &.button-danger:hover {
     background-color: color-mix(in srgb, var(--danger-color) 75%, var(--color-mix-dark));
     color: var(--text-on-danger);
   }
 
-  &.bg-neutral:hover,
   &.badge-neutral:hover,
-  &.btn-neutral:hover {
+  &.button-neutral:hover {
     background-color: color-mix(in srgb, var(--neutral-color) 75%, var(--color-mix-dark));
     color: var(--text-on-neutral);
   }
 
-  &.bg-light:hover,
   &.badge-light:hover,
-  &.btn-light:hover {
+  &.button-light:hover {
     background-color: color-mix(in srgb, var(--light-color) 75%, var(--color-mix-dark));
     color: var(--text-on-light);
   }
 
-  &.bg-dark:hover,
   &.badge-dark:hover,
-  &.btn-dark:hover {
+  &.button-dark:hover {
     background-color: color-mix(in srgb, var(--dark-color) 75%, var(--color-mix-dark));
     color: var(--text-on-dark);
   }
 
-
-  &.outline-primary:hover,
   &.badge-outline-primary:hover,
-  &.btn-outline-primary:hover {
+  &.button-outline-primary:hover {
     background-color: var(--primary-color);
     color: var(--text-on-primary);
   }
 
-  &.outline-secondary:hover,
   &.badge-outline-secondary:hover,
-  &.btn-outline-secondary:hover {
+  &.button-outline-secondary:hover {
     background-color: var(--secondary-color);
     color: var(--text-on-secondary);
   }
 
-  &.outline-tertiary:hover,
   &.badge-outline-tertiary:hover,
-  &.btn-outline-tertiary:hover {
+  &.button-outline-tertiary:hover {
     background-color: var(--tertiary-color);
     color: var(--text-on-tertiary);
   }
 
-  &.outline-success:hover,
   &.badge-outline-success:hover,
-  &.btn-outline-success:hover {
+  &.button-outline-success:hover {
     background-color: var(--success-color);
     color: var(--text-on-success);
   }
 
-  &.outline-info:hover,
   &.badge-outline-info:hover,
-  &.btn-outline-info:hover {
+  &.button-outline-info:hover {
     background-color: var(--info-color);
     color: var(--text-on-info);
   }
 
-  &.outline-warning:hover,
   &.badge-outline-warning:hover,
-  &.btn-outline-warning:hover {
+  &.button-outline-warning:hover {
     background-color: var(--warning-color);
     color: var(--text-on-warning);
   }
 
-  &.outline-danger:hover,
   &.badge-outline-danger:hover,
-  &.btn-outline-danger:hover {
+  &.button-outline-danger:hover {
     background-color: var(--danger-color);
     color: var(--text-on-danger);
   }
 
-  &.outline-neutral:hover,
   &.badge-outline-neutral:hover,
-  &.btn-outline-neutral:hover {
+  &.button-outline-neutral:hover {
     background-color: var(--neutral-color);
     color: var(--text-on-neutral);
   }
 
-  &.outline-light:hover,
   &.badge-outline-light:hover,
-  &.btn-outline-light:hover {
+  &.button-outline-light:hover {
     background-color: var(--light-color);
     color: var(--text-on-light);
   }
 
-  &.outline-dark:hover,
   &.badge-outline-dark:hover,
-  &.btn-outline-dark:hover {
+  &.button-outline-dark:hover {
     background-color: var(--dark-color);
     color: var(--text-on-dark);
   }
@@ -742,6 +684,7 @@ thead.table-primary,
 tbody.table-primary,
 tfoot.table-primary {
   background-color: var(--table-primary-color);
+
   & * {
     color: var(--text-on-table-primary);
   }
@@ -752,6 +695,7 @@ thead.table-secondary,
 tbody.table-secondary,
 tfoot.table-secondary {
   background-color: var(--table-secondary-color);
+
   & * {
     color: var(--text-on-table-secondary);
   }
@@ -762,6 +706,7 @@ thead.table-tertiary,
 tbody.table-tertiary,
 tfoot.table-tertiary {
   background-color: var(--table-tertiary-color);
+
   & * {
     color: var(--text-on-table-tertiary);
   }
@@ -772,6 +717,7 @@ thead.table-success,
 tbody.table-success,
 tfoot.table-success {
   background-color: var(--table-success-color);
+
   & * {
     color: var(--text-on-table-success);
   }
@@ -782,6 +728,7 @@ thead.table-info,
 tbody.table-info,
 tfoot.table-info {
   background-color: var(--table-info-color);
+
   & * {
     color: var(--text-on-table-info);
   }
@@ -792,6 +739,7 @@ thead.table-warning,
 tbody.table-warning,
 tfoot.table-warning {
   background-color: var(--table-warning-color);
+
   & * {
     color: var(--text-on-table-warning);
   }
@@ -802,6 +750,7 @@ thead.table-danger,
 tbody.table-danger,
 tfoot.table-danger {
   background-color: var(--table-danger-color);
+
   & * {
     color: var(--text-on-table-danger);
   }
@@ -812,6 +761,7 @@ thead.table-neutral,
 tbody.table-neutral,
 tfoot.table-neutral {
   background-color: var(--table-neutral-color);
+
   & * {
     color: var(--text-on-table-neutral);
   }
@@ -822,6 +772,7 @@ thead.table-dark,
 tbody.table-dark,
 tfoot.table-dark {
   background-color: var(--table-dark-color);
+
   & * {
     color: var(--text-on-table-dark);
   }
@@ -832,6 +783,7 @@ thead.table-light,
 tbody.table-light,
 tfoot.table-light {
   background-color: var(--table-light-color);
+
   & * {
     color: var(--text-on-table-light);
   }
@@ -841,6 +793,7 @@ tfoot.table-light {
 
 .link-primary {
   color: var(--primary-color);
+
   &:hover {
     color: color-mix(in srgb, var(--primary-color) 75%, var(--color-mix-light));
   }
@@ -848,6 +801,7 @@ tfoot.table-light {
 
 .link-secondary {
   color: var(--secondary-color);
+
   &:hover {
     color: color-mix(in srgb, var(--secondary-color) 75%, var(--color-mix-light));
   }
@@ -855,6 +809,7 @@ tfoot.table-light {
 
 .link-tertiary {
   color: var(--tertiary-color);
+
   &:hover {
     color: color-mix(in srgb, var(--tertiary-color) 75%, var(--color-mix-light));
   }
@@ -862,6 +817,7 @@ tfoot.table-light {
 
 .link-success {
   color: var(--success-color);
+
   &:hover {
     color: color-mix(in srgb, var(--success-color) 75%, var(--color-mix-light));
   }
@@ -869,6 +825,7 @@ tfoot.table-light {
 
 .link-info {
   color: var(--info-color);
+
   &:hover {
     color: color-mix(in srgb, var(--info-color) 75%, var(--color-mix-light));
   }
@@ -876,6 +833,7 @@ tfoot.table-light {
 
 .link-warning {
   color: var(--warning-color);
+
   &:hover {
     color: color-mix(in srgb, var(--warning-color) 75%, var(--color-mix-light));
   }
@@ -883,6 +841,7 @@ tfoot.table-light {
 
 .link-danger {
   color: var(--danger-color);
+
   &:hover {
     color: color-mix(in srgb, var(--danger-color) 75%, var(--color-mix-light));
   }
@@ -890,6 +849,7 @@ tfoot.table-light {
 
 .link-neutral {
   color: var(--neutral-color);
+
   &:hover {
     color: color-mix(in srgb, var(--neutral-color) 75%, var(--color-mix-light));
   }
@@ -897,6 +857,7 @@ tfoot.table-light {
 
 .link-dark {
   color: var(--dark-color);
+
   &:hover {
     color: color-mix(in srgb, var(--dark-color) 75%, var(--color-mix-light));
   }
@@ -904,6 +865,7 @@ tfoot.table-light {
 
 .link-light {
   color: var(--light-color);
+
   &:hover {
     color: color-mix(in srgb, var(--light-color) 75%, var(--color-mix-light));
   }

@@ -1,5 +1,6 @@
 // Base
 @use 'base/base';
+@use 'base/typography';
 // Abstract
 @use 'abstract/keyframes';
 // Layout
@@ -24,6 +25,8 @@
 @use 'components/forms';
 @use 'components/highlight';
 @use 'components/modals';
+@use 'components/nav_burgers';
+@use 'components/nav_links';
 @use 'components/navbars';
 @use 'components/tabs';
 @use 'components/tables';

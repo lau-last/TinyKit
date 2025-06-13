@@ -11,7 +11,7 @@
     {% block javascripts %}{% endblock %}
 </head>
 <body class="preload">
-<nav class="navbar bg-primary-fill navbar-sticky box-shadow">
+<nav class="navbar background-primary text-contrast navbar-sticky box-shadow">
     <div class="navbar-header">
         <a href="{{ url('app_main') }}" class="ms-1 fs-5 no-underline">TinyKit</a>
         <div class="navbar-burger" data-action="toggle-sidebar" data-target="#menu-principal" data-animated="true">
@@ -36,15 +36,14 @@
 
     <div class="aside-body">
 
-        <div class="wrapper-dropdown my-half">
-            <button type="button" class="btn-dropdown btn-primary" data-action="toggle-dropdown"
+        <div class="wrapper-dropdown mb-half">
+            <button type="button" class="button-dropdown button-primary" data-action="toggle-dropdown"
                     data-target="#dropdown-layout">
                 Layout
                 <span data-arrow="down"></span>
             </button>
-            <div id="dropdown-layout" class="dropdown-push">
-
-                <ul>
+            <div id="dropdown-layout" data-mode="push">
+                <ul class="list-style-none">
                     <li><a href="{{ url('app_layout') }}#container-section" class="nav-link">Containers</a></li>
                     <li><a href="{{ url('app_layout') }}#columns-section" class="nav-link">Columns</a></li>
                     <li><a href="{{ url('app_layout') }}#flexbox-section" class="nav-link">Flexbox</a></li>
@@ -53,14 +52,14 @@
             </div>
         </div>
 
-        <div class="wrapper-dropdown my-half">
-            <button type="button" class="btn-dropdown btn-primary" data-action="toggle-dropdown"
+        <div class="wrapper-dropdown mb-half">
+            <button type="button" class="button-dropdown button-primary" data-action="toggle-dropdown"
                     data-target="#dropdown-content">
                 Content
                 <span data-arrow="down"></span>
             </button>
-            <div id="dropdown-content" class="dropdown-push">
-                <ul>
+            <div id="dropdown-content" data-mode="push">
+                <ul class="list-style-none">
                     <li><a href="{{ url('app_content') }}#display-section" class="nav-link">Display</a></li>
                     <li><a href="{{ url('app_content') }}#font-size-section" class="nav-link">Font size</a></li>
                     <li><a href="{{ url('app_content') }}#font-weight-section" class="nav-link">Font weight</a></li>
@@ -71,41 +70,53 @@
             </div>
         </div>
 
-        <div class="wrapper-dropdown my-half">
-            <button type="button" class="btn-dropdown btn-primary" data-action="toggle-dropdown"
+        <div class="wrapper-dropdown mb-half">
+            <button type="button" class="button-dropdown button-primary" data-action="toggle-dropdown"
                     data-target="#dropdown-form">
                 Form
                 <span data-arrow="down"></span>
             </button>
-            <div id="dropdown-form" class="dropdown-push">
-                <ul>
+            <div id="dropdown-form" data-mode="push">
+                <ul class="list-style-none">
                     <li><a href="{{ url('app_form') }}#form-section" class="nav-link">Form input</a></li>
                 </ul>
             </div>
         </div>
 
-        <div class="wrapper-dropdown my-half">
-            <button type="button" class="btn-dropdown btn-primary" data-action="toggle-dropdown"
+        <div class="wrapper-dropdown mb-half">
+            <button type="button" class="button-dropdown button-primary" data-action="toggle-dropdown"
                     data-target="#dropdown-component">
                 Component
                 <span data-arrow="down"></span>
             </button>
-            <div id="dropdown-component" class="dropdown-push">
-                <ul>
-                    <li><a href="{{ url('app_component') }}#dropdown-section" class="nav-link">Dropdown</a></li>
+            <div id="dropdown-component" data-mode="push">
+                <ul class="list-style-none">
+                    <li><a href="{{ url('app_component') }}#button-section" class="nav-link">Button</a></li>
                 </ul>
             </div>
         </div>
 
-        <div class="wrapper-dropdown my-half">
-            <button type="button" class="btn-dropdown btn-primary" data-action="toggle-dropdown"
+        <div class="wrapper-dropdown mb-half">
+            <button type="button" class="button-dropdown button-primary" data-action="toggle-dropdown"
                     data-target="#dropdown-other">
                 Other
                 <span data-arrow="down"></span>
             </button>
-            <div id="dropdown-other" class="dropdown-push">
-                <ul>
+            <div id="dropdown-other" data-mode="push">
+                <ul class="list-style-none">
                     <li><a href="{{ url('app_other') }}#other-section" class="nav-link">Other</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="wrapper-dropdown mb-half">
+            <button type="button" class="button-dropdown button-primary" data-action="toggle-dropdown"
+                    data-target="#dropdown-setting">
+                Setting
+                <span data-arrow="down"></span>
+            </button>
+            <div id="dropdown-setting" data-mode="push">
+                <ul class="list-style-none">
+                    <li><a href="{{ url('app_setting') }}" class="nav-link">Setting</a></li>
                 </ul>
             </div>
         </div>
