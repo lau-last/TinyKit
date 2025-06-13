@@ -14,7 +14,7 @@ export default class NavbarSideManager {
     };
 
     private initSidebarStates(): void {
-        const states = LocalStorageManager.getStates('sidebar_state');
+        const states = LocalStorageManager.getStates('tiny_kit_sidebar_state');
         const body = document.body;
         const contents: HTMLElement[] = [];
 
@@ -48,7 +48,7 @@ export default class NavbarSideManager {
             ? 'open'
             : 'closed';
 
-        LocalStorageManager.setState('sidebar_state', content.id, state);
+        LocalStorageManager.setState('tiny_kit_sidebar_state', content.id, state);
     };
 
     private removeClass(currentButton: Element): void {
@@ -62,7 +62,7 @@ export default class NavbarSideManager {
                 const content = document.querySelector<HTMLElement>(target);
                 if (!content) return;
 
-                LocalStorageManager.setState('sidebar_state', content.id, 'closed');
+                LocalStorageManager.setState('tiny_kit_sidebar_state', content.id, 'closed');
 
                 button.classList.remove('animate-burger');
                 content.classList.remove('show-aside-start');
@@ -102,7 +102,7 @@ export default class NavbarSideManager {
                 const content = document.querySelector<HTMLElement>(target);
                 if (!content) return;
 
-                LocalStorageManager.setState('sidebar_state', content.id, 'closed');
+                LocalStorageManager.setState('tiny_kit_sidebar_state', content.id, 'closed');
 
                 this.handleToggleClass(content);
                 this.handlePushMode(content);
@@ -140,8 +140,8 @@ export default class NavbarSideManager {
     };
 
     private onlyOneSideBarOpenInLocalStorage(): void {
-        const states = LocalStorageManager.getStates('sidebar_state');
-        const lastStateUpdate = LocalStorageManager.getLastUpdated('sidebar_state');
+        const states = LocalStorageManager.getStates('tiny_kit_sidebar_state');
+        const lastStateUpdate = LocalStorageManager.getLastUpdated('tiny_kit_sidebar_state');
 
         let count = 0;
         for (const sidebar in states) {
@@ -153,7 +153,7 @@ export default class NavbarSideManager {
         if (count > 1 && lastStateUpdate) {
             for (const sidebar in states) {
                 if (sidebar !== lastStateUpdate.id && states[sidebar] === 'open') {
-                    LocalStorageManager.setState('sidebar_state', sidebar, 'closed');
+                    LocalStorageManager.setState('tiny_kit_sidebar_state', sidebar, 'closed');
                 }
             }
         }

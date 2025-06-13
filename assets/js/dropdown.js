@@ -7,7 +7,7 @@ export default class DropdownManager {
     }
     ;
     initDropdownStates() {
-        const states = LocalStorageManager.getStates('dropdown_state');
+        const states = LocalStorageManager.getStates('tiny_kit_dropdown_state');
         for (const dropdownId in states) {
             if (states[dropdownId] === 'open') {
                 const content = document.getElementById(dropdownId);
@@ -57,12 +57,12 @@ export default class DropdownManager {
     }
     ;
     expand(content, animate = true) {
-        LocalStorageManager.setState('dropdown_state', content.id, 'open');
+        LocalStorageManager.setState('tiny_kit_dropdown_state', content.id, 'open');
         CollapseEffectManager.expand(content, animate, () => this.updateArrow(content));
     }
     ;
     collapse(content) {
-        LocalStorageManager.setState('dropdown_state', content.id, 'close');
+        LocalStorageManager.setState('tiny_kit_dropdown_state', content.id, 'close');
         CollapseEffectManager.collapse(content);
     }
     ;

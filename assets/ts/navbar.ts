@@ -9,7 +9,7 @@ export default class NavbarManager {
     };
 
     private initNavbarStates(): void {
-        const states = LocalStorageManager.getStates('navbar_state');
+        const states = LocalStorageManager.getStates('tiny_kit_navbar_state');
         for (const navbar in states) {
             if (states[navbar] === 'open') {
                 const content = document.getElementById(navbar);
@@ -44,12 +44,12 @@ export default class NavbarManager {
     };
 
     private expand(content: HTMLElement, animate = true): void {
-        LocalStorageManager.setState('navbar_state', content.id, 'open');
+        LocalStorageManager.setState('tiny_kit_navbar_state', content.id, 'open');
         CollapseEffectManager.expand(content, animate);
     };
 
     private collapse(content: HTMLElement): void {
-        LocalStorageManager.setState('navbar_state', content.id, 'close');
+        LocalStorageManager.setState('tiny_kit_navbar_state', content.id, 'close');
         CollapseEffectManager.collapse(content);
     };
 }

@@ -8,7 +8,7 @@ export default class NavbarManager {
     }
     ;
     initNavbarStates() {
-        const states = LocalStorageManager.getStates('navbar_state');
+        const states = LocalStorageManager.getStates('tiny_kit_navbar_state');
         for (const navbar in states) {
             if (states[navbar] === 'open') {
                 const content = document.getElementById(navbar);
@@ -44,12 +44,12 @@ export default class NavbarManager {
     }
     ;
     expand(content, animate = true) {
-        LocalStorageManager.setState('navbar_state', content.id, 'open');
+        LocalStorageManager.setState('tiny_kit_navbar_state', content.id, 'open');
         CollapseEffectManager.expand(content, animate);
     }
     ;
     collapse(content) {
-        LocalStorageManager.setState('navbar_state', content.id, 'close');
+        LocalStorageManager.setState('tiny_kit_navbar_state', content.id, 'close');
         CollapseEffectManager.collapse(content);
     }
     ;

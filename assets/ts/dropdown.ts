@@ -9,7 +9,7 @@ export default class DropdownManager {
     };
 
     private initDropdownStates(): void {
-        const states: Record<string, string | null> = LocalStorageManager.getStates('dropdown_state');
+        const states: Record<string, string | null> = LocalStorageManager.getStates('tiny_kit_dropdown_state');
         for (const dropdownId in states) {
             if (states[dropdownId] === 'open') {
                 const content = document.getElementById(dropdownId);
@@ -58,12 +58,12 @@ export default class DropdownManager {
     };
 
     private expand(content: HTMLElement, animate = true): void {
-        LocalStorageManager.setState('dropdown_state', content.id, 'open');
+        LocalStorageManager.setState('tiny_kit_dropdown_state', content.id, 'open');
         CollapseEffectManager.expand(content, animate, () => this.updateArrow(content));
     };
 
     private collapse(content: HTMLElement): void {
-        LocalStorageManager.setState('dropdown_state', content.id, 'close');
+        LocalStorageManager.setState('tiny_kit_dropdown_state', content.id, 'close');
         CollapseEffectManager.collapse(content);
     };
 

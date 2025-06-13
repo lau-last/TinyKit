@@ -75,6 +75,19 @@
                        data-variable="--font-weight"
                        data-action="setting">
                 <span id="font-weight-value" style="min-width: 1.5rem;"></span>
+            </div>
         </div>
+
+        <button id="reset" class="button-primary extra-large">Reset all settings from this app</button>
     </section>
+
+
+    <script type="module">
+        document.addEventListener('DOMContentLoaded', () => {
+            document.getElementById('reset')?.addEventListener('click', () => {
+                LocalStorageManager.clearPrefix("tiny_kit_");
+                location.reload();
+            });
+        });
+    </script>
 {% endblock %}

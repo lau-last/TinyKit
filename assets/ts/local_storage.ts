@@ -74,4 +74,20 @@ export default class LocalStorageManager {
 
         return {id: lastKey, value: lastValue as T, updatedAt: lastTimestamp};
     };
+
+
+    static clearPrefix(prefix: string): void {
+        const keysToRemove: string[] = [];
+
+        for (let i = 0; i < localStorage.length; i++) {
+            const key = localStorage.key(i);
+            if (key && key.startsWith(`${prefix}#`)) {
+                keysToRemove.push(key);
+            }
+        }
+
+        for (const key of keysToRemove) {
+            localStorage.removeItem(key);
+        }
+    }
 }
