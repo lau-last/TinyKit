@@ -5,16 +5,16 @@ type StoredData<T = unknown> = {
 
 export default class LocalStorageManager {
 
-    static setState<T = unknown>(prefix: string, elementId: string, state: T): void {
+    static setState<T = unknown>(prefix: string, dataKey: string, state: T): void {
         const data: StoredData<T> = {
             value: state,
             updatedAt: Date.now()
         };
-        localStorage.setItem(`${prefix}#${elementId}`, JSON.stringify(data));
+        localStorage.setItem(`${prefix}#${dataKey}`, JSON.stringify(data));
     };
 
-    static getState<T = unknown>(prefix: string, elementId: string): T | null {
-        const item = localStorage.getItem(`${prefix}#${elementId}`);
+    static getState<T = unknown>(prefix: string, dataKey: string): T | null {
+        const item = localStorage.getItem(`${prefix}#${dataKey}`);
         if (!item) return null;
 
         try {
@@ -81,7 +81,7 @@ export default class LocalStorageManager {
 
         for (let i = 0; i < localStorage.length; i++) {
             const key = localStorage.key(i);
-            if (key && key.startsWith(`${prefix}#`)) {
+            if (key && key.startsWith(`${prefix}`)) {
                 keysToRemove.push(key);
             }
         }

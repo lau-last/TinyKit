@@ -11,7 +11,6 @@ import CopyToClipboardManager from './js/clipboard.js';
 import SyntaxHighlighterManager from './js/highlighter.js';
 import ToggleManager from './js/toggle.js';
 import SettingManager  from "./js/setting.js";
-import LocalStorageManager from "./js/local_storage.js";
 
 
 const navbar = new NavbarManager();
@@ -42,6 +41,4 @@ document.addEventListener('DOMContentLoaded', function () {
     syntaxHighlighter.init();
     toggle.init();
     setting.init();
-
-    window.LocalStorageManager = LocalStorageManager;
 });

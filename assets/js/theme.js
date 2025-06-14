@@ -1,3 +1,4 @@
+import LocalStorageManager from "./local_storage.js";
 export default class ThemeManager {
     init() {
         this.initTheme();
@@ -10,7 +11,7 @@ export default class ThemeManager {
         const checkbox = document.getElementById('switch-theme');
         if (!checkbox)
             return;
-        let theme = localStorage.getItem('theme');
+        let theme = localStorage.getItem('tiny_kit_theme');
         if (theme === null) {
             theme = this.getSystemTheme();
         }
@@ -26,7 +27,7 @@ export default class ThemeManager {
     }
     ;
     initTheme() {
-        const savedTheme = localStorage.getItem('theme');
+        const savedTheme = LocalStorageManager.getState('tiny_kit_theme', 'switch-theme');
         const theme = savedTheme === 'dark' || savedTheme === 'light' ? savedTheme : this.getSystemTheme();
         this.applyTheme(theme);
     }
@@ -39,7 +40,7 @@ export default class ThemeManager {
             const theme = checkbox.checked ? 'dark' : 'light';
             this.handleTransition();
             this.applyTheme(theme);
-            localStorage.setItem('theme', theme);
+            LocalStorageManager.setState('tiny_kit_theme', 'switch-theme', theme);
         });
     }
     ;
@@ -68,7 +69,7 @@ export default class ThemeManager {
                 }
                 this.handleTransition();
                 this.applyTheme(desiredTheme);
-                localStorage.setItem('theme', desiredTheme);
+                LocalStorageManager.setState('tiny_kit_theme', 'switch-theme', desiredTheme);
             });
         });
     }

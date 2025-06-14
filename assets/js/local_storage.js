@@ -1,15 +1,15 @@
 export default class LocalStorageManager {
-    static setState(prefix, elementId, state) {
+    static setState(prefix, dataKey, state) {
         const data = {
             value: state,
             updatedAt: Date.now()
         };
-        localStorage.setItem(`${prefix}#${elementId}`, JSON.stringify(data));
+        localStorage.setItem(`${prefix}#${dataKey}`, JSON.stringify(data));
     }
     ;
-    static getState(prefix, elementId) {
+    static getState(prefix, dataKey) {
         var _a;
-        const item = localStorage.getItem(`${prefix}#${elementId}`);
+        const item = localStorage.getItem(`${prefix}#${dataKey}`);
         if (!item)
             return null;
         try {
