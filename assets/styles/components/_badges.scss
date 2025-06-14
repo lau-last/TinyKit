@@ -1,12 +1,24 @@
 /* Badge */
+.group-badge {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--badge-group-gap-md);
+
+    &.sm {gap: var(--badge-group-gap-sm);}
+    &.md {gap: var(--badge-group-gap-md);}
+    &.lg {gap: var(--badge-group-gap-lg);}
+}
+
+a.badge{text-decoration: none;}
+
 .badge {
     padding: var(--badge-padding-md);
     border-radius: var(--border-radius);
     white-space: nowrap;
 
-    &.badge-sm {padding: var(--badge-padding-sm);}
-    &.badge-md {padding: var(--badge-padding-md);}
-    &.badge-lg {padding: var(--badge-padding-lg);}
-    &.badge-pill {border-radius: 10rem;}
 
+    &.sm {padding: var(--badge-padding-sm);}
+    &.md {padding: var(--badge-padding-md);}
+    &.lg {padding: var(--badge-padding-lg);}
+    &.round {border-radius: 10rem;}
 }

@@ -74,7 +74,7 @@
   --text-on-table-neutral: var(--text-black);
   --text-on-table-light: var(--text-black);
   --text-on-table-dark: var(--text-white);
-  --text-on-surface-footer: var(--text-white);
+  --text-on-footer-muted: var(--text-white);
 
   // Links colors
   --link-color: var(--text-color);
@@ -118,7 +118,7 @@
   --button-color: var(--gray-100);
 
   // Components
-  --surface-footer-color: var(--gray-100);
+  --footer-muted: var(--gray-100);
 
   // Carousel
   --carousel-dot-bg-color: var(--gray-300);
@@ -141,53 +141,56 @@
   // Border Radius
   --border-radius: .3rem;
 
+  // Card
+  --padding-card-header: .5rem 1rem;
+  --padding-card-body: 1rem;
+  --padding-card-footer: .5rem 1rem;
+
   // Spacing gap
   --gap-base: 2.5rem;
   --gap-grid: 1.5rem;
+  --gap-form: 2.5rem;
+  --gap-container-card: 1.5rem;
 
   // Inputs
-  --input-height-xs: 2rem;
   --input-height-sm: 2.5rem;
   --input-height-md: 3rem;
   --input-height-lg: 3.5rem;
-  --input-height-xl: 4rem;
   // Input size for checkbox and radio
-  --input-size-xs: 1rem;
   --input-size-sm: 1.2rem;
   --input-size-md: 1.4rem;
   --input-size-lg: 1.6rem;
-  --input-size-xl: 1.8rem;
   // Input size for switch
-  --input-size-switch-xs: 1rem;
   --input-size-switch-sm: 1.2rem;
   --input-size-switch-md: 1.4rem;
   --input-size-switch-lg: 1.6rem;
-  --input-size-switch-xl: 1.8rem;
+  // Input size for range
+  --input-size-range-sm: .5rem;
+  --input-size-range-md: .6rem;
+  --input-size-range-lg: .7rem;
 
   // nav links
-  --nav-link-padding-xs: .25rem .5rem;
   --nav-link-padding-sm: .5rem 1rem;
   --nav-link-padding-md: .75rem 1.5rem;
   --nav-link-padding-lg: 1rem 2rem;
-  --nav-link-padding-xl: 1.5rem 3rem;
 
-  // Buttons
-  --button-group-gap-xs: .25rem;
+  // Buttons gap
   --button-group-gap-sm: .5rem;
   --button-group-gap-md: .75rem;
   --button-group-gap-lg: 1rem;
-  --button-group-gap-xl: 2rem;
-
-  --button-padding-xs: .25rem .5rem;
+  // Buttons padding
   --button-padding-sm: .5rem 1rem;
   --button-padding-md: .75rem 1.5rem;
   --button-padding-lg: 1rem 2rem;
-  --button-padding-xl: 1.5rem 3rem;
 
-  // Badges
-  --badge-padding-sm: .2rem .4rem;
-  --badge-padding-md: .4rem .8rem;
-  --badge-padding-lg: .5rem 1rem;
+  // Badges padding
+  --badge-padding-sm: .3rem .9rem;
+  --badge-padding-md: .4rem 1.2rem;
+  --badge-padding-lg: .8rem 2.4rem;
+  // Badges gap
+  --badge-group-gap-sm: .3rem;
+  --badge-group-gap-md: .4rem;
+  --badge-group-gap-lg: .8rem;
 
   // Table
   --table-padding-sm: .6rem;
@@ -216,6 +219,7 @@
 
   // Font sizes text
   --font-size-base: 1.2rem;
+  --font-size-xs: .8rem;
   --font-size-sm: 1rem;
   --font-size-md: 1.2rem;
   --font-size-lg: 1.4rem;
@@ -280,7 +284,7 @@
   --text-on-table-neutral: var(--text-black);
   --text-on-table-light: var(--text-black);
   --text-on-table-dark: var(--text-white);
-  --text-on-surface-footer: var(--text-white);
+  --text-on-footer-muted: var(--text-white);
 
   // Links colors
   --link-color: var(--text-color);
@@ -324,7 +328,7 @@
   --button-color: var(--gray-200);
 
   // Components
-  --surface-footer-color: var(--gray-600);
+  --footer-muted: var(--gray-600);
 
   // Carousel
   --carousel-dot-bg-color: var(--gray-400);
@@ -388,12 +392,29 @@ html {
       font-weight: var(--font-weight-500);
     }
 
-    h1 {font-size: var(--font-size-h1);}
-    h2 {font-size: var(--font-size-h2);}
-    h3 {font-size: var(--font-size-h3);}
-    h4 {font-size: var(--font-size-h4);}
-    h5 {font-size: var(--font-size-h5);}
-    h6 {font-size: var(--font-size-h6);}
+    h1 {
+      font-size: var(--font-size-h1);
+    }
+
+    h2 {
+      font-size: var(--font-size-h2);
+    }
+
+    h3 {
+      font-size: var(--font-size-h3);
+    }
+
+    h4 {
+      font-size: var(--font-size-h4);
+    }
+
+    h5 {
+      font-size: var(--font-size-h5);
+    }
+
+    h6 {
+      font-size: var(--font-size-h6);
+    }
 
 
     img {

@@ -49,8 +49,7 @@
             </div>
             <div class="form-inline justify-content-between" style="width: 30rem">
                 <label for="font-size">Font size</label>
-                <input class="input-lg"
-                       type="range"
+                <input type="range"
                        id="font-size"
                        name="font-size"
                        min="1"
@@ -59,13 +58,12 @@
                        value="1.2"
                        data-variable="--font-size-base"
                        data-action="setting">
-                <span id="font-size-value" style="min-width: 1.5rem;"></span>
+                <span id="font-size-value"></span>
             </div>
 
             <div class="form-inline justify-content-between" style="width: 30rem">
                 <label for="font-weight">Font weight</label>
-                <input class="input-lg"
-                       type="range"
+                <input type="range"
                        id="font-weight"
                        name="font-weight"
                        min="100"
@@ -74,10 +72,10 @@
                        value="400"
                        data-variable="--font-weight-base"
                        data-action="setting">
-                <span id="font-weight-value" style="min-width: 1.5rem;"></span>
+                <span id="font-weight-value"></span>
             </div>
-        </div>
 
-        <button id="reset" class="button-primary extra-large">Reset all settings from this app</button>
+            <button id="reset" class="btn-primary">Reset all settings from this app</button>
+        </div>
     </section>
 {% endblock %}

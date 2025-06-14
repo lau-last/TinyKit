@@ -11,7 +11,7 @@
     {% block javascripts %}{% endblock %}
 </head>
 <body class="preload">
-<nav class="navbar background-primary text-contrast navbar-sticky box-shadow">
+<nav class="navbar bg-primary text-contrast navbar-sticky box-shadow">
     <div class="navbar-header">
         <a href="{{ url('app_main') }}" class="ms-1 fs-5 no-underline">TinyKit</a>
         <div class="navbar-burger" data-action="toggle-sidebar" data-target="#menu-principal" data-animated="true">
@@ -37,7 +37,7 @@
     <div class="aside-body">
 
         <div class="wrapper-dropdown mb-half">
-            <button type="button" class="button-dropdown button-primary" data-action="toggle-dropdown"
+            <button type="button" class="btn-dropdown btn-primary" data-action="toggle-dropdown"
                     data-target="#dropdown-layout">
                 Layout
                 <span data-arrow="down"></span>
@@ -46,58 +46,59 @@
                 <ul class="list-style-none">
                     <li><a href="{{ url('app_layout') }}#container-section" class="nav-link">Containers</a></li>
                     <li><a href="{{ url('app_layout') }}#columns-section" class="nav-link">Columns</a></li>
-                    <li><a href="{{ url('app_layout') }}#flexbox-section" class="nav-link">Flexbox</a></li>
-                    <li><a href="{{ url('app_layout') }}#grid-section" class="nav-link">Grid</a></li>
+                    <li><a href="{{ url('app_layout') }}#flexbox-section" class="nav-link">Flexboxes</a></li>
+                    <li><a href="{{ url('app_layout') }}#grid-section" class="nav-link">Grids</a></li>
                 </ul>
             </div>
         </div>
 
         <div class="wrapper-dropdown mb-half">
-            <button type="button" class="button-dropdown button-primary" data-action="toggle-dropdown"
+            <button type="button" class="btn-dropdown btn-primary" data-action="toggle-dropdown"
                     data-target="#dropdown-content">
                 Content
                 <span data-arrow="down"></span>
             </button>
             <div id="dropdown-content" data-mode="push">
                 <ul class="list-style-none">
-                    <li><a href="{{ url('app_content') }}#display-section" class="nav-link">Display</a></li>
-                    <li><a href="{{ url('app_content') }}#font-size-section" class="nav-link">Font size</a></li>
-                    <li><a href="{{ url('app_content') }}#font-weight-section" class="nav-link">Font weight</a></li>
-                    <li><a href="{{ url('app_content') }}#img-section" class="nav-link">Image</a></li>
-                    <li><a href="{{ url('app_content') }}#table-section" class="nav-link">Table</a></li>
-                    <li><a href="{{ url('app_content') }}#title-section" class="nav-link">Title</a></li>
+                    <li><a href="{{ url('app_content') }}#font-size-section" class="nav-link">Fonts size</a></li>
+                    <li><a href="{{ url('app_content') }}#font-weight-section" class="nav-link">Fonts weight</a></li>
+                    <li><a href="{{ url('app_content') }}#img-section" class="nav-link">Images</a></li>
+                    <li><a href="{{ url('app_content') }}#table-section" class="nav-link">Tables</a></li>
+                    <li><a href="{{ url('app_content') }}#title-section" class="nav-link">Titles</a></li>
                 </ul>
             </div>
         </div>
 
         <div class="wrapper-dropdown mb-half">
-            <button type="button" class="button-dropdown button-primary" data-action="toggle-dropdown"
+            <button type="button" class="btn-dropdown btn-primary" data-action="toggle-dropdown"
                     data-target="#dropdown-form">
                 Form
                 <span data-arrow="down"></span>
             </button>
             <div id="dropdown-form" data-mode="push">
                 <ul class="list-style-none">
-                    <li><a href="{{ url('app_form') }}#form-section" class="nav-link">Form input</a></li>
+                    <li><a href="{{ url('app_form') }}#form-section" class="nav-link">Forms input</a></li>
                 </ul>
             </div>
         </div>
 
         <div class="wrapper-dropdown mb-half">
-            <button type="button" class="button-dropdown button-primary" data-action="toggle-dropdown"
+            <button type="button" class="btn-dropdown btn-primary" data-action="toggle-dropdown"
                     data-target="#dropdown-component">
                 Component
                 <span data-arrow="down"></span>
             </button>
             <div id="dropdown-component" data-mode="push">
                 <ul class="list-style-none">
-                    <li><a href="{{ url('app_component') }}#button-section" class="nav-link">Button</a></li>
+                    <li><a href="{{ url('app_component') }}#button-section" class="nav-link">Buttons</a></li>
+                    <li><a href="{{ url('app_component') }}#badge-section" class="nav-link">Badges</a></li>
+                    <li><a href="{{ url('app_component') }}#badge-linked-section" class="nav-link">Badges linked</a></li>
                 </ul>
             </div>
         </div>
 
         <div class="wrapper-dropdown mb-half">
-            <button type="button" class="button-dropdown button-primary" data-action="toggle-dropdown"
+            <button type="button" class="btn-dropdown btn-primary" data-action="toggle-dropdown"
                     data-target="#dropdown-other">
                 Other
                 <span data-arrow="down"></span>
@@ -109,14 +110,14 @@
             </div>
         </div>
         <div class="wrapper-dropdown mb-half">
-            <button type="button" class="button-dropdown button-primary" data-action="toggle-dropdown"
+            <button type="button" class="btn-dropdown btn-primary" data-action="toggle-dropdown"
                     data-target="#dropdown-setting">
                 Setting
                 <span data-arrow="down"></span>
             </button>
             <div id="dropdown-setting" data-mode="push">
                 <ul class="list-style-none">
-                    <li><a href="{{ url('app_setting') }}" class="nav-link">Setting</a></li>
+                    <li><a href="{{ url('app_setting') }}" class="nav-link">Settings</a></li>
                 </ul>
             </div>
         </div>

@@ -88,7 +88,7 @@ export default class SettingManager {
         const buttonReset = document.getElementById('reset');
         if (buttonReset) {
             buttonReset.addEventListener('click', () => {
-                LocalStorageManager.clearPrefix("tiny_kit_");
+                LocalStorageManager.clearPrefix("tiny_kit_setting");
                 location.reload();
             });
         }

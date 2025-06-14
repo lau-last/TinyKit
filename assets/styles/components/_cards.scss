@@ -1,3 +1,8 @@
+.container-card{
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--gap-container-card);
+}
 .card {
     display: flex;
     flex-direction: column;
@@ -5,38 +10,23 @@
     border: 1px solid var(--border-color-whisper);
     border-radius: var(--border-radius);
 
-
     &.card-bordered {
-        border: 1px solid var(--border-color-whisper);
-
-        .card-header {
-            padding: 0.5rem 1rem;
-            border: none;
-        }
-
+        .card-header, .card-footer {border: none;}
         .card-body {
-            padding: 0.5rem 1rem;
             border-top: 1px solid var(--border-color-whisper);
             border-bottom: 1px solid var(--border-color-whisper);
-        }
-
-        .card-footer {
-            padding: 0.5rem 1rem;
-            border: none;
         }
     }
 
     .card-header {
         border-radius: var(--border-radius) var(--border-radius) 0 0;
-        padding: 0.5rem 1rem;
+        padding: var(--padding-card-header);
     }
-
     .card-body {
-        padding: 0.5rem 1rem;
+        padding: var(--padding-card-body);
     }
-
     .card-footer {
         border-radius: 0 0 var(--border-radius) var(--border-radius);
-        padding: 0.5rem 1rem;
+        padding: var(--padding-card-footer);
     }
 }

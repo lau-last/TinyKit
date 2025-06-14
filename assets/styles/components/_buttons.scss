@@ -1,18 +1,16 @@
-.group-button {
+.group-btn {
     display: flex;
     flex-wrap: wrap;
     gap: var(--button-group-gap-md);
 
-    &.extra-small {gap: var(--button-group-gap-xs);}
-    &.small {gap: var(--button-group-gap-sm);}
-    &.medium {gap: var(--button-group-gap-md);}
-    &.large {gap: var(--button-group-gap-lg);}
-    &.extra-large {gap: var(--button-group-gap-xl);}
+    &.sm {gap: var(--button-group-gap-sm);}
+    &.md {gap: var(--button-group-gap-md);}
+    &.lg {gap: var(--button-group-gap-lg);}
 }
 
 
 button,
-.button {
+.btn {
     border-radius: var(--border-radius);
     padding: var(--button-padding-md);
     border: none;
@@ -24,11 +22,9 @@ button,
         box-shadow: none;
     }
 
-    &.extra-small {padding: var(--button-padding-xs);}
-    &.small {padding: var(--button-padding-sm);}
-    &.medium {padding: var(--button-padding-md);}
-    &.large {padding: var(--button-padding-lg);}
-    &.extra-large {padding: var(--button-padding-xl);}
+    &.sm {padding: var(--button-padding-sm);}
+    &.md {padding: var(--button-padding-md);}
+    &.lg {padding: var(--button-padding-lg);}
     &.round {border-radius: 10rem;}
 }
 
