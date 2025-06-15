@@ -11,7 +11,7 @@
     {% block javascripts %}{% endblock %}
 </head>
 <body class="preload">
-<nav class="navbar bg-primary text-contrast navbar-sticky box-shadow">
+<nav class="navbar bg-primary text-contrast box-shadow-navbar">
     <div class="navbar-header">
         <a href="{{ url('app_main') }}" class="ms-1 fs-5 no-underline">TinyKit</a>
         <div class="navbar-burger" data-action="toggle-sidebar" data-target="#menu-principal" data-animated="true">
@@ -91,9 +91,11 @@
             <div id="dropdown-component" data-mode="push">
                 <ul class="list-style-none">
                     <li><a href="{{ url('app_component') }}#alert-section" class="nav-link">Alerts</a></li>
-                    <li><a href="{{ url('app_component') }}#button-section" class="nav-link">Buttons</a></li>
                     <li><a href="{{ url('app_component') }}#badge-section" class="nav-link">Badges</a></li>
                     <li><a href="{{ url('app_component') }}#badge-linked-section" class="nav-link">Badges linked</a></li>
+                    <li><a href="{{ url('app_component') }}#button-section" class="nav-link">Buttons</a></li>
+                    <li><a href="{{ url('app_component') }}#card-section" class="nav-link">Cards</a></li>
+                    <li><a href="{{ url('app_component') }}#carousel-section" class="nav-link">Carousels</a></li>
                 </ul>
             </div>
         </div>

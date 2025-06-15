@@ -44,8 +44,8 @@
   --transparent-theme: var(--transparent-black);
 
   // Shadow
-  --box-shadow: 0 .5rem 1rem #00000026, inset 0 -1px #ffffff26;
-
+  --box-shadow-navbar: 0 .5rem 1rem #00000026, inset 0 -1px #ffffff26;
+  --box-shadow-card: 0 5px 15px rgba(0, 0, 0, .08);
   // Mix colors
   --color-mix-dark: var(--gray-1000);
   --color-mix-light: var(--gray-0);
@@ -87,16 +87,16 @@
   --border-color-dark: var(--gray-500);
 
   // Tables
-  --table-primary-color: color-mix(in srgb, var(--primary-color) 30%, var(--color-mix-light));
-  --table-tertiary-color: color-mix(in srgb, var(--tertiary-color) 30%, var(--color-mix-light));
-  --table-secondary-color: color-mix(in srgb, var(--secondary-color) 30%, var(--color-mix-light));
-  --table-success-color: color-mix(in srgb, var(--success-color) 30%, var(--color-mix-light));
-  --table-info-color: color-mix(in srgb, var(--info-color) 30%, var(--color-mix-light));
-  --table-warning-color: color-mix(in srgb, var(--warning-color) 30%, var(--color-mix-light));
-  --table-danger-color: color-mix(in srgb, var(--danger-color) 30%, var(--color-mix-light));
-  --table-neutral-color: color-mix(in srgb, var(--neutral-color) 30%, var(--color-mix-light));
-  --table-dark-color: color-mix(in srgb, var(--dark-color) 30%, var(--color-mix-light));
-  --table-light-color: color-mix(in srgb, var(--light-color) 30%, var(--color-mix-light));
+  --table-primary-color: color-mix(in srgb, var(--primary-color) 50%, var(--color-mix-light));
+  --table-tertiary-color: color-mix(in srgb, var(--tertiary-color) 50%, var(--color-mix-light));
+  --table-secondary-color: color-mix(in srgb, var(--secondary-color) 50%, var(--color-mix-light));
+  --table-success-color: color-mix(in srgb, var(--success-color) 50%, var(--color-mix-light));
+  --table-info-color: color-mix(in srgb, var(--info-color) 50%, var(--color-mix-light));
+  --table-warning-color: color-mix(in srgb, var(--warning-color) 50%, var(--color-mix-light));
+  --table-danger-color: color-mix(in srgb, var(--danger-color) 50%, var(--color-mix-light));
+  --table-neutral-color: color-mix(in srgb, var(--neutral-color) 50%, var(--color-mix-light));
+  --table-dark-color: color-mix(in srgb, var(--dark-color) 50%, var(--color-mix-light));
+  --table-light-color: color-mix(in srgb, var(--light-color) 50%, var(--color-mix-light));
   --table-striped-bg-color: rgba(128, 128, 128, 0.2);
   --table-border-color: var(--gray-100);
   --table-border-divider-color: var(--gray-1000);
@@ -127,6 +127,10 @@
   --carousel-control-color: var(--gray-0);
   --carousel-control-color-hover: color-mix(in srgb, var(--gray-1000) 50%, var(--transparent));
   --carousel-text-number-color: var(--gray-0);
+  --carousel-control-padding: 1.5rem;
+  --carousel-control-height: 50rem;
+  --carousel-effect-duration-slide: 0.5s;
+  --carousel-effect-duration-fade: 0.5s;
 
   // Code
   --bg-color-code: color-mix(in srgb, var(--primary-color) 5%, var(--gray-0));

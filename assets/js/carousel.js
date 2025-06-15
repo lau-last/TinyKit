@@ -3,161 +3,131 @@ export default class CarouselManager {
         this.slideIndexes = {};
         this.interval = 5000;
     }
-    ;
     init() {
-        this.activeFirstSlideAndDot();
-        this.initAutoPlay();
-        this.initNextButtons();
-        this.initPrevButtons();
-        this.initDotControls();
+        this.activateFirstSlide();
+        this.setupAutoplay();
+        this.bindControls('[data-control="next"]', 1);
+        this.bindControls('[data-control="prev"]', -1);
+        this.bindDots();
     }
-    ;
-    initAutoPlay() {
-        const carousels = document.querySelectorAll('[data-carousel="slide"]');
-        for (const carousel of carousels) {
-            const autoPlay = carousel.getAttribute('data-auto-play');
-            const intervalAttr = carousel.getAttribute('data-interval');
-            if (intervalAttr) {
-                const parsedInterval = parseInt(intervalAttr, 10);
-                if (!isNaN(parsedInterval)) {
-                    this.interval = parsedInterval;
-                }
+    setupAutoplay() {
+        document.querySelectorAll('[data-carousel="slide"]').forEach(carousel => {
+            const interval = parseInt(carousel.getAttribute('data-interval') || '', 10);
+            const autoplay = carousel.getAttribute('data-autoplay') === 'true';
+            const target = `#${carousel.id}`;
+            if (!isNaN(interval))
+                this.interval = interval;
+            if (autoplay) {
+                setInterval(() => this.changeSlide(target, 1), this.interval);
             }
-            if (autoPlay === 'true') {
-                setInterval(() => {
-                    const target = `#${carousel.id}`;
-                    this.changeSlide(target, 1);
-                }, this.interval);
-            }
-        }
+        });
     }
-    ;
-    activeFirstSlideAndDot() {
-        const carousels = document.querySelectorAll('[data-carousel="slide"]');
-        for (const carousel of carousels) {
+    activateFirstSlide() {
+        document.querySelectorAll('[data-carousel="slide"]').forEach(carousel => {
+            var _a, _b, _c;
             const slides = carousel.getElementsByClassName('slide');
-            const targetSelector = carousel.id;
-            const containerDot = document.querySelector(`[data-dot-target="#${targetSelector}"]`);
-            if (!containerDot)
-                continue;
-            const dots = containerDot.getElementsByClassName('dot');
-            let indexWithActiveSlide = 0;
-            let alreadyActive = false;
+            const target = `#${carousel.id}`;
+            const dotsContainer = document.querySelector(`[data-dot-target="${target}"]`);
+            const dots = (_a = dotsContainer === null || dotsContainer === void 0 ? void 0 : dotsContainer.getElementsByClassName('dot')) !== null && _a !== void 0 ? _a : [];
+            const effect = carousel.getAttribute('data-effect') || 'fade';
+            if (e)
+                let index = 0;
             for (let i = 0; i < slides.length; i++) {
                 if (slides[i].classList.contains('show-slide')) {
-                    alreadyActive = true;
-                    indexWithActiveSlide = i;
+                    index = i;
                     break;
                 }
             }
-            if (!alreadyActive && slides.length > 0) {
-                slides[0].classList.add('show-slide');
-                if (dots.length > 0) {
-                    dots[0].classList.add('active');
-                }
-            }
-            this.slideIndexes[`#${targetSelector}`] = indexWithActiveSlide;
-            this.updateIndicators(`#${targetSelector}`, indexWithActiveSlide);
-        }
+            (_b = slides[index]) === null || _b === void 0 ? void 0 : _b.classList.add('show-slide');
+            (_c = dots[index]) === null || _c === void 0 ? void 0 : _c.classList.add('active');
+            this.slideIndexes[target] = index;
+            this.updateIndicators(target, index);
+        });
     }
-    ;
-    initNextButtons() {
-        const buttons = document.querySelectorAll('[data-control="next"]');
-        buttons.forEach(button => {
+    bindControls(selector, direction) {
+        document.querySelectorAll(selector).forEach(button => {
             button.addEventListener('click', () => {
                 const target = button.getAttribute('data-target');
-                if (target) {
-                    this.changeSlide(target, 1);
-                }
+                if (target)
+                    this.changeSlide(target, direction);
             });
         });
     }
-    ;
-    initPrevButtons() {
-        const buttons = document.querySelectorAll('[data-control="prev"]');
-        buttons.forEach(button => {
-            button.addEventListener('click', () => {
-                const target = button.getAttribute('data-target');
-                if (target) {
-                    this.changeSlide(target, -1);
-                }
-            });
-        });
-    }
-    ;
-    initDotControls() {
-        const containers = document.querySelectorAll('[data-dot-target]');
-        containers.forEach(container => {
-            const dots = container.getElementsByClassName('dot');
-            Array.from(dots).forEach(dot => {
+    bindDots() {
+        document.querySelectorAll('[data-dot-target]').forEach(container => {
+            Array.from(container.getElementsByClassName('dot')).forEach(dot => {
                 dot.addEventListener('click', () => {
                     const target = container.getAttribute('data-dot-target');
-                    const indexStr = dot.getAttribute('data-index');
-                    if (target && indexStr) {
-                        const index = parseInt(indexStr, 10);
-                        if (!isNaN(index)) {
-                            this.goToSlide(target, index);
-                        }
-                    }
+                    const index = parseInt(dot.getAttribute('data-index') || '', 10);
+                    if (target && !isNaN(index))
+                        this.goToSlide(target, index);
                 });
             });
         });
     }
-    ;
     changeSlide(target, direction) {
-        const content = document.querySelector(target);
-        if (!content)
+        var _a, _b;
+        const slides = (_a = document.querySelector(target)) === null || _a === void 0 ? void 0 : _a.getElementsByClassName('slide');
+        if (!slides || slides.length === 0)
             return;
-        const slides = content.getElementsByClassName('slide');
-        if (slides.length === 0)
-            return;
-        if (!(target in this.slideIndexes))
-            this.slideIndexes[target] = 0;
-        let newIndex = this.slideIndexes[target] + direction;
-        if (newIndex >= slides.length)
-            newIndex = 0;
-        if (newIndex < 0)
-            newIndex = slides.length - 1;
+        const currentIndex = (_b = this.slideIndexes[target]) !== null && _b !== void 0 ? _b : 0;
+        let newIndex = (currentIndex + direction + slides.length) % slides.length;
         this.updateDisplay(target, slides, newIndex);
     }
-    ;
     goToSlide(target, index) {
-        const content = document.querySelector(target);
-        if (!content)
+        var _a;
+        const slides = (_a = document.querySelector(target)) === null || _a === void 0 ? void 0 : _a.getElementsByClassName('slide');
+        if (!slides || index < 0 || index >= slides.length)
             return;
-        const slides = content.getElementsByClassName('slide');
-        if (index < 0 || index >= slides.length)
-            return;
-        this.slideIndexes[target] = index;
         this.updateDisplay(target, slides, index);
     }
-    ;
-    updateDisplay(target, slides, index) {
-        this.hideAll(slides);
-        this.show(slides, index);
+    updateDisplayFade(target, slides, index) {
+        Array.from(slides).forEach(slide => slide.classList.remove('show-slide'));
+        slides[index].classList.add('show-slide');
         this.updateIndicators(target, index);
         this.slideIndexes[target] = index;
     }
-    ;
-    show(slides, index) {
-        slides[index].classList.add('show-slide');
+    updateDisplayTranslation(target, slides, index) {
+        const wrapper = document.querySelector(`${target} .wrapper-slides`);
+        if (!wrapper)
+            return;
+        const slideWidth = wrapper.offsetWidth;
+        wrapper.style.transform = `translateX(-${index * slideWidth}px)`;
+        this.updateIndicators(target, index);
+        this.slideIndexes[target] = index;
     }
-    ;
-    hideAll(slides) {
-        Array.from(slides).forEach(slide => {
-            slide.classList.remove('show-slide');
-        });
-    }
-    ;
     updateIndicators(target, index) {
         const container = document.querySelector(`[data-dot-target="${target}"]`);
-        if (!container)
+        const dots = container === null || container === void 0 ? void 0 : container.getElementsByClassName('dot');
+        if (!dots)
             return;
-        const dots = container.getElementsByClassName('dot');
         Array.from(dots).forEach(dot => dot.classList.remove('active'));
-        if (dots.length > index) {
+        if (dots.length > index)
             dots[index].classList.add('active');
+    }
+    updateDisplay(target, slides, index) {
+        const carousel = document.querySelector(target);
+        const effect = (carousel === null || carousel === void 0 ? void 0 : carousel.getAttribute('data-effect')) || 'fade';
+        switch (effect) {
+            case 'slide':
+                this.updateDisplayTranslation(target, slides, index);
+                break;
+            case 'fade':
+            default:
+                this.updateDisplayFade(target, slides, index);
+                break;
         }
     }
-    ;
+    cloneSlidesForInfinite(carousel) {
+        const wrapper = carousel.querySelector('.slides-wrapper');
+        if (!wrapper)
+            return;
+        const slides = wrapper.querySelectorAll('.slide');
+        if (slides.length < 2)
+            return;
+        const first = slides[0].cloneNode(true);
+        const last = slides[slides.length - 1].cloneNode(true);
+        wrapper.insertBefore(last, slides[0]);
+        wrapper.appendChild(first);
+    }
 }

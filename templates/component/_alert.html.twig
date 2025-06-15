@@ -1,59 +1,84 @@
 <section id="alert-section">
 
     <div class="container">
-        <h2 class="text-primary text-center">Alerts</h2>
 
-        <div class="container-alert">
-            <div class="alert alert-primary">
-                Success! This alert box indicates a successful or positive action. Success! This alert box indicates a
-                successful or positive action.
-                <button type="button" class="close" data-action="dismiss-alert"></button>
-            </div>
-            <div class="alert alert-secondary">
-                Success! This alert box indicates a successful or positive action. Success! This alert box indicates a
-                successful or positive action.
-                <button type="button" class="close" data-action="dismiss-alert"></button>
-            </div>
-            <div class="alert alert-tertiary">
-                Success! This alert box indicates a successful or positive action. Success! This alert box indicates a
-                successful or positive action.
-                <button type="button" class="close" data-action="dismiss-alert"></button>
-            </div>
-            <div class="alert alert-success">
-                Success! This alert box indicates a successful or positive action. Success! This alert box indicates a
-                successful or positive action.
-                <button type="button" class="close" data-action="dismiss-alert"></button>
-            </div>
-            <div class="alert alert-info">
-                Success! This alert box indicates a successful or positive action. Success! This alert box indicates a
-                successful or positive action.
-                <button type="button" class="close" data-action="dismiss-alert"></button>
-            </div>
-            <div class="alert alert-warning">
-                Success! This alert box indicates a successful or positive action. Success! This alert box indicates a
-                successful or` positive action.
-                <button type="button" class="close" data-action="dismiss-alert"></button>
-            </div>
-            <div class="alert alert-danger">
-                Success! This alert box indicates a successful or positive action. Success! This alert box indicates a
-                successful or positive action.
-                <button type="button" class="close" data-action="dismiss-alert"></button>
-            </div>
-            <div class="alert alert-neutral">
-                Success! This alert box indicates a successful or positive action. Success! This alert box indicates a
-                successful or positive action.
-                <button type="button" class="close" data-action="dismiss-alert"></button>
-            </div>
-            <div class="alert alert-light">
-                Success! This alert box indicates a successful or positive action. Success! This alert box indicates a
-                successful or positive action.
-                <button type="button" class="close" data-action="dismiss-alert"></button>
-            </div>
-            <div class="alert alert-dark">
-                Success! This alert box indicates a successful or positive action. Success! This alert box indicates a
-                successful or positive action.
-                <button type="button" class="close" data-action="dismiss-alert"></button>
+        <div class="d-flex align-items-center mt-2">
+            <h2>Alerts</h2>
+            <div class="ms-2 cursor-pointer" data-action="toggle-display" data-target="#container-code-alerts"></div>
+        </div>
+
+        <div data-code-target="#code-alerts">
+            <div class="container-alert">
+                <div class="alert alert-primary">
+                    Success! This alert box indicates a successful or positive action. Success! This alert box indicates
+                    a
+                    successful or positive action.
+                    <button type="button" class="close" data-action="dismiss-alert"></button>
+                </div>
+                <div class="alert alert-secondary">
+                    Success! This alert box indicates a successful or positive action. Success! This alert box indicates
+                    a
+                    successful or positive action.
+                    <button type="button" class="close" data-action="dismiss-alert"></button>
+                </div>
+                <div class="alert alert-tertiary">
+                    Success! This alert box indicates a successful or positive action. Success! This alert box indicates
+                    a
+                    successful or positive action.
+                    <button type="button" class="close" data-action="dismiss-alert"></button>
+                </div>
+                <div class="alert alert-success">
+                    Success! This alert box indicates a successful or positive action. Success! This alert box indicates
+                    a
+                    successful or positive action.
+                    <button type="button" class="close" data-action="dismiss-alert"></button>
+                </div>
+                <div class="alert alert-info">
+                    Success! This alert box indicates a successful or positive action. Success! This alert box indicates
+                    a
+                    successful or positive action.
+                    <button type="button" class="close" data-action="dismiss-alert"></button>
+                </div>
+                <div class="alert alert-warning">
+                    Success! This alert box indicates a successful or positive action. Success! This alert box indicates
+                    a
+                    successful or` positive action.
+                    <button type="button" class="close" data-action="dismiss-alert"></button>
+                </div>
+                <div class="alert alert-danger">
+                    Success! This alert box indicates a successful or positive action. Success! This alert box indicates
+                    a
+                    successful or positive action.
+                    <button type="button" class="close" data-action="dismiss-alert"></button>
+                </div>
+                <div class="alert alert-neutral">
+                    Success! This alert box indicates a successful or positive action. Success! This alert box indicates
+                    a
+                    successful or positive action.
+                    <button type="button" class="close" data-action="dismiss-alert"></button>
+                </div>
+                <div class="alert alert-light">
+                    Success! This alert box indicates a successful or positive action. Success! This alert box indicates
+                    a
+                    successful or positive action.
+                    <button type="button" class="close" data-action="dismiss-alert"></button>
+                </div>
+                <div class="alert alert-dark">
+                    Success! This alert box indicates a successful or positive action. Success! This alert box indicates
+                    a
+                    successful or positive action.
+                    <button type="button" class="close" data-action="dismiss-alert"></button>
+                </div>
             </div>
         </div>
+
+        <div class="container-code mt-2 d-none" id="container-code-alerts">
+            <button class="btn-primary position-top-right" type="button" data-position-tooltip="left" data-action="copy"
+                    data-target="#code-alerts" data-tooltip="Copié !">Copier
+            </button>
+            <pre><code id="code-alerts" data-type="code">
+        </code></pre>
+        </div>
+
     </div>
 </section>

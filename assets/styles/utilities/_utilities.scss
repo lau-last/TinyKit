@@ -1,6 +1,6 @@
 //Text alignment
 .text-start {
-  &\:force {
+  &-force {
     text-align: left !important;
   }
 
@@ -8,7 +8,7 @@
 }
 
 .text-center {
-  &\:force {
+  &-force {
     text-align: center !important;
   }
 
@@ -16,7 +16,7 @@
 }
 
 .text-end {
-  &\:force {
+  &-force {
     text-align: right !important;
   }
 
@@ -24,7 +24,7 @@
 }
 
 .text-nowrap {
-  &\:force {
+  &-force {
     text-wrap: nowrap !important;
     white-space: nowrap !important;
   }
@@ -35,7 +35,7 @@
 
 //Cursor
 .cursor-pointer {
-  &\:force {
+  &-force {
     cursor: pointer !important;
   }
 
@@ -44,7 +44,7 @@
 
 //Border
 .border-0 {
-  &\:force {
+  &-force {
     border-width: 0 !important;
   }
 
@@ -52,7 +52,7 @@
 }
 
 .border-1 {
-  &\:force {
+  &-force {
     border-width: .1rem !important;
   }
 
@@ -60,7 +60,7 @@
 }
 
 .border-2 {
-  &\:force {
+  &-force {
     border-width: .2rem !important;
   }
 
@@ -68,7 +68,7 @@
 }
 
 .border-3 {
-  &\:force {
+  &-force {
     border-width: .3rem !important;
   }
 
@@ -76,7 +76,7 @@
 }
 
 .border-radius {
-  &\:force {
+  &-force {
     border-radius: var(--border-radius) !important;
   }
 
@@ -84,7 +84,7 @@
 }
 
 .border-radius-0 {
-  &\:force {
+  &-force {
     border-radius: 0 !important;
   }
 
@@ -93,7 +93,7 @@
 
 //Opacity
 .opacity-0 {
-  &\:force {
+  &-force {
     opacity: 0 !important;
   }
 
@@ -101,7 +101,7 @@
 }
 
 .opacity-25 {
-  &\:force {
+  &-force {
     opacity: 0.25 !important;
   }
 
@@ -109,7 +109,7 @@
 }
 
 .opacity-50 {
-  &\:force {
+  &-force {
     opacity: 0.5 !important;
   }
 
@@ -117,7 +117,7 @@
 }
 
 .opacity-75 {
-  &\:force {
+  &-force {
     opacity: 0.75 !important;
   }
 
@@ -125,7 +125,7 @@
 }
 
 .opacity-100 {
-  &\:force {
+  &-force {
     opacity: 1 !important;
   }
 
@@ -134,7 +134,7 @@
 
 //Overflow/Resize
 .no-scroll {
-  &\:force {
+  &-force {
     overflow: hidden !important;
   }
 
@@ -142,7 +142,7 @@
 }
 
 .no-resize {
-  &\:force {
+  &-force {
     resize: none !important;
   }
 
@@ -151,7 +151,7 @@
 
 //Position
 .position-relative {
-  &\:force {
+  &-force {
     position: relative !important;
   }
 
@@ -159,7 +159,7 @@
 }
 
 .position-absolute {
-  &\:force {
+  &-force {
     position: absolute !important;
   }
 
@@ -167,7 +167,7 @@
 }
 
 .position-fixed {
-  &\:force {
+  &-force {
     position: fixed !important;
   }
 
@@ -175,7 +175,7 @@
 }
 
 .position-sticky {
-  &\:force {
+  &-force {
     position: sticky !important;
   }
 
@@ -183,7 +183,7 @@
 }
 
 .position-relative {
-  &\:force {
+  &-force {
     position: relative !important;
   }
 
@@ -191,7 +191,7 @@
 }
 
 .position-absolute {
-  &\:force {
+  &-force {
     position: absolute !important;
   }
 
@@ -199,7 +199,7 @@
 }
 
 .position-fixed {
-  &\:force {
+  &-force {
     position: fixed !important;
   }
 
@@ -207,7 +207,7 @@
 }
 
 .position-sticky {
-  &\:force {
+  &-force {
     position: sticky !important;
   }
 
@@ -216,7 +216,7 @@
 
 //Width
 .fit-content {
-  &\:force {
+  &-force {
     width: fit-content !important;
   }
 
@@ -224,17 +224,18 @@
 }
 
 //Boxshadow
-.box-shadow {
-  &\:force {
-    box-shadow: var(--box-shadow) !important;
-  }
+.box-shadow-navbar {
+  box-shadow: var(--box-shadow-navbar);
+}
 
-  box-shadow: var(--box-shadow);
+//Boxshadow
+.box-shadow-card {
+  box-shadow: var(--box-shadow-card);
 }
 
 //Inheritance
 .inherit {
-  &\:force {
+  &-force {
     all: inherit !important;
   }
 
@@ -242,7 +243,7 @@
 }
 
 .initial {
-  &\:force {
+  &-force {
     all: initial !important;
   }
 
@@ -251,7 +252,7 @@
 
 //Lists
 .list-style-none {
-  &\:force {
+  &-force {
     list-style: none !important;
   }
 
@@ -260,7 +261,7 @@
 
 //Links
 .no-underline {
-  &\:force {
+  &-force {
     text-decoration: none !important;
   }
 

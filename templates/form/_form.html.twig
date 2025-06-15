@@ -85,12 +85,12 @@
 
                         <!-- Input email -->
                         <label for="email">Email</label>
-                        <input type="email" id="email" name="email">
+                        <input type="email" id="email" name="email" autocomplete="email">
 
 
                         <!-- Input tel -->
                         <label for="tel">Tel</label>
-                        <input type="tel" id="tel" name="tel">
+                        <input type="tel" id="tel" name="tel" autocomplete="tel" >
 
                         <!-- Textarea -->
                         <label for="textarea">Message</label>
@@ -142,7 +142,7 @@
 
                         <!-- Range -->
                         <label for="range">Range</label>
-                        <input class="input-sm" type="range" id="range" name="range" min="0" max="100">
+                        <input type="range" id="range" name="range" min="0" max="100">
                     </div>
                     <div class="col-sm-12 col-md-6 col-lg-6 col-xl-3">
 
@@ -160,7 +160,7 @@
 
                         <!-- Form switch -->
                         <span class="switch-label" data-label="switch">Switch</span>
-                        <div class="wrapper-switch md">
+                        <div class="wrapper-switch">
                             <label class="switch">
                                 <input id="switch" name="switch" type="checkbox">
                                 <span class="slider"></span>
@@ -169,7 +169,7 @@
 
                         <!-- Form switch round -->
                         <span class="switch-label" data-label="switch-round">Switch round</span>
-                        <div class="wrapper-switch md">
+                        <div class="wrapper-switch">
                             <label class="switch">
                                 <input id="switch-round" name="switch" type="checkbox">
                                 <span class="slider round"></span>
@@ -210,17 +210,17 @@
 
                         <!-- Input text sm -->
                             <label for="text-sm">Text sm</label>
-                            <input class="sm" type="text" id="text-sm" name="text"
+                            <input class="input-sm" type="text" id="text-sm" name="text"
                                    placeholder="Entrez du texte">
 
                         <!-- Default input text md -->
                             <label for="text-md">Text md</label>
-                            <input class="md" type="text" id="text-md" name="text"
+                            <input class="input-md" type="text" id="text-md" name="text"
                                    placeholder="Entrez du texte">
 
                         <!-- Input text lg -->
                             <label for="text-lg">Text lg</label>
-                            <input class="lg" type="text" id="text-lg" name="text"
+                            <input class="input-lg" type="text" id="text-lg" name="text"
                                    placeholder="Entrez du texte">
 
                     </div>
@@ -229,17 +229,17 @@
 
                         <!-- Input color sm -->
                         <label for="color-sm">Color sm</label>
-                        <input class="sm" type="color" id="color-sm" name="color">
+                        <input class="input-sm" type="color" id="color-sm" name="color">
 
 
                         <!-- Default input color md -->
                         <label for="color-md">Color md</label>
-                        <input class="md" type="color" id="color-md" name="color">
+                        <input class="input-md" type="color" id="color-md" name="color">
 
 
                         <!-- Input color lg -->
                         <label for="color-lg">Color lg</label>
-                        <input class="lg" type="color" id="color-lg" name="color">
+                        <input class="input-lg" type="color" id="color-lg" name="color">
 
 
                     </div>
@@ -248,15 +248,15 @@
 
                         <!-- Form radio sm -->
                         <label for="radio-sm">Radio</label>
-                        <input class="sm" type="radio" id="radio-sm" name="choice" value="yes">
+                        <input class="input-sm" type="radio" id="radio-sm" name="choice" value="yes">
 
                         <!-- Form radio md -->
                         <label for="radio-md">Radio</label>
-                        <input class="md" type="radio" id="radio-md" name="choice" value="yes">
+                        <input class="input-md" type="radio" id="radio-md" name="choice" value="yes">
 
                         <!-- Form radio lg -->
                         <label for="radio-lg">Radio</label>
-                        <input class="lg" type="radio" id="radio-lg" name="choice" value="yes">
+                        <input class="input-lg" type="radio" id="radio-lg" name="choice" value="yes">
 
 
                     </div>
@@ -265,22 +265,22 @@
 
                         <!-- Form checkbox sm -->
                         <label for="checkbox-sm">Checkbox</label>
-                        <input class="sm" type="checkbox" id="checkbox-sm" name="checkbox" value="1">
+                        <input class="input-sm" type="checkbox" id="checkbox-sm" name="checkbox" value="1">
 
                         <!-- Form checkbox md -->
                         <label for="checkbox-md">Checkbox</label>
-                        <input class="md" type="checkbox" id="checkbox-md" name="checkbox" value="1">
+                        <input class="input-md" type="checkbox" id="checkbox-md" name="checkbox" value="1">
 
                         <!-- Form checkbox lg -->
                         <label for="checkbox-lg">Checkbox</label>
-                        <input class="lg" type="checkbox" id="checkbox-lg" name="checkbox" value="1">
+                        <input class="input-lg" type="checkbox" id="checkbox-lg" name="checkbox" value="1">
 
                     </div>
                     <div class="col-sm-12 col-md-6 col-lg-6 col-xl-2">
 
                         <!-- Form switch sm -->
                         <span class="switch-label" data-label="switch-round-sm">Switch round sm</span>
-                        <div class="wrapper-switch sm">
+                        <div class="wrapper-switch-sm">
                             <label class="switch">
                                 <input id="switch-round-sm" name="switch" type="checkbox">
                                 <span class="slider round"></span>
@@ -290,7 +290,7 @@
 
                         <!-- Form default switch md -->
                         <span class="switch-label" data-label="switch-round-md">Switch round md</span>
-                        <div class="wrapper-switch md">
+                        <div class="wrapper-switch-md">
                             <label class="switch">
                                 <input id="switch-round-md" name="switch" type="checkbox">
                                 <span class="slider round"></span>
@@ -300,7 +300,7 @@
 
                         <!-- Form switch lg -->
                         <span class="switch-label" data-label="switch-round-lg">Switch round lg</span>
-                        <div class="wrapper-switch lg">
+                        <div class="wrapper-switch-lg">
                             <label class="switch">
                                 <input id="switch-round-lg" name="switch" type="checkbox">
                                 <span class="slider round"></span>
@@ -384,8 +384,8 @@
 
                             <!-- Form switch inline -->
                             <div class="form-inline">
-                                <span class="switch-label" data-label="switch-round-inline">Switch round lg</span>
-                                <div class="wrapper-switch xl">
+                                <span class="switch-label" data-label="switch-round-inline">Switch round</span>
+                                <div class="wrapper-switch">
                                     <label class="switch">
                                         <input id="switch-round-inline" name="switch" type="checkbox">
                                         <span class="slider round"></span>
