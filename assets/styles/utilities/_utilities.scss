@@ -1,49 +1,268 @@
-// Text alignment
-.text-start { text-align: left; }
-.text-center { text-align: center; }
-.text-end { text-align: right; }
-.text-nowrap { white-space: nowrap; }
+//Text alignment
+.text-start {
+  &\:force {
+    text-align: left !important;
+  }
 
-// Cursor
-.cursor-pointer { cursor: pointer; }
+  text-align: left;
+}
 
-// Border
-.border-0 { border: 0 !important; }
-.border-1 { border-width: .1rem; }
-.border-2 { border-width: .2rem; }
-.border-3 { border-width: .3rem; }
-.border-radius { border-radius: var(--border-radius); }
-.border-radius-0 { border-radius: 0 !important; }
+.text-center {
+  &\:force {
+    text-align: center !important;
+  }
 
-// Opacity
-.opacity-0 { opacity: 0 !important; }
-.opacity-25 { opacity: 0.25 !important; }
-.opacity-50 { opacity: 0.5 !important; }
-.opacity-75 { opacity: 0.75 !important; }
-.opacity-100 { opacity: 1 !important; }
+  text-align: center;
+}
 
-// Overflow / Resize
-.no-scroll { overflow: hidden; }
-.no-resize { resize: none; }
+.text-end {
+  &\:force {
+    text-align: right !important;
+  }
 
-// Position
-.position-relative { position: relative !important; }
-.position-absolute { position: absolute !important; }
-.position-fixed { position: fixed !important; }
-.position-sticky { position: sticky !important; }
+  text-align: right;
+}
 
-// Width
-.fit-content { width: fit-content; }
+.text-nowrap {
+  &\:force {
+    text-wrap: nowrap !important;
+    white-space: nowrap !important;
+  }
 
-// Box shadow
-.box-shadow { box-shadow: var(--box-shadow); }
+  text-wrap: nowrap;
+  white-space: nowrap;
+}
 
-// Inheritance
-.inherit { all: inherit; }
-.initial { all: initial; }
+//Cursor
+.cursor-pointer {
+  &\:force {
+    cursor: pointer !important;
+  }
 
-// Lists
-.list-style-none {list-style: none;}
+  cursor: pointer;
+}
 
-// Links
-.no-underline {text-decoration: none;}
+//Border
+.border-0 {
+  &\:force {
+    border-width: 0 !important;
+  }
+
+  border-width: 0;
+}
+
+.border-1 {
+  &\:force {
+    border-width: .1rem !important;
+  }
+
+  border-width: .1rem;
+}
+
+.border-2 {
+  &\:force {
+    border-width: .2rem !important;
+  }
+
+  border-width: .2rem;
+}
+
+.border-3 {
+  &\:force {
+    border-width: .3rem !important;
+  }
+
+  border-width: .3rem;
+}
+
+.border-radius {
+  &\:force {
+    border-radius: var(--border-radius) !important;
+  }
+
+  border-radius: var(--border-radius);
+}
+
+.border-radius-0 {
+  &\:force {
+    border-radius: 0 !important;
+  }
+
+  border-radius: 0;
+}
+
+//Opacity
+.opacity-0 {
+  &\:force {
+    opacity: 0 !important;
+  }
+
+  opacity: 0;
+}
+
+.opacity-25 {
+  &\:force {
+    opacity: 0.25 !important;
+  }
+
+  opacity: 0.25;
+}
+
+.opacity-50 {
+  &\:force {
+    opacity: 0.5 !important;
+  }
+
+  opacity: 0.5;
+}
+
+.opacity-75 {
+  &\:force {
+    opacity: 0.75 !important;
+  }
+
+  opacity: 0.75;
+}
+
+.opacity-100 {
+  &\:force {
+    opacity: 1 !important;
+  }
+
+  opacity: 1;
+}
+
+//Overflow/Resize
+.no-scroll {
+  &\:force {
+    overflow: hidden !important;
+  }
+
+  overflow: hidden;
+}
+
+.no-resize {
+  &\:force {
+    resize: none !important;
+  }
+
+  resize: none;
+}
+
+//Position
+.position-relative {
+  &\:force {
+    position: relative !important;
+  }
+
+  position: relative;
+}
+
+.position-absolute {
+  &\:force {
+    position: absolute !important;
+  }
+
+  position: absolute;
+}
+
+.position-fixed {
+  &\:force {
+    position: fixed !important;
+  }
+
+  position: fixed;
+}
+
+.position-sticky {
+  &\:force {
+    position: sticky !important;
+  }
+
+  position: sticky;
+}
+
+.position-relative {
+  &\:force {
+    position: relative !important;
+  }
+
+  position: relative;
+}
+
+.position-absolute {
+  &\:force {
+    position: absolute !important;
+  }
+
+  position: absolute;
+}
+
+.position-fixed {
+  &\:force {
+    position: fixed !important;
+  }
+
+  position: fixed;
+}
+
+.position-sticky {
+  &\:force {
+    position: sticky !important;
+  }
+
+  position: sticky;
+}
+
+//Width
+.fit-content {
+  &\:force {
+    width: fit-content !important;
+  }
+
+  width: fit-content;
+}
+
+//Boxshadow
+.box-shadow {
+  &\:force {
+    box-shadow: var(--box-shadow) !important;
+  }
+
+  box-shadow: var(--box-shadow);
+}
+
+//Inheritance
+.inherit {
+  &\:force {
+    all: inherit !important;
+  }
+
+  all: inherit;
+}
+
+.initial {
+  &\:force {
+    all: initial !important;
+  }
+
+  all: initial;
+}
+
+//Lists
+.list-style-none {
+  &\:force {
+    list-style: none !important;
+  }
+
+  list-style: none;
+}
+
+//Links
+.no-underline {
+  &\:force {
+    text-decoration: none !important;
+  }
+
+  text-decoration: none;
+}

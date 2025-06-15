@@ -103,8 +103,8 @@ input[type="checkbox"]:not(.switch input[type="checkbox"]) {
 input[type="range"]:focus,
 input[type="radio"]:focus,
 input[type="checkbox"]:focus {
-  border-color: var(--transparent) !important;
-  box-shadow: none !important;
+  border-color: var(--transparent);
+  box-shadow: none;
 }
 
 input[type="radio"],

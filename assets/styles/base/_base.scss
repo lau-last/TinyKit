@@ -54,27 +54,27 @@
   --text-white: var(--gray-0);
   --text-black: var(--gray-1000);
   --text-color: var(--text-black);
-  --text-on-primary: var(--text-white);
-  --text-on-secondary: var(--text-white);
+  --text-on-primary: var(--text-black);
+  --text-on-secondary: var(--text-black);
   --text-on-tertiary: var(--text-white);
-  --text-on-success: var(--text-white);
-  --text-on-info: var(--text-white);
+  --text-on-success: var(--text-black);
+  --text-on-info: var(--text-black);
   --text-on-warning: var(--text-black);
-  --text-on-danger: var(--text-white);
+  --text-on-danger: var(--text-black);
   --text-on-neutral: var(--text-black);
   --text-on-light: var(--text-black);
   --text-on-dark: var(--text-white);
-  --text-on-table-primary: var(--text-white);
-  --text-on-table-secondary: var(--text-white);
-  --text-on-table-tertiary: var(--text-white);
-  --text-on-table-success: var(--text-white);
-  --text-on-table-info: var(--text-white);
+  --text-on-table-primary: var(--text-black);
+  --text-on-table-secondary: var(--text-black);
+  --text-on-table-tertiary: var(--text-black);
+  --text-on-table-success: var(--text-black);
+  --text-on-table-info: var(--text-black);
   --text-on-table-warning: var(--text-black);
-  --text-on-table-danger: var(--text-white);
+  --text-on-table-danger: var(--text-black);
   --text-on-table-neutral: var(--text-black);
   --text-on-table-light: var(--text-black);
-  --text-on-table-dark: var(--text-white);
-  --text-on-footer-muted: var(--text-white);
+  --text-on-table-dark: var(--text-black);
+  --text-on-footer-muted: var(--text-black);
 
   // Links colors
   --link-color: var(--text-color);
@@ -152,7 +152,7 @@
   --container-alert-left: 0.5rem;
   --container-alert-right: 0.5rem;
   --alert-padding: .5rem 1rem;
-  --alert-move-duration: .15s;
+  --alert-move-duration: .125s;
   --alert-step-delay: .025s;
 
   // Spacing gap
@@ -276,7 +276,7 @@
   --text-color: var(--text-white);
   --text-on-primary: var(--text-black);
   --text-on-secondary: var(--text-black);
-  --text-on-tertiary: var(--text-black);
+  --text-on-tertiary: var(--text-white);
   --text-on-success: var(--text-black);
   --text-on-info: var(--text-black);
   --text-on-warning: var(--text-black);

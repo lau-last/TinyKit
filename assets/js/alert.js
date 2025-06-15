@@ -35,7 +35,7 @@ export default class AlertManager {
         parent.addEventListener('transitionend', () => {
             alertsBelow.forEach((alert, i) => {
                 alert.style.setProperty('--alert-move-up', `-${moveDistance}px`);
-                alert.style.setProperty('--alert-move-delay', `${i * delayStep}s`);
+                alert.style.setProperty('--alert-move-delay', `${i * parseFloat(delayStep)}s`);
                 alert.classList.add('move-up');
                 this.disableButtons();
             });
