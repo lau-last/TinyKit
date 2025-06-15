@@ -146,11 +146,21 @@
   --padding-card-body: 1rem;
   --padding-card-footer: .5rem 1rem;
 
+  // Alerts
+  --container-alert-top: 0.5rem;
+  --container-alert-bottom: 0.5rem;
+  --container-alert-left: 0.5rem;
+  --container-alert-right: 0.5rem;
+  --alert-padding: .5rem 1rem;
+  --alert-move-duration: .15s;
+  --alert-step-delay: .025s;
+
   // Spacing gap
   --gap-base: 2.5rem;
   --gap-grid: 1.5rem;
   --gap-form: 2.5rem;
   --gap-container-card: 1.5rem;
+  --gap-container-alert: 0.5rem;
 
   // Inputs
   --input-height-sm: 2.5rem;

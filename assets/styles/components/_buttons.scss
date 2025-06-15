@@ -8,6 +8,10 @@
     &.lg {gap: var(--button-group-gap-lg);}
 }
 
+button[disabled] {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
 
 button,
 .btn {

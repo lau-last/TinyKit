@@ -1,0 +1,47 @@
+.container-alert {
+  position: fixed;
+  top: var(--container-alert-top);
+  right: var(--container-alert-right);
+  left: var(--container-alert-left);
+  display: flex;
+  flex-direction: column;
+  z-index: 1000;
+  gap: var(--gap-container-alert);
+}
+
+
+.alert {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  border-radius: var(--border-radius);
+  padding: var(--alert-padding);
+  margin: var(--alert-margin);
+  transition: opacity 0.3s ease;
+
+
+  &.fade-out {
+    opacity: 0;
+  }
+
+  &.move-up {
+    transition: transform var(--alert-move-duration, 0.3s) ease var(--alert-move-delay, 0s);
+    transform: translateY(var(--alert-move-up, 0));
+  }
+
+  &.alert-success {
+    background-color: color-mix(in srgb, var(--success-color) 50%, var(--color-mix-light));
+    color: color-mix(in srgb, var(--success-color) 50%, var(--color-mix-dark));
+  }
+
+  .close::before {
+    content: "";
+    display: block;
+    width: 1em;
+    height: 1em;
+    mask: url("data:image/svg+xml,%3Csvg fill='none' viewBox='0 0 24 24' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' xmlns='http://www.w3.org/2000/svg'%3E%3Cline x1='18' y1='6' x2='6' y2='18'/%3E%3Cline x1='6' y1='6' x2='18' y2='18'/%3E%3C/svg%3E") no-repeat center / contain;
+    background-color: currentColor;
+  }
+
+}

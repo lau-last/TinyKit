@@ -24,6 +24,7 @@ export default class SettingManager {
     initColors() {
         const inputsColors = document.querySelectorAll('input[type="color"][data-action="setting"]');
         inputsColors.forEach((input) => {
+            this.setColors(input);
             input.addEventListener('input', (event) => {
                 const target = event.target;
                 const variable = target.dataset.variable;
@@ -34,6 +35,12 @@ export default class SettingManager {
         });
     }
     ;
+    setColors(input) {
+        const variable = input.dataset.variable;
+        if (!variable)
+            return;
+        input.value = getComputedStyle(document.documentElement).getPropertyValue(variable).trim();
+    }
     saveState() {
         const allInputs = [];
         const inputsColors = document.querySelectorAll('input[type="color"][data-action="setting"]');
@@ -66,6 +73,7 @@ export default class SettingManager {
         const rangeInput = document.getElementById('font-size');
         const valueDisplay = document.getElementById('font-size-value');
         if (rangeInput && valueDisplay) {
+            this.setFontSize(rangeInput);
             valueDisplay.textContent = parseFloat(rangeInput.value).toFixed(2);
             rangeInput.addEventListener('input', () => {
                 valueDisplay.textContent = parseFloat(rangeInput.value).toFixed(2);
@@ -73,16 +81,31 @@ export default class SettingManager {
             });
         }
     }
+    setFontSize(input) {
+        const variable = input.dataset.variable;
+        if (!variable)
+            return;
+        let value = getComputedStyle(document.documentElement).getPropertyValue(variable).trim();
+        value = value.replace('rem', '');
+        input.value = value;
+    }
     initFontWeight() {
         const rangeInput = document.getElementById('font-weight');
         const valueDisplay = document.getElementById('font-weight-value');
         if (rangeInput && valueDisplay) {
+            this.setFontWeight(rangeInput);
             valueDisplay.textContent = rangeInput.value;
             rangeInput.addEventListener('input', () => {
                 valueDisplay.textContent = rangeInput.value;
                 document.documentElement.style.setProperty('--font-weight-base', `${rangeInput.value}`);
             });
         }
+    }
+    setFontWeight(input) {
+        const variable = input.dataset.variable;
+        if (!variable)
+            return;
+        input.value = getComputedStyle(document.documentElement).getPropertyValue(variable).trim();
     }
     initReset() {
         const buttonReset = document.getElementById('reset');

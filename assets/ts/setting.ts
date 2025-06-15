@@ -27,6 +27,7 @@ export default class SettingManager {
     private initColors(): void {
         const inputsColors = document.querySelectorAll<HTMLInputElement>('input[type="color"][data-action="setting"]')
         inputsColors.forEach((input) => {
+            this.setColors(input);
             input.addEventListener('input', (event: Event) => {
                 const target = event.target as HTMLInputElement;
                 const variable = target.dataset.variable;
@@ -36,6 +37,12 @@ export default class SettingManager {
             });
         });
     };
+
+    private setColors(input: HTMLInputElement): void {
+        const variable = input.dataset.variable as string | undefined;
+        if (!variable) return;
+        input.value = getComputedStyle(document.documentElement).getPropertyValue(variable).trim();
+    }
 
     private saveState(): void {
         const allInputs: HTMLInputElement[] = [];
@@ -71,6 +78,7 @@ export default class SettingManager {
         const valueDisplay = document.getElementById('font-size-value') as HTMLElement | null;
 
         if (rangeInput && valueDisplay) {
+            this.setFontSize(rangeInput);
             valueDisplay.textContent = parseFloat(rangeInput.value).toFixed(2);
             rangeInput.addEventListener('input', () => {
                 valueDisplay.textContent = parseFloat(rangeInput.value).toFixed(2);
@@ -79,17 +87,32 @@ export default class SettingManager {
         }
     }
 
+    private setFontSize(input: HTMLInputElement): void {
+        const variable = input.dataset.variable as string | undefined;
+        if (!variable) return;
+        let value = getComputedStyle(document.documentElement).getPropertyValue(variable).trim();
+        value = value.replace('rem', '');
+        input.value = value;
+    }
+
     private initFontWeight(): void {
         const rangeInput = document.getElementById('font-weight') as HTMLInputElement | null;
         const valueDisplay = document.getElementById('font-weight-value') as HTMLElement | null;
 
         if (rangeInput && valueDisplay) {
+            this.setFontWeight(rangeInput);
             valueDisplay.textContent = rangeInput.value;
             rangeInput.addEventListener('input', () => {
                 valueDisplay.textContent = rangeInput.value;
                 document.documentElement.style.setProperty('--font-weight-base', `${rangeInput.value}`);
             });
         }
+    }
+
+    private setFontWeight(input: HTMLInputElement): void {
+        const variable = input.dataset.variable as string | undefined;
+        if (!variable) return;
+        input.value = getComputedStyle(document.documentElement).getPropertyValue(variable).trim();
     }
 
     private initReset(): void {

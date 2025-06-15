@@ -11,6 +11,7 @@ import CopyToClipboardManager from './js/clipboard.js';
 import SyntaxHighlighterManager from './js/highlighter.js';
 import ToggleManager from './js/toggle.js';
 import SettingManager  from "./js/setting.js";
+import AlertManager from "./js/alert.js";
 
 
 const navbar = new NavbarManager();
@@ -26,6 +27,7 @@ const copyToClipboard = new CopyToClipboardManager();
 const syntaxHighlighter = new SyntaxHighlighterManager();
 const toggle = new ToggleManager();
 const setting = new SettingManager();
+const alert = new AlertManager();
 
 document.addEventListener('DOMContentLoaded', function () {
     navbar.init();
@@ -41,4 +43,5 @@ document.addEventListener('DOMContentLoaded', function () {
     syntaxHighlighter.init();
     toggle.init();
     setting.init();
+    alert.init();
 });
