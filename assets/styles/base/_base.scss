@@ -125,12 +125,15 @@
   --carousel-dot-bg-color-active: var(--gray-500);
   --carousel-dot-bg-color-hover: var(--gray-500);
   --carousel-control-color: var(--gray-0);
-  --carousel-control-color-hover: color-mix(in srgb, var(--gray-1000) 50%, var(--transparent));
+  --carousel-control-bg-color: color-mix(in srgb, var(--gray-1000) 50%, var(--transparent));
+  --carousel-control-color-hover: color-mix(in srgb, var(--gray-1000) 75%, var(--transparent));
   --carousel-text-number-color: var(--gray-0);
   --carousel-control-padding: 1.5rem;
-  --carousel-control-height: 50rem;
   --carousel-effect-duration-slide: 0.5s;
   --carousel-effect-duration-fade: 0.5s;
+  --carousel-interval-slide : 5000;
+  --carousel-height: 50rem;
+  --carousel-gap: 3rem;
 
   // Code
   --bg-color-code: color-mix(in srgb, var(--primary-color) 5%, var(--gray-0));
@@ -345,11 +348,12 @@
   --footer-muted: var(--gray-600);
 
   // Carousel
-  --carousel-dot-bg-color: var(--gray-400);
-  --carousel-dot-bg-color-active: var(--primary-color);
-  --carousel-dot-bg-color-hover: var(--gray-600);
+  --carousel-dot-bg-color: var(--gray-300);
+  --carousel-dot-bg-color-active: var(--gray-500);
+  --carousel-dot-bg-color-hover: var(--gray-500);
   --carousel-control-color: var(--gray-0);
-  --carousel-control-color-hover: color-mix(in srgb, var(--gray-1000) 50%, var(--transparent));
+  --carousel-control-bg-color: color-mix(in srgb, var(--gray-1000) 50%, var(--transparent));
+  --carousel-control-color-hover: color-mix(in srgb, var(--gray-1000) 75%, var(--transparent));
   --carousel-text-number-color: var(--gray-0);
 
   // Code

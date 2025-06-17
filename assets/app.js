@@ -12,6 +12,8 @@ import SyntaxHighlighterManager from './js/highlighter.js';
 import ToggleManager from './js/toggle.js';
 import SettingManager  from "./js/setting.js";
 import AlertManager from "./js/alert.js";
+import CarouselSlideManager from "./js/carousel_slide.js";
+
 
 
 const navbar = new NavbarManager();
@@ -28,6 +30,9 @@ const syntaxHighlighter = new SyntaxHighlighterManager();
 const toggle = new ToggleManager();
 const setting = new SettingManager();
 const alert = new AlertManager();
+const carouselSlide = new CarouselSlideManager();
+
+
 
 document.addEventListener('DOMContentLoaded', function () {
     navbar.init();
@@ -36,7 +41,7 @@ document.addEventListener('DOMContentLoaded', function () {
     tabs.init();
     modal.init();
     dropdown.init();
-    carouselFade.init();
+    // carouselFade.init();
     theme.init();
     input.init();
     copyToClipboard.init();
@@ -44,4 +49,5 @@ document.addEventListener('DOMContentLoaded', function () {
     toggle.init();
     setting.init();
     alert.init();
+    carouselSlide.init();
 });
