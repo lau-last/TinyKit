@@ -2,7 +2,6 @@ import ConverterManager from "./converter_tool.js";
 
 export default class CarouselSlideManager {
     private transitioningMap: Map<Element, boolean>;
-    private dotUpdateTimestamps: Map<Element, number> = new Map();
 
     constructor() {
         this.transitioningMap = new Map();
@@ -276,6 +275,8 @@ export default class CarouselSlideManager {
             const carousel = document.querySelector<HTMLElement>(targetSelector);
             if (!carousel) return;
 
+            const isAutoPlay = carousel.getAttribute('data-autoplay') === 'true';
+
             const slides = carousel.querySelectorAll('.slide:not(.cloned)');
             const numberOfDots = slides.length;
 
@@ -286,14 +287,18 @@ export default class CarouselSlideManager {
                 dot.classList.add('dot');
                 if (i === 0) dot.classList.add('active');
 
-                this.handleClickDots(dot, carousel, i);
+                !isAutoPlay ? this.bindDotClickEvent(dot, carousel, i) : this.cursorNotAllowed(dot);
 
                 container.appendChild(dot);
             }
         });
     }
 
-    private handleClickDots(dot: Element, carousel: Element, i: number): void {
+    private cursorNotAllowed(dot: HTMLElement): void {
+       dot.style.cursor = 'not-allowed';
+    }
+
+    private bindDotClickEvent(dot: Element, carousel: Element, i: number): void {
         dot.addEventListener('click', () => {
             if (this.transitioningMap.get(carousel)) return;
 
@@ -320,13 +325,14 @@ export default class CarouselSlideManager {
             carousel.getAttribute('data-step') || '1'
         );
         let currentIndex = parseInt(carousel.getAttribute('data-current-index') || '0', 10);
-
         const realIndex = (currentIndex - clonesToCreate + totalDots) % totalDots;
 
         dots.forEach((dot, i) => {
             dot.classList.toggle('active', i === realIndex);
         });
     }
+
+
 
 
 }

@@ -1,7 +1,6 @@
 import ConverterManager from "./converter_tool.js";
 export default class CarouselSlideManager {
     constructor() {
-        this.dotUpdateTimestamps = new Map();
         this.transitioningMap = new Map();
     }
     init() {
@@ -220,6 +219,7 @@ export default class CarouselSlideManager {
             const carousel = document.querySelector(targetSelector);
             if (!carousel)
                 return;
+            const isAutoPlay = carousel.getAttribute('data-autoplay') === 'true';
             const slides = carousel.querySelectorAll('.slide:not(.cloned)');
             const numberOfDots = slides.length;
             container.innerHTML = '';
@@ -228,12 +228,15 @@ export default class CarouselSlideManager {
                 dot.classList.add('dot');
                 if (i === 0)
                     dot.classList.add('active');
-                this.handleClickDots(dot, carousel, i);
+                !isAutoPlay ? this.bindDotClickEvent(dot, carousel, i) : this.cursorNotAllowed(dot);
                 container.appendChild(dot);
             }
         });
     }
-    handleClickDots(dot, carousel, i) {
+    cursorNotAllowed(dot) {
+        dot.style.cursor = 'not-allowed';
+    }
+    bindDotClickEvent(dot, carousel, i) {
         dot.addEventListener('click', () => {
             if (this.transitioningMap.get(carousel))
                 return;
