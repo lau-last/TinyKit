@@ -2,9 +2,11 @@ import ConverterManager from "./converter_tool.js";
 
 export default class CarouselSlideManager {
     private transitioningMap: Map<Element, boolean>;
+    private realIndexForDots: Map<Element, number>;
 
     constructor() {
         this.transitioningMap = new Map();
+        this.realIndexForDots = new Map();
     }
 
     init(): void {
@@ -189,12 +191,25 @@ export default class CarouselSlideManager {
         return 1;
     }
 
+    // private getClonesRequired(slidesPerView: number, dataStep: string | null): number {
+    //     if (dataStep === 'all') {
+    //         return Math.ceil(slidesPerView * 2);
+    //     } else {
+    //         return slidesPerView;
+    //     }
+    // }
+    //
+
     private getClonesRequired(slidesPerView: number, dataStep: string | null): number {
+        let step = 1;
+
         if (dataStep === 'all') {
-            return Math.ceil(slidesPerView * 2);
-        } else {
-            return slidesPerView;
+            step = slidesPerView;
+        } else if (dataStep && !isNaN(parseInt(dataStep, 10))) {
+            step = parseInt(dataStep, 10);
         }
+
+        return Math.max(slidesPerView, step) + 2;
     }
 
     private cloneSlidesForInfiniteLoop(slidesPerView: number, carousel: Element): void {
@@ -295,7 +310,7 @@ export default class CarouselSlideManager {
     }
 
     private cursorNotAllowed(dot: HTMLElement): void {
-       dot.style.cursor = 'not-allowed';
+        dot.style.cursor = 'not-allowed';
     }
 
     private bindDotClickEvent(dot: Element, carousel: Element, i: number): void {
@@ -314,6 +329,7 @@ export default class CarouselSlideManager {
 
 
     private updateDots(carousel: Element): void {
+        const autoPlay = carousel.getAttribute('data-autoplay') === 'true';
         const dotContainerSelector = `[data-dot-target="#${(carousel as HTMLElement).id}"]`;
         const dotContainer = document.querySelector(dotContainerSelector);
         if (!dotContainer) return;
@@ -327,12 +343,32 @@ export default class CarouselSlideManager {
         let currentIndex = parseInt(carousel.getAttribute('data-current-index') || '0', 10);
         const realIndex = (currentIndex - clonesToCreate + totalDots) % totalDots;
 
-        dots.forEach((dot, i) => {
-            dot.classList.toggle('active', i === realIndex);
-        });
+
+        if (autoPlay) {
+            const previousRealIndex = this.realIndexForDots.get(carousel) ?? -1;
+            if (realIndex !== previousRealIndex && !isNaN(realIndex)) {
+                this.realIndexForDots.set(carousel, realIndex);
+                dots.forEach(dot => dot.classList.remove('active'));
+                const steps: number[] = [];
+                let i = previousRealIndex;
+                while (i !== realIndex) {
+                    i = (i + 1 + totalDots) % totalDots;
+                    steps.push(i);
+                }
+                steps.forEach((index, stepIndex) => {
+                    setTimeout(() => {
+                        dots[index]?.classList.add('active');
+                        if (index !== realIndex) {
+                            setTimeout(() => dots[index]?.classList.remove('active'), 150);
+                        }
+                    }, stepIndex * 80);
+                });
+            }
+        }
+        else {
+            dots.forEach((dot, i) => {
+                dot.classList.toggle('active', i === realIndex);
+            });
+        }
     }
-
-
-
-
 }

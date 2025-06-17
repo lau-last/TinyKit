@@ -2,6 +2,7 @@ import ConverterManager from "./converter_tool.js";
 export default class CarouselSlideManager {
     constructor() {
         this.transitioningMap = new Map();
+        this.realIndexForDots = new Map();
     }
     init() {
         this.initCarousels();
@@ -147,13 +148,23 @@ export default class CarouselSlideManager {
         }
         return 1;
     }
+    // private getClonesRequired(slidesPerView: number, dataStep: string | null): number {
+    //     if (dataStep === 'all') {
+    //         return Math.ceil(slidesPerView * 2);
+    //     } else {
+    //         return slidesPerView;
+    //     }
+    // }
+    //
     getClonesRequired(slidesPerView, dataStep) {
+        let step = 1;
         if (dataStep === 'all') {
-            return Math.ceil(slidesPerView * 2);
+            step = slidesPerView;
         }
-        else {
-            return slidesPerView;
+        else if (dataStep && !isNaN(parseInt(dataStep, 10))) {
+            step = parseInt(dataStep, 10);
         }
+        return Math.max(slidesPerView, step) + 2;
     }
     cloneSlidesForInfiniteLoop(slidesPerView, carousel) {
         const wrapper = carousel.querySelector('.wrapper-slides');
@@ -249,6 +260,8 @@ export default class CarouselSlideManager {
         });
     }
     updateDots(carousel) {
+        var _a;
+        const autoPlay = carousel.getAttribute('data-autoplay') === 'true';
         const dotContainerSelector = `[data-dot-target="#${carousel.id}"]`;
         const dotContainer = document.querySelector(dotContainerSelector);
         if (!dotContainer)
@@ -258,8 +271,32 @@ export default class CarouselSlideManager {
         const clonesToCreate = this.getClonesRequired(parseInt(carousel.getAttribute('data-view') || '1', 10), carousel.getAttribute('data-step') || '1');
         let currentIndex = parseInt(carousel.getAttribute('data-current-index') || '0', 10);
         const realIndex = (currentIndex - clonesToCreate + totalDots) % totalDots;
-        dots.forEach((dot, i) => {
-            dot.classList.toggle('active', i === realIndex);
-        });
+        if (autoPlay) {
+            const previousRealIndex = (_a = this.realIndexForDots.get(carousel)) !== null && _a !== void 0 ? _a : -1;
+            if (realIndex !== previousRealIndex && !isNaN(realIndex)) {
+                this.realIndexForDots.set(carousel, realIndex);
+                dots.forEach(dot => dot.classList.remove('active'));
+                const steps = [];
+                let i = previousRealIndex;
+                while (i !== realIndex) {
+                    i = (i + 1 + totalDots) % totalDots;
+                    steps.push(i);
+                }
+                steps.forEach((index, stepIndex) => {
+                    setTimeout(() => {
+                        var _a;
+                        (_a = dots[index]) === null || _a === void 0 ? void 0 : _a.classList.add('active');
+                        if (index !== realIndex) {
+                            setTimeout(() => { var _a; return (_a = dots[index]) === null || _a === void 0 ? void 0 : _a.classList.remove('active'); }, 150);
+                        }
+                    }, stepIndex * 80);
+                });
+            }
+        }
+        else {
+            dots.forEach((dot, i) => {
+                dot.classList.toggle('active', i === realIndex);
+            });
+        }
     }
 }
