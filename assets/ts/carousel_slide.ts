@@ -191,15 +191,6 @@ export default class CarouselSlideManager {
         return 1;
     }
 
-    // private getClonesRequired(slidesPerView: number, dataStep: string | null): number {
-    //     if (dataStep === 'all') {
-    //         return Math.ceil(slidesPerView * 2);
-    //     } else {
-    //         return slidesPerView;
-    //     }
-    // }
-    //
-
     private getClonesRequired(slidesPerView: number, dataStep: string | null): number {
         let step = 1;
 
@@ -279,7 +270,6 @@ export default class CarouselSlideManager {
         });
     }
 
-
     private initDotControls(): void {
         const containersDots = document.querySelectorAll<HTMLElement>('[data-dot-target]');
 
@@ -290,8 +280,6 @@ export default class CarouselSlideManager {
             const carousel = document.querySelector<HTMLElement>(targetSelector);
             if (!carousel) return;
 
-            const isAutoPlay = carousel.getAttribute('data-autoplay') === 'true';
-
             const slides = carousel.querySelectorAll('.slide:not(.cloned)');
             const numberOfDots = slides.length;
 
@@ -300,18 +288,18 @@ export default class CarouselSlideManager {
             for (let i = 0; i < numberOfDots; i++) {
                 const dot = document.createElement('span');
                 dot.classList.add('dot');
-                if (i === 0) dot.classList.add('active');
+                // if (i === 0) dot.classList.add('active');
 
-                !isAutoPlay ? this.bindDotClickEvent(dot, carousel, i) : this.cursorNotAllowed(dot);
+                const span = document.createElement('span');
+                dot.appendChild(span);
+
+                this.bindDotClickEvent(dot, carousel, i);
 
                 container.appendChild(dot);
             }
+            this.updateDots(carousel);
         });
-    }
-
-    private cursorNotAllowed(dot: HTMLElement): void {
-        dot.style.cursor = 'not-allowed';
-    }
+    };
 
     private bindDotClickEvent(dot: Element, carousel: Element, i: number): void {
         dot.addEventListener('click', () => {
@@ -329,46 +317,53 @@ export default class CarouselSlideManager {
 
 
     private updateDots(carousel: Element): void {
-        const autoPlay = carousel.getAttribute('data-autoplay') === 'true';
         const dotContainerSelector = `[data-dot-target="#${(carousel as HTMLElement).id}"]`;
         const dotContainer = document.querySelector(dotContainerSelector);
         if (!dotContainer) return;
 
         const dots = dotContainer.querySelectorAll('.dot');
-        const totalDots = dots.length;
+        const totalOriginalSlides = dots.length;
+
+        const slidesPerView = parseInt(carousel.getAttribute('data-view') || '1', 10);
         const clonesToCreate = this.getClonesRequired(
-            parseInt(carousel.getAttribute('data-view') || '1', 10),
+            slidesPerView,
             carousel.getAttribute('data-step') || '1'
         );
         let currentIndex = parseInt(carousel.getAttribute('data-current-index') || '0', 10);
-        const realIndex = (currentIndex - clonesToCreate + totalDots) % totalDots;
+        let firstVisibleOriginalIndex = (currentIndex - clonesToCreate) % totalOriginalSlides;
 
+        if (firstVisibleOriginalIndex < 0) {
+            firstVisibleOriginalIndex += totalOriginalSlides;
+        }
 
-        if (autoPlay) {
-            const previousRealIndex = this.realIndexForDots.get(carousel) ?? -1;
-            if (realIndex !== previousRealIndex && !isNaN(realIndex)) {
-                this.realIndexForDots.set(carousel, realIndex);
-                dots.forEach(dot => dot.classList.remove('active'));
-                const steps: number[] = [];
-                let i = previousRealIndex;
-                while (i !== realIndex) {
-                    i = (i + 1 + totalDots) % totalDots;
-                    steps.push(i);
-                }
-                steps.forEach((index, stepIndex) => {
-                    setTimeout(() => {
-                        dots[index]?.classList.add('active');
-                        if (index !== realIndex) {
-                            setTimeout(() => dots[index]?.classList.remove('active'), 150);
-                        }
-                    }, stepIndex * 80);
-                });
+        dots.forEach(dot => {
+            dot.classList.remove('active');
+        });
+
+        for (let i = 0; i < slidesPerView; i++) {
+            const visibleDotIndex = (firstVisibleOriginalIndex + i) % totalOriginalSlides;
+            if (dots[visibleDotIndex]) {
+                dots[visibleDotIndex].classList.add('active');
             }
         }
-        else {
-            dots.forEach((dot, i) => {
-                dot.classList.toggle('active', i === realIndex);
-            });
-        }
-    }
+    };
+    // private updateDots(carousel: Element): void {
+    //     const dotContainerSelector = `[data-dot-target="#${(carousel as HTMLElement).id}"]`;
+    //     const dotContainer = document.querySelector(dotContainerSelector);
+    //     if (!dotContainer) return;
+    //
+    //     const dots = dotContainer.querySelectorAll('.dot');
+    //     const totalDots = dots.length;
+    //     const clonesToCreate = this.getClonesRequired(
+    //         parseInt(carousel.getAttribute('data-view') || '1', 10),
+    //         carousel.getAttribute('data-step') || '1'
+    //     );
+    //     let currentIndex = parseInt(carousel.getAttribute('data-current-index') || '0', 10);
+    //     const realIndex = (currentIndex - clonesToCreate + totalDots) % totalDots;
+    //
+    //     dots.forEach((dot, i) => {
+    //         dot.classList.toggle('active', i === realIndex);
+    //     });
+    // }
+
 }

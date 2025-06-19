@@ -21,9 +21,9 @@
         align-items: center;
 
         img {
-            -webkit-animation-name: zoom;
+            -webkit-animation-name: fade-in, grow-md;
             -webkit-animation-duration: 0.3s;
-            animation-name: zoom;
+            animation-name: fade-in, grow-md;
             animation-duration: 0.3s;
             width: 100%;
 
@@ -45,7 +45,8 @@
         background-color: var(--bg-color);
         border-radius: var(--border-radius);
         position: relative;
-        animation-name: animate-from-top;
+        animation: fade-in, slide-from-top-md;
+        -webkit-animation-name: fade-in, slide-from-top-md;
         animation-duration: 0.3s;
         width: 100%;
 

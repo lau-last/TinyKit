@@ -1,0 +1,80 @@
+<style>
+    .row {
+        .col-3 {
+            div {
+                border-radius: var(--border-radius);
+                background: var(--light-color);
+                height: 100px;
+                width: 100px;
+            }
+        }
+    }
+</style>
+<section id="animations-section">
+    <div class="container">
+
+        <div class="d-flex align-items-center">
+            <h2>Animations</h2>
+            <div class="ms-2 cursor-pointer" data-action="toggle-display" data-target="#container-code-animation"></div>
+        </div>
+
+        <div class="row">
+            <div class="col-3">
+                <div data-animation="animation-shake-x animation-medium"></div>
+            </div>
+            <div class="col-3">
+                <div data-animation="animation-shake-y animation-medium"></div>
+            </div>
+            <div class="col-3">
+                <div data-animation="animation-grow animation-medium"></div>
+            </div>
+            <div class="col-3">
+                <div data-animation="animation-shrink animation-medium"></div>
+            </div>
+
+
+
+            <div class="col-3">
+                <div data-animation="animation-slide-top animation-medium"></div>
+            </div>
+            <div class="col-3">
+                <div data-animation="animation-slide-bottom animation-medium"></div>
+            </div>
+            <div class="col-3">
+                <div data-animation="animation-slide-left animation-medium"></div>
+            </div>
+            <div class="col-3">
+                <div data-animation="animation-slide-right animation-medium"></div>
+            </div>
+
+
+
+            <div class="col-3">
+                <div data-animation="animation-rotate animation-medium"></div>
+            </div>
+        </div>
+    </div>
+</section>
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        document.querySelectorAll('[data-animation]').forEach((element) => {
+            element.addEventListener('mouseenter', () => {
+                const animationNames = element.getAttribute('data-animation').split(' ');
+
+                // Supprimer les classes d'animation
+                element.classList.remove(...animationNames);
+
+                // Force le reflow
+                void element.offsetWidth;
+
+                // Ajouter les classes d'animation
+                element.classList.add(...animationNames);
+
+                // Nettoyage après la fin de l'animation
+                element.addEventListener('animationend', () => {
+                    element.classList.remove(...animationNames);
+                }, { once: true });
+            });
+        });
+    });
+</script>

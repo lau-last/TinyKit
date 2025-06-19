@@ -121,6 +121,7 @@
   --footer-muted: var(--gray-100);
 
   // Carousel
+  --carousel-border-color-dot: color-mix(in srgb, var(--gray-300) 50%, var(--transparent));
   --carousel-dot-bg-color: var(--gray-300);
   --carousel-dot-bg-color-active: var(--gray-500);
   --carousel-dot-bg-color-hover: var(--gray-500);
@@ -348,11 +349,12 @@
   --footer-muted: var(--gray-600);
 
   // Carousel
+  --carousel-border-color-dot: color-mix(in srgb, var(--gray-300) 50%, var(--transparent));
   --carousel-dot-bg-color: var(--gray-300);
   --carousel-dot-bg-color-active: var(--gray-500);
   --carousel-dot-bg-color-hover: var(--gray-500);
   --carousel-control-color: var(--gray-0);
-  --carousel-control-bg-color: color-mix(in srgb, var(--gray-1000) 50%, var(--transparent));
+  --carousel-control-bg-color: var(--gray-1000);
   --carousel-control-color-hover: color-mix(in srgb, var(--gray-1000) 75%, var(--transparent));
   --carousel-text-number-color: var(--gray-0);
 

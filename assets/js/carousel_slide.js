@@ -148,14 +148,6 @@ export default class CarouselSlideManager {
         }
         return 1;
     }
-    // private getClonesRequired(slidesPerView: number, dataStep: string | null): number {
-    //     if (dataStep === 'all') {
-    //         return Math.ceil(slidesPerView * 2);
-    //     } else {
-    //         return slidesPerView;
-    //     }
-    // }
-    //
     getClonesRequired(slidesPerView, dataStep) {
         let step = 1;
         if (dataStep === 'all') {
@@ -230,23 +222,22 @@ export default class CarouselSlideManager {
             const carousel = document.querySelector(targetSelector);
             if (!carousel)
                 return;
-            const isAutoPlay = carousel.getAttribute('data-autoplay') === 'true';
             const slides = carousel.querySelectorAll('.slide:not(.cloned)');
             const numberOfDots = slides.length;
             container.innerHTML = '';
             for (let i = 0; i < numberOfDots; i++) {
                 const dot = document.createElement('span');
                 dot.classList.add('dot');
-                if (i === 0)
-                    dot.classList.add('active');
-                !isAutoPlay ? this.bindDotClickEvent(dot, carousel, i) : this.cursorNotAllowed(dot);
+                // if (i === 0) dot.classList.add('active');
+                const span = document.createElement('span');
+                dot.appendChild(span);
+                this.bindDotClickEvent(dot, carousel, i);
                 container.appendChild(dot);
             }
+            this.updateDots(carousel);
         });
     }
-    cursorNotAllowed(dot) {
-        dot.style.cursor = 'not-allowed';
-    }
+    ;
     bindDotClickEvent(dot, carousel, i) {
         dot.addEventListener('click', () => {
             if (this.transitioningMap.get(carousel))
@@ -260,43 +251,28 @@ export default class CarouselSlideManager {
         });
     }
     updateDots(carousel) {
-        var _a;
-        const autoPlay = carousel.getAttribute('data-autoplay') === 'true';
         const dotContainerSelector = `[data-dot-target="#${carousel.id}"]`;
         const dotContainer = document.querySelector(dotContainerSelector);
         if (!dotContainer)
             return;
         const dots = dotContainer.querySelectorAll('.dot');
-        const totalDots = dots.length;
-        const clonesToCreate = this.getClonesRequired(parseInt(carousel.getAttribute('data-view') || '1', 10), carousel.getAttribute('data-step') || '1');
+        const totalOriginalSlides = dots.length;
+        const slidesPerView = parseInt(carousel.getAttribute('data-view') || '1', 10);
+        const clonesToCreate = this.getClonesRequired(slidesPerView, carousel.getAttribute('data-step') || '1');
         let currentIndex = parseInt(carousel.getAttribute('data-current-index') || '0', 10);
-        const realIndex = (currentIndex - clonesToCreate + totalDots) % totalDots;
-        if (autoPlay) {
-            const previousRealIndex = (_a = this.realIndexForDots.get(carousel)) !== null && _a !== void 0 ? _a : -1;
-            if (realIndex !== previousRealIndex && !isNaN(realIndex)) {
-                this.realIndexForDots.set(carousel, realIndex);
-                dots.forEach(dot => dot.classList.remove('active'));
-                const steps = [];
-                let i = previousRealIndex;
-                while (i !== realIndex) {
-                    i = (i + 1 + totalDots) % totalDots;
-                    steps.push(i);
-                }
-                steps.forEach((index, stepIndex) => {
-                    setTimeout(() => {
-                        var _a;
-                        (_a = dots[index]) === null || _a === void 0 ? void 0 : _a.classList.add('active');
-                        if (index !== realIndex) {
-                            setTimeout(() => { var _a; return (_a = dots[index]) === null || _a === void 0 ? void 0 : _a.classList.remove('active'); }, 150);
-                        }
-                    }, stepIndex * 80);
-                });
+        let firstVisibleOriginalIndex = (currentIndex - clonesToCreate) % totalOriginalSlides;
+        if (firstVisibleOriginalIndex < 0) {
+            firstVisibleOriginalIndex += totalOriginalSlides;
+        }
+        dots.forEach(dot => {
+            dot.classList.remove('active');
+        });
+        for (let i = 0; i < slidesPerView; i++) {
+            const visibleDotIndex = (firstVisibleOriginalIndex + i) % totalOriginalSlides;
+            if (dots[visibleDotIndex]) {
+                dots[visibleDotIndex].classList.add('active');
             }
         }
-        else {
-            dots.forEach((dot, i) => {
-                dot.classList.toggle('active', i === realIndex);
-            });
-        }
     }
+    ;
 }
