@@ -1,6 +1,7 @@
 .navbar-sm {
   width: 100%;
-  padding: var(--navbar-padding-md);
+  min-height: var(--navbar-min-height-sm);
+  padding: var(--navbar-padding-sm);
   @container body (width < 576px) {
 
     .navbar-header {
@@ -87,6 +88,7 @@
 .navbar,
 .navbar-md {
   width: 100%;
+  min-height: var(--navbar-min-height-md);
   padding: var(--navbar-padding-md);
   @container body (width < 768px) {
 
@@ -173,6 +175,7 @@
 
 .navbar-lg {
   width: 100%;
+  min-height: var(--navbar-min-height-lg);
   padding: var(--navbar-padding-lg);
   @container body (width < 992px) {
 
@@ -259,6 +262,7 @@
 
 .navbar-xl {
   width: 100%;
+  min-height: var(--navbar-min-height-xl);
   padding: var(--navbar-padding-xl);
   @container body (width < 1200px) {
 
@@ -344,7 +348,8 @@
 }
 
 .navbar-side {
-  padding: var(--navbar-padding-mobile);
+  min-height: var(--navbar-min-height-side);
+  padding: var(--navbar-padding-side);
   width: 100%;
   display: flex;
   align-items: center;

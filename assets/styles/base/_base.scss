@@ -130,7 +130,7 @@
   --carousel-control-padding: 1.5rem;
   --carousel-effect-duration-slide: 0.5s;
   --carousel-effect-duration-fade: 0.5s;
-  --carousel-interval-slide : 5000;
+  --carousel-interval-slide: 5000;
   --carousel-height: 50rem;
   --carousel-gap: 3rem;
 
@@ -157,6 +157,13 @@
   --padding-card-body: 1rem;
   --padding-card-footer: .5rem 1rem;
 
+  // modal
+  --padding-modal: 2rem;
+  --padding-modal-header: 0.5rem 1rem;
+  --padding-modal-body: 0.5rem 1rem;
+  --padding-modal-footer: 0.5rem 1rem;
+
+
   // Alerts
   --container-alert-top: 0.5rem;
   --container-alert-bottom: 0.5rem;
@@ -175,11 +182,16 @@
   --gap-container-alert: 0.5rem;
 
   // Navbar
-  --navbar-padding-mobile : .5rem;
+  --navbar-padding-side: .5rem;
   --navbar-padding-sm: .5rem;
   --navbar-padding-md: .5rem;
   --navbar-padding-lg: .5rem;
   --navbar-padding-xl: .5rem;
+  --navbar-min-height-sm: 4rem;
+  --navbar-min-height-md: 4rem;
+  --navbar-min-height-lg: 4rem;
+  --navbar-min-height-xl: 4rem;
+  --navbar-min-height-side: 4rem;
 
   // Inputs
   --input-height-sm: 2.5rem;

@@ -25,7 +25,7 @@ $shade-of-gray: (0, 50, 100, 150, 200, 250, 300, 350, 400, 450, 500, 550, 600, 6
     &.text-contrast {
       color: var(--text-on-primary);
 
-      * {
+     &-child *{
         color: var(--text-on-primary);
       }
     }
@@ -41,7 +41,7 @@ $shade-of-gray: (0, 50, 100, 150, 200, 250, 300, 350, 400, 450, 500, 550, 600, 6
     &.text-contrast {
       color: var(--text-on-secondary);
 
-      * {
+      &-child * {
         color: var(--text-on-secondary);
       }
     }
@@ -57,7 +57,7 @@ $shade-of-gray: (0, 50, 100, 150, 200, 250, 300, 350, 400, 450, 500, 550, 600, 6
     &.text-contrast {
       color: var(--text-on-tertiary);
 
-      * {
+      &-child * {
         color: var(--text-on-tertiary);
       }
     }
@@ -73,7 +73,7 @@ $shade-of-gray: (0, 50, 100, 150, 200, 250, 300, 350, 400, 450, 500, 550, 600, 6
     &.text-contrast {
       color: var(--text-on-success);
 
-      * {
+      &-child * {
         color: var(--text-on-success);
       }
     }
@@ -89,7 +89,7 @@ $shade-of-gray: (0, 50, 100, 150, 200, 250, 300, 350, 400, 450, 500, 550, 600, 6
     &.text-contrast {
       color: var(--text-on-danger);
 
-      * {
+      &-child * {
         color: var(--text-on-danger);
       }
     }
@@ -105,7 +105,7 @@ $shade-of-gray: (0, 50, 100, 150, 200, 250, 300, 350, 400, 450, 500, 550, 600, 6
     &.text-contrast {
       color: var(--text-on-warning);
 
-      * {
+      &-child * {
         color: var(--text-on-warning);
       }
     }
@@ -121,7 +121,7 @@ $shade-of-gray: (0, 50, 100, 150, 200, 250, 300, 350, 400, 450, 500, 550, 600, 6
     &.text-contrast {
       color: var(--text-on-info);
 
-      * {
+      &-child * {
         color: var(--text-on-info);
       }
     }
@@ -137,7 +137,7 @@ $shade-of-gray: (0, 50, 100, 150, 200, 250, 300, 350, 400, 450, 500, 550, 600, 6
     &.text-contrast {
       color: var(--text-on-neutral);
 
-      * {
+      &-child * {
         color: var(--text-on-neutral);
       }
     }
@@ -153,7 +153,7 @@ $shade-of-gray: (0, 50, 100, 150, 200, 250, 300, 350, 400, 450, 500, 550, 600, 6
     &.text-contrast {
       color: var(--text-on-light);
 
-      * {
+      &-child * {
         color: var(--text-on-light);
       }
     }
@@ -169,7 +169,7 @@ $shade-of-gray: (0, 50, 100, 150, 200, 250, 300, 350, 400, 450, 500, 550, 600, 6
     &.text-contrast {
       color: var(--text-on-dark);
 
-      * {
+      &-child * {
         color: var(--text-on-dark);
       }
     }
@@ -185,7 +185,7 @@ $shade-of-gray: (0, 50, 100, 150, 200, 250, 300, 350, 400, 450, 500, 550, 600, 6
     &.text-contrast {
       color: var(--text-black);
 
-      * {
+      &-child * {
         color: var(--text-black);
       }
     }
@@ -201,7 +201,7 @@ $shade-of-gray: (0, 50, 100, 150, 200, 250, 300, 350, 400, 450, 500, 550, 600, 6
     &.text-contrast {
       color: var(--text-white);
 
-      * {
+      &-child * {
         color: var(--text-white);
       }
     }
@@ -217,7 +217,7 @@ $shade-of-gray: (0, 50, 100, 150, 200, 250, 300, 350, 400, 450, 500, 550, 600, 6
     &.text-contrast {
       color: var(--text-on-footer-muted);
 
-      * {
+      &-child * {
         color: var(--text-on-footer-muted);
       }
     }
@@ -233,7 +233,7 @@ $shade-of-gray: (0, 50, 100, 150, 200, 250, 300, 350, 400, 450, 500, 550, 600, 6
     &.text-contrast {
       color: var(--text-color);
 
-      * {
+      &-child * {
         color: var(--text-color);
       }
     }
