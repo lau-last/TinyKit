@@ -4,8 +4,9 @@ export default class ModalManager {
         this.initCloseButtons();
     }
     ;
+    // initialize modal buttons with event listeners
     initOpenButtons() {
-        const buttons = document.querySelectorAll('[data-toggle="modal"]');
+        const buttons = document.querySelectorAll('[data-action="toggle-modal"]');
         buttons.forEach(button => {
             button.addEventListener('click', () => {
                 const targetSelector = button.getAttribute('data-target');
@@ -21,8 +22,9 @@ export default class ModalManager {
         });
     }
     ;
+    // initialize close buttons with event listeners
     initCloseButtons() {
-        const closeButtons = document.querySelectorAll('[data-function="close-modal"]');
+        const closeButtons = document.querySelectorAll('[data-action="close-modal"]');
         closeButtons.forEach(button => {
             button.addEventListener('click', () => {
                 const targetSelector = button.getAttribute('data-target');
@@ -37,6 +39,7 @@ export default class ModalManager {
         });
     }
     ;
+    // handle image modal
     handleImageModal(button) {
         if (!(button instanceof HTMLImageElement))
             return;
@@ -49,10 +52,12 @@ export default class ModalManager {
         }
     }
     ;
+    // disable scroll
     disableScroll() {
         document.documentElement.classList.add('no-scroll');
     }
     ;
+    // enable scroll
     enableScroll() {
         document.documentElement.classList.remove('no-scroll');
     }

@@ -63,7 +63,7 @@ export default class CarouselSlideManager {
             if (wrapper) {
                 wrapper.addEventListener('transitionend', () => {
                     let currentIndex = parseInt(carousel.getAttribute('data-current-index') || '0', 10);
-                    const slidesToCloneCount = this.getClonesRequired(parseInt(carousel.getAttribute('data-view') || '1', 10), carousel.getAttribute('data-step') || '1');
+                    const slidesToCloneCount = this.getClonesRequired(parseInt(carousel.getAttribute('data-view') || '1', 10), carousel.getAttribute('data-step') || 'single');
                     if (currentIndex < slidesToCloneCount) {
                         currentIndex = originalSlideCount + currentIndex;
                         carousel.setAttribute('data-current-index', currentIndex.toString());
@@ -120,7 +120,7 @@ export default class CarouselSlideManager {
             this.transitioningMap.set(carousel, true);
             let currentIndex = parseInt(carousel.getAttribute('data-current-index') || '0', 10);
             const slidesPerView = parseInt(carousel.getAttribute('data-view') || '1', 10);
-            const slideBy = carousel.getAttribute('data-step') || '1';
+            const slideBy = carousel.getAttribute('data-step') || 'single';
             const increment = this.validateStep(slideBy, slidesPerView);
             currentIndex = direction === 'next'
                 ? currentIndex + increment
@@ -141,10 +141,6 @@ export default class CarouselSlideManager {
         }
         if (step === 'single') {
             return 1;
-        }
-        const stepNumber = parseInt(step, 10);
-        if (!isNaN(stepNumber) && stepNumber > 0) {
-            return stepNumber;
         }
         return 1;
     }
@@ -200,7 +196,7 @@ export default class CarouselSlideManager {
             if (isNaN(intervalAttr) || intervalAttr < 500)
                 return; // sécurité
             const slidesPerView = parseInt(carousel.getAttribute('data-view') || '1', 10);
-            const slideBy = carousel.getAttribute('data-step') || '1';
+            const slideBy = carousel.getAttribute('data-step') || 'single';
             const increment = this.validateStep(slideBy, slidesPerView);
             setInterval(() => {
                 if (this.transitioningMap.get(carousel))
@@ -228,7 +224,6 @@ export default class CarouselSlideManager {
             for (let i = 0; i < numberOfDots; i++) {
                 const dot = document.createElement('span');
                 dot.classList.add('dot');
-                // if (i === 0) dot.classList.add('active');
                 const span = document.createElement('span');
                 dot.appendChild(span);
                 this.bindDotClickEvent(dot, carousel, i);
@@ -243,13 +238,14 @@ export default class CarouselSlideManager {
             if (this.transitioningMap.get(carousel))
                 return;
             const slidesPerView = parseInt(carousel.getAttribute('data-view') || '1', 10);
-            const dataStep = carousel.getAttribute('data-step') || '1';
+            const dataStep = carousel.getAttribute('data-step') || 'single';
             const clonesToCreate = this.getClonesRequired(slidesPerView, dataStep);
             const targetIndex = i + clonesToCreate;
             carousel.setAttribute('data-current-index', targetIndex.toString());
             this.updatePosition(carousel);
         });
     }
+    ;
     updateDots(carousel) {
         const dotContainerSelector = `[data-dot-target="#${carousel.id}"]`;
         const dotContainer = document.querySelector(dotContainerSelector);
@@ -258,7 +254,7 @@ export default class CarouselSlideManager {
         const dots = dotContainer.querySelectorAll('.dot');
         const totalOriginalSlides = dots.length;
         const slidesPerView = parseInt(carousel.getAttribute('data-view') || '1', 10);
-        const clonesToCreate = this.getClonesRequired(slidesPerView, carousel.getAttribute('data-step') || '1');
+        const clonesToCreate = this.getClonesRequired(slidesPerView, carousel.getAttribute('data-step') || 'single');
         let currentIndex = parseInt(carousel.getAttribute('data-current-index') || '0', 10);
         let firstVisibleOriginalIndex = (currentIndex - clonesToCreate) % totalOriginalSlides;
         if (firstVisibleOriginalIndex < 0) {

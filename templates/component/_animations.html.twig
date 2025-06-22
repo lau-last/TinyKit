@@ -1,0 +1,85 @@
+<style>
+        .container-card-animation {
+            display: flex;
+            justify-content: center;
+            div {
+                margin: 1rem;
+                border-radius: var(--border-radius);
+                background: var(--light-color);
+                height: 100px;
+                width: 100px;
+            }
+        }
+</style>
+<section id="animation-section">
+    <div class="container">
+
+        <div class="d-flex align-items-center">
+            <h2>Animations</h2>
+            <div class="ms-2 cursor-pointer" data-action="toggle-display" data-target="#container-code-animation"></div>
+        </div>
+
+        <div data-code-target="#code-animation">
+
+            <div class="container-card-animation">
+                <div data-animation="animation-shake-x-md animation-medium" data-listener="mouseenter"></div>
+                <div data-animation="animation-shake-y-md animation-medium" data-listener="mouseenter"></div>
+                <div data-animation="animation-grow-md animation-medium" data-listener="mouseenter"></div>
+            </div>
+            <div class="container-card-animation">
+                <div data-animation="animation-shrink-md animation-medium" data-listener="mouseenter"></div>
+                <div data-animation="animation-slide-top-md animation-medium" data-listener="mouseenter"></div>
+                <div data-animation="animation-slide-bottom-md animation-medium" data-listener="mouseenter"></div>
+            </div>
+            <div class="container-card-animation">
+                <div data-animation="animation-slide-left-md animation-medium" data-listener="mouseenter"></div>
+                <div data-animation="animation-slide-right-md animation-medium" data-listener="mouseenter"></div>
+                <div data-animation="animation-rotate animation-medium" data-listener="mouseenter"></div>
+            </div>
+
+
+            {#            <div class="row"> #}
+            {#                <div class="col-4"> #}
+            {#                    <div data-animation="animation-shake-x-md animation-medium" data-listener="mouseenter"></div> #}
+            {#                </div> #}
+            {#                <div class="col-4"> #}
+            {#                    <div data-animation="animation-shake-y-md animation-medium" data-listener="mouseenter"></div> #}
+            {#                </div> #}
+            {#                <div class="col-4"> #}
+            {#                    <div data-animation="animation-grow-md animation-medium" data-listener="mouseenter"></div> #}
+            {#                </div> #}
+
+
+            {#                <div class="col-4"> #}
+            {#                    <div data-animation="animation-shrink-md animation-medium" data-listener="mouseenter"></div> #}
+            {#                </div> #}
+            {#                <div class="col-4"> #}
+            {#                    <div data-animation="animation-slide-top-md animation-medium" data-listener="mouseenter"></div> #}
+            {#                </div> #}
+            {#                <div class="col-4"> #}
+            {#                    <div data-animation="animation-slide-bottom-md animation-medium" data-listener="mouseenter"></div> #}
+            {#                </div> #}
+
+
+            {#                <div class="col-4"> #}
+            {#                    <div data-animation="animation-slide-left-md animation-medium" data-listener="mouseenter"></div> #}
+            {#                </div> #}
+            {#                <div class="col-4"> #}
+            {#                    <div data-animation="animation-slide-right-md animation-medium" data-listener="mouseenter"></div> #}
+            {#                </div> #}
+            {#                <div class="col-4"> #}
+            {#                    <div data-animation="animation-rotate animation-medium" data-listener="mouseenter"></div> #}
+            {#                </div> #}
+            {#            </div> #}
+        </div>
+
+
+        <div class="container-code mt-2 d-none" id="container-code-animation">
+            <button class="btn-primary position-top-right" type="button" data-position-tooltip="left" data-action="copy"
+                    data-target="#code-animation" data-tooltip="Copié !">Copier
+            </button>
+            <pre><code id="code-animation" data-type="code">
+        </code></pre>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,124 @@
+[data-component="scroll-indicator-x"] {
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  width: 100%;
+  position: fixed;
+
+  // Position
+  &.scroll-indicator-top {
+    top: 0;
+  }
+
+  // Position
+  &.scroll-indicator-bottom {
+    bottom: 0;
+  }
+
+  // Sizes
+  &.scroll-indicator {
+    &-sm {
+      .container-progress-bar {
+        height: var(--progress-bar-sm);
+
+        .progress-bar {
+          height: var(--progress-bar-sm);
+        }
+      }
+    }
+
+    &-md {
+      .container-progress-bar {
+        height: var(--progress-bar-md);
+
+        .progress-bar {
+          height: var(--progress-bar-md);
+        }
+      }
+    }
+
+    &-lg {
+      .container-progress-bar {
+        height: var(--progress-bar-lg);
+
+        .progress-bar {
+          height: var(--progress-bar-lg);
+        }
+      }
+    }
+  }
+
+  // Container
+  .container-progress-bar {
+    height: var(--progress-bar-md);
+    width: 100%;
+
+    .progress-bar {
+      height: var(--progress-bar-md);
+      width: 0;
+    }
+  }
+}
+
+
+[data-component="scroll-indicator-y"] {
+  top: 0;
+  bottom: 0;
+  z-index: 1000;
+  height: 100%;
+  position: fixed;
+
+  // Position
+  &.scroll-indicator-left {
+    left: 0;
+  }
+
+  // Position
+  &.scroll-indicator-right {
+    right: 0;
+  }
+
+  // Sizes
+  &.scroll-indicator {
+    &-sm {
+      .container-progress-bar {
+        width: var(--progress-bar-sm);
+
+        .progress-bar {
+          width: var(--progress-bar-sm);
+        }
+      }
+    }
+
+    &-md {
+      .container-progress-bar {
+        width: var(--progress-bar-md);
+
+        .progress-bar {
+          width: var(--progress-bar-md);
+        }
+      }
+    }
+
+    &-lg {
+      .container-progress-bar {
+        width: var(--progress-bar-lg);
+
+        .progress-bar {
+          width: var(--progress-bar-lg);
+        }
+      }
+    }
+  }
+
+  // Container
+  .container-progress-bar {
+    width: var(--progress-bar-md);
+    height: 100%;
+
+    .progress-bar {
+      width: var(--progress-bar-md);
+      height: 0;
+    }
+  }
+}

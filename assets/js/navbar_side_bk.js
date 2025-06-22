@@ -6,30 +6,12 @@ export default class NavbarSideManager {
     }
     ;
     initSideNavbar() {
-        this.setFallbackDisplay();
         this.onlyOneSideBarOpenInLocalStorage();
         this.initSidebarStates();
         this.handleOpenButton();
         this.handleCloseButton();
     }
     ;
-    // Set display none to sidebar content if it don't have data-mode attribute
-    setFallbackDisplay() {
-        const buttons = document.querySelectorAll('[data-action="toggle-sidebar"]');
-        buttons.forEach(button => {
-            const targetSelector = button.getAttribute('data-target');
-            if (!targetSelector)
-                return;
-            const content = document.querySelector(targetSelector);
-            if (!content)
-                return;
-            if (!content.hasAttribute('data-mode') && !content.hasAttribute('data-position')) {
-                content.style.display = 'none';
-                return;
-            }
-        });
-    }
-    // Init sidebar states from local storage
     initSidebarStates() {
         const states = LocalStorageManager.getStates('tiny_kit_sidebar_state');
         const body = document.body;
@@ -54,7 +36,6 @@ export default class NavbarSideManager {
         });
     }
     ;
-    // Set state of sidebar in local storage
     handleStateOfSidebar(content) {
         if (!content)
             return;
@@ -64,7 +45,6 @@ export default class NavbarSideManager {
         LocalStorageManager.setState('tiny_kit_sidebar_state', content.id, state);
     }
     ;
-    // Remove class from other sidebar (close other sidebar)
     removeClass(currentButton) {
         const openButtons = document.querySelectorAll('[data-action="toggle-sidebar"]');
         if (!openButtons)
@@ -87,7 +67,6 @@ export default class NavbarSideManager {
         });
     }
     ;
-    // Open sidebar with event listener (click)
     handleOpenButton() {
         const openButtons = document.querySelectorAll('[data-action="toggle-sidebar"]');
         if (!openButtons)
@@ -100,7 +79,6 @@ export default class NavbarSideManager {
                 const content = document.querySelector(target);
                 if (!content)
                     return;
-                const mode = this.getMode(content);
                 this.removeClass(button);
                 this.handleToggleClass(content);
                 this.handlePushMode(content);
@@ -109,7 +87,6 @@ export default class NavbarSideManager {
         });
     }
     ;
-    // Close sidebar with event listener (click)
     handleCloseButton() {
         const closeButtons = document.querySelectorAll('[data-action="close-sidebar"]');
         if (!closeButtons)
@@ -129,13 +106,11 @@ export default class NavbarSideManager {
         });
     }
     ;
-    // Add class to sidebar or remove class
     handleToggleClass(content) {
         const side = this.getSide(content);
         content.classList.toggle(`show-aside-${side}`);
     }
     ;
-    // Add margin to body if sidebar is open in push mode
     handlePushMode(content) {
         const side = this.getSide(content);
         const mode = this.getMode(content);
@@ -151,17 +126,14 @@ export default class NavbarSideManager {
         }
     }
     ;
-    // Get sidebar mode
     getMode(content) {
-        return content.getAttribute('data-mode') || 'overlay';
+        return content.getAttribute('data-mode') || 'hover';
     }
     ;
-    // Get sidebar position
     getSide(content) {
         return content.getAttribute('data-position') || 'start';
     }
     ;
-    // Only one sidebar open in local storage
     onlyOneSideBarOpenInLocalStorage() {
         const states = LocalStorageManager.getStates('tiny_kit_sidebar_state');
         const lastStateUpdate = LocalStorageManager.getLastUpdated('tiny_kit_sidebar_state');

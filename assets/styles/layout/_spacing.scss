@@ -105,3 +105,9 @@ $spacings-padding: (
         padding-bottom: $value;
     }
 }
+
+@each $key, $value in $spacings-padding {
+    .gap-#{$key} {
+        gap: $value;
+    }
+}

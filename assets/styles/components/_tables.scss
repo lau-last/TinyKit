@@ -89,7 +89,7 @@ table {
             tbody {
                 tr:hover {
                     cursor: pointer;
-                    background-color: var(--table-bg-hover-color) !important;
+                    background-color: var(--table-bg-color-hover) !important;
 
                     th:first-child, td:first-child {
                         border: none !important;
@@ -126,7 +126,7 @@ table {
         tbody {
             tr:hover {
                 cursor: pointer;
-                background-color: var(--table-bg-hover-color) !important;
+                background-color: var(--table-bg-color-hover) !important;
 
                 th:first-child, td:first-child {
                     border-left: 1px solid var(--table-border-color) !important;

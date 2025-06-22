@@ -11,7 +11,7 @@
     {% block javascripts %}{% endblock %}
 </head>
 <body class="preload">
-<nav class="navbar bg-primary text-contrast box-shadow-navbar">
+<nav class="navbar-side bg-primary text-contrast box-shadow-navbar">
     <div class="navbar-header">
         <a href="{{ url('app_main') }}" class="ms-1 fs-5 no-underline">TinyKit</a>
         <div class="navbar-burger" data-action="toggle-sidebar" data-target="#menu-principal" data-animated="true">
@@ -40,7 +40,7 @@
             <button type="button" class="btn-dropdown btn-primary" data-action="toggle-dropdown"
                     data-target="#dropdown-layout">
                 Layout
-                <span data-arrow="down"></span>
+                <span>+</span>
             </button>
             <div id="dropdown-layout" data-mode="push">
                 <ul class="list-style-none">
@@ -56,7 +56,7 @@
             <button type="button" class="btn-dropdown btn-primary" data-action="toggle-dropdown"
                     data-target="#dropdown-content">
                 Content
-                <span data-arrow="down"></span>
+                <span>+</span>
             </button>
             <div id="dropdown-content" data-mode="push">
                 <ul class="list-style-none">
@@ -73,7 +73,7 @@
             <button type="button" class="btn-dropdown btn-primary" data-action="toggle-dropdown"
                     data-target="#dropdown-form">
                 Form
-                <span data-arrow="down"></span>
+                <span>+</span>
             </button>
             <div id="dropdown-form" data-mode="push">
                 <ul class="list-style-none">
@@ -86,16 +86,21 @@
             <button type="button" class="btn-dropdown btn-primary" data-action="toggle-dropdown"
                     data-target="#dropdown-component">
                 Component
-                <span data-arrow="down"></span>
+                <span>+</span>
             </button>
             <div id="dropdown-component" data-mode="push">
                 <ul class="list-style-none">
                     <li><a href="{{ url('app_component') }}#alert-section" class="nav-link">Alerts</a></li>
+                    <li><a href="{{ url('app_component') }}#animation-section" class="nav-link">Animations</a></li>
                     <li><a href="{{ url('app_component') }}#badge-section" class="nav-link">Badges</a></li>
                     <li><a href="{{ url('app_component') }}#badge-linked-section" class="nav-link">Badges linked</a></li>
                     <li><a href="{{ url('app_component') }}#button-section" class="nav-link">Buttons</a></li>
                     <li><a href="{{ url('app_component') }}#card-section" class="nav-link">Cards</a></li>
-                    <li><a href="{{ url('app_component') }}#carousel-slide-section" class="nav-link">Carousels</a></li>
+                    <li><a href="{{ url('app_component') }}#dropdown-section" class="nav-link">Dropdowns</a></li>
+                    <li><a href="{{ url('app_component') }}#modal-section" class="nav-link">Modals</a></li>
+                    <li><a href="{{ url('app_component') }}#navbar-section" class="nav-link">Navbars</a></li>
+                    <li><a href="{{ url('app_component') }}#navbar-side-section" class="nav-link">Sidebar</a></li>
+                    <li><a href="{{ url('app_component') }}#scroll-indicator-section" class="nav-link">Scrolls indicator</a></li>
                 </ul>
             </div>
         </div>
@@ -104,7 +109,7 @@
             <button type="button" class="btn-dropdown btn-primary" data-action="toggle-dropdown"
                     data-target="#dropdown-other">
                 Other
-                <span data-arrow="down"></span>
+                <span>+</span>
             </button>
             <div id="dropdown-other" data-mode="push">
                 <ul class="list-style-none">
@@ -116,7 +121,7 @@
             <button type="button" class="btn-dropdown btn-primary" data-action="toggle-dropdown"
                     data-target="#dropdown-setting">
                 Setting
-                <span data-arrow="down"></span>
+                <span>+</span>
             </button>
             <div id="dropdown-setting" data-mode="push">
                 <ul class="list-style-none">

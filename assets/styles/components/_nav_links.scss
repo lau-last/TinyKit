@@ -7,11 +7,26 @@
   text-decoration: none;
   padding: var(--nav-link-padding-md);
 
-  &.small         { padding: var(--nav-link-padding-sm); }
-  &.medium        { padding: var(--nav-link-padding-md); }
-  &.large         { padding: var(--nav-link-padding-lg); }
+  &-sm {
+    @extend .nav-link;
+    padding: var(--nav-link-padding-sm);
+  }
 
-  &:hover {background-color: var(--hover-color);}
+  &-md {
+    @extend .nav-link;
+    padding: var(--nav-link-padding-md);
+  }
+
+  &-lg {
+    @extend .nav-link;
+    padding: var(--nav-link-padding-lg);
+  }
+
+  &:hover {
+    background-color: var(--nav-link-bg-color-hover);
+  }
 }
 
-.nav-link-fit {width: fit-content;}
+.nav-link-fit {
+  width: fit-content;
+}

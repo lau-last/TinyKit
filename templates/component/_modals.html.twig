@@ -1,0 +1,120 @@
+<section id="modal-section">
+    <div class="container">
+
+        <div class="d-flex align-items-center">
+            <h2>Modal</h2>
+            <div class="ms-2 cursor-pointer" data-action="toggle-display" data-target="#container-code-modal"></div>
+        </div>
+
+        <div data-code-target="#code-modal">
+            <!--Button-->
+            <button class="btn btn-primary" type="button" data-action="toggle-modal" data-target="#modal">Open Modal
+            </button>
+            <button class="btn btn-primary" type="button" data-action="toggle-modal" data-target="#modal-bordered">Open
+                Modal
+                bordered
+            </button>
+
+            <!--Modal-->
+            <div class="modal" id="modal">
+
+                <!--Modal-content-->
+                <div class="modal-content">
+
+                    <!--Modal-header-->
+                    <div class="modal-header bg-primary text-contrast">
+                        <h6>Modal Header</h6>
+
+                        <!--Data-attribute + SVG-->
+                        <span data-action="close-modal" data-target="#modal" class="cursor-pointer">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="none"
+                             stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M3 5a2 2 0 0 1 2 -2h14a2 2 0 0 1 2 2v14a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2v-14z"></path>
+                            <path d="M9 9l6 6m0 -6l-6 6"></path>
+                        </svg>
+                    </span>
+                    </div>
+
+                    <!--Modal-body-->
+                    <div class="modal-body">
+                        <p class="p-1">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium deserunt distinctio ea
+                            laboriosam quae soluta, voluptas! Accusantium aspernatur aut eius explicabo, fugiat iure
+                            molestiae placeat rerum. Dolorum eius non numquam repellat, repudiandae soluta tempora!
+                            Aliquid dignissimos eum hic maiores, molestiae mollitia omnis praesentium quod reprehenderit
+                            sapiente! A accusamus adipisci amet autem debitis, dolorum eaque enim eos est, expedita hic
+                            laboriosam magnam modi nostrum quam quasi totam veritatis. Aliquam atque corporis culpa
+                            dicta dolore dolorem dolores ducimus eveniet fugit harum illum impedit laudantium magnam
+                            molestiae molestias necessitatibus, nisi non nostrum numquam officiis quod ullam
+                            voluptatibus. Accusantium harum incidunt libero. Eum, illo.</p>
+                        <div class="d-flex justify-content-end">
+                            <button type="button" class="btn-danger me-1" data-action="close-modal"
+                                    data-target="#modal">
+                                Close
+                            </button>
+                            <button type="button" class="btn btn-primary">Do something</button>
+                        </div>
+                    </div>
+
+                    <!--Modal-footer-->
+                    <div class="modal-footer bg-footer-muted">
+                        <p><i>Lorem ipsum dolor sit amet</i></p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="modal" id="modal-bordered">
+
+                <!--Modal-content-->
+                <div class="modal-content modal-bordered border-color-success-force text-success">
+
+                    <!--Modal-header-->
+                    <div class="modal-header">
+                        <h6>Modal Header</h6>
+
+                        <!--Data-attribute + SVG-->
+                        <span data-action="close-modal" data-target="#modal-bordered" class="cursor-pointer">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="none"
+                             stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M3 5a2 2 0 0 1 2 -2h14a2 2 0 0 1 2 2v14a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2v-14z"></path>
+                            <path d="M9 9l6 6m0 -6l-6 6"></path>
+                        </svg>
+                    </span>
+                    </div>
+
+                    <!--Modal-body-->
+                    <div class="modal-body border-color-success-force">
+                        <p class="p-1">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium deserunt distinctio ea
+                            laboriosam quae soluta, voluptas! Accusantium aspernatur aut eius explicabo, fugiat iure
+                            molestiae placeat rerum. Dolorum eius non numquam repellat, repudiandae soluta tempora!
+                            Aliquid dignissimos eum hic maiores, molestiae mollitia omnis praesentium quod reprehenderit
+                            sapiente! A accusamus adipisci amet autem debitis, dolorum eaque enim eos est, expedita hic
+                            laboriosam magnam modi nostrum quam quasi totam veritatis. Aliquam atque corporis culpa
+                            dicta dolore dolorem dolores ducimus eveniet fugit harum illum impedit laudantium magnam
+                            molestiae molestias necessitatibus, nisi non nostrum numquam officiis quod ullam
+                            voluptatibus. Accusantium harum incidunt libero. Eum, illo.</p>
+                        <div class="d-flex justify-content-end">
+                            <button type="button" class="outline-success" data-action="close-modal"
+                                    data-target="#modal-bordered">
+                                Close
+                            </button>
+                        </div>
+                    </div>
+
+                    <!--Modal-footer-->
+                    <div class="modal-footer">
+                        <p><i>Lorem ipsum dolor sit amet</i></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container-code mt-2 d-none" id="container-code-modal">
+            <button class="btn-primary position-top-right" type="button" data-position-tooltip="left" data-action="copy"
+                    data-target="#code-modal" data-tooltip="Copié !">Copier
+            </button>
+            <pre><code id="code-modal" data-type="code">
+        </code></pre>
+        </div>
+
+    </div>
+</section>

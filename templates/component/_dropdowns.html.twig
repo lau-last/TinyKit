@@ -1,0 +1,93 @@
+<section id="dropdown-section" class="my-5">
+    <div class="container">
+
+        <div class="d-flex align-items-center">
+            <h2>Dropdown button</h2>
+            <div class="ms-2 cursor-pointer" data-action="toggle-display" data-target="#container-code-dropdown-button">
+            </div>
+        </div>
+
+
+        <div class="container-code mt-2 d-none" id="container-code-dropdown-button">
+            <button class="btn-primary position-top-right" type="button" data-position-tooltip="left" data-action="copy"
+                    data-target="#code-dropdown-button" data-tooltip="Copié !">Copier
+            </button>
+            <pre class="p-2"><code id="code-dropdown-button" data-type="code">
+        </code></pre>
+        </div>
+
+
+        <div data-code-target="#code-dropdown-button">
+            <div class="wrapper-dropdown">
+                <!--Button-->
+                <button type="button" class="btn-dropdown btn-primary mt-half" data-action="toggle-dropdown"
+                        data-target="#dropdownOverlay">
+                    Dropdown overlay
+                    <span>+</span>
+                </button>
+                <!--Content-->
+                <div id="dropdownOverlay" class="dropdown" data-mode="overlay" data-expanded="false">
+                    <p class="p-1">
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur cumque distinctio, dolorum
+                        eligendi excepturi hic, modi natus non nostrum obcaecati repellat sint tenetur ut. Accusamus
+                        aspernatur autem cum delectus deleniti dolor, facilis fugit illo ipsa ipsum laboriosam, laborum
+                        nisi nobis odio placeat porro quae quibusdam quidem sapiente sed similique sit tempore
+                        temporibus, ullam vel. Accusamus esse fuga fugiat obcaecati quas quo rerum soluta tempore vero
+                        voluptates? Alias asperiores aspernatur atque aut, culpa cumque dignissimos doloremque eius est
+                        et eum facilis fugiat ipsam itaque libero magnam minus, molestiae natus nemo nihil nobis
+                        officiis pariatur placeat praesentium quidem repellendus suscipit ullam voluptatum?
+                    </p>
+                </div>
+            </div>
+            <div class="wrapper-dropdown">
+                <!--Button-->
+                <button type="button" class="btn-dropdown btn-primary mt-half" data-action="toggle-dropdown"
+                        data-target="#dropdownPush">
+                    Dropdown push
+                    <span>+</span>
+                </button>
+                <!--Content-->
+                <div id="dropdownPush" class="dropdown" data-mode="push" data-expanded="false">
+                    <p class="p-1">
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur cumque distinctio, dolorum
+                        eligendi excepturi hic, modi natus non nostrum obcaecati repellat sint tenetur ut. Accusamus
+                        aspernatur autem cum delectus deleniti dolor, facilis fugit illo ipsa ipsum laboriosam, laborum
+                        nisi nobis odio placeat porro quae quibusdam quidem sapiente sed similique sit tempore
+                        temporibus, ullam vel. Accusamus esse fuga fugiat obcaecati quas quo rerum soluta tempore vero
+                        voluptates? Alias asperiores aspernatur atque aut, culpa cumque dignissimos doloremque eius est
+                        et eum facilis fugiat ipsam itaque libero magnam minus, molestiae natus nemo nihil nobis
+                        officiis pariatur placeat praesentium quidem repellendus suscipit ullam voluptatum?
+                    </p>
+                </div>
+            </div>
+            <div class="wrapper-dropdown-fit">
+                <!--Button-->
+                <button type="button" class="btn-dropdown btn-primary mt-half" data-action="toggle-dropdown"
+                        data-target="#dropdownOverlayFit">
+                    Dropdown overlay fit
+                    <span class="ms-1">+</span>
+                </button>
+                <!--Content-->
+                <div id="dropdownOverlayFit" class="dropdown" data-mode="overlay" data-expanded="false">
+                    <p class="p-1">
+                        Lorem ipsum dolor sit amet
+                    </p>
+                </div>
+            </div>
+            <div class="wrapper-dropdown-fit">
+                <!--Button-->
+                <button type="button" class="btn-dropdown btn-primary mt-half" data-action="toggle-dropdown"
+                        data-target="#dropdownPushFit">
+                    Dropdown push fit
+                    <span class="ms-1">+</span>
+                </button>
+                <!--Content-->
+                <div id="dropdownPushFit" class="dropdown" data-mode="push" data-expanded="false">
+                    <p class="p-1">
+                        Lorem ipsum dolor sit amet
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

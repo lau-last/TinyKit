@@ -44,9 +44,16 @@ export default class CollapseEffectManager {
      * Réduit l'élément avec animation.
      * @param content L'élément HTML à réduire.
      */
-    static collapse(content: HTMLElement): void {
+    static collapse(content: HTMLElement, animate = true, callback?: () => void): void {
         const startHeight = content.scrollHeight;
         content.style.height = `${startHeight}px`;
+
+        if (!animate) {
+            content.setAttribute('data-expanded', 'false');
+            content.style.height = '0px';
+            return;
+        }
+
         // Forcer reflow pour que l'animation soit prise en compte
         void content.offsetHeight;
 
@@ -63,6 +70,7 @@ export default class CollapseEffectManager {
         animation.onfinish = () => {
             content.setAttribute('data-expanded', 'false');
             content.style.height = '0px';
+            if (callback) callback();
         };
     };
 }

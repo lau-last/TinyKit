@@ -1,0 +1,31 @@
+<section id="scroll-indicator-section">
+    <div class="container">
+
+        <div class="d-flex align-items-center">
+            <h2>Scroll indicator</h2>
+            <div class="ms-2 cursor-pointer" data-action="toggle-display"
+                 data-target="#container-code-scroll-indicator"></div>
+        </div>
+
+
+        <div data-code-target="#code-carousel-scroll-indicator">
+            <div data-component="scroll-indicator-x"
+                 class="scroll-indicator-bottom scroll-indicator-primary scroll-indicator-md"></div>
+            <div data-component="scroll-indicator-x"
+                 class="scroll-indicator-top scroll-indicator-secondary scroll-indicator-md"></div>
+            <div data-component="scroll-indicator-y"
+                 class="scroll-indicator-left scroll-indicator-tertiary scroll-indicator-md"></div>
+            <div data-component="scroll-indicator-y"
+                 class="scroll-indicator-right scroll-indicator-danger scroll-indicator-md"></div>
+        </div>
+
+        <div class="container-code mt-2 d-none" id="container-code-scroll-indicator">
+            <button class="btn-primary position-top-right" type="button" data-position-tooltip="left" data-action="copy"
+                    data-target="#code-carousel-scroll-indicator" data-tooltip="Copié !">Copier
+            </button>
+            <pre><code id="code-carousel-scroll-indicator" data-type="code">
+        </code></pre>
+        </div>
+
+    </div>
+</section>

@@ -11,11 +11,9 @@ export default class ThemeManager {
         const checkbox = document.getElementById('switch-theme');
         if (!checkbox)
             return;
-        let theme = localStorage.getItem('tiny_kit_theme');
-        if (theme === null) {
-            theme = this.getSystemTheme();
-        }
-        checkbox.checked = theme === 'dark';
+        const theme = LocalStorageManager.getState('tiny_kit_theme', 'switch-theme');
+        const appliedTheme = (theme === 'dark' || theme === 'light') ? theme : this.getSystemTheme();
+        checkbox.checked = appliedTheme === 'dark';
     }
     ;
     getSystemTheme() {
