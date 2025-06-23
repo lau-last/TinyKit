@@ -13,7 +13,7 @@
 .tab-content {
     border-radius: var(--border-radius);
     display: none;
-    padding: 1rem;
+    padding: var(--tab-content-padding);
     -webkit-animation: fade-in 1s;
     animation: fade-in 1s;
 

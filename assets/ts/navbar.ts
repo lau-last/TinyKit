@@ -50,6 +50,6 @@ export default class NavbarManager {
 
     private collapse(content: HTMLElement): void {
         LocalStorageManager.setState('tiny_kit_navbar_state', content.id, 'close');
-        CollapseEffectManager.collapse(content);
+        CollapseEffectManager.collapse(content, true, true);
     };
 }

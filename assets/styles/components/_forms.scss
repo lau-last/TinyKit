@@ -15,8 +15,8 @@ textarea {
   border-radius: var(--border-radius);
   background-color: var(--input-bg-color);
   color: var(--input-color);
-  margin-block: .5rem;
-  padding: 0 1.5rem;
+  padding: var(--input-padding);
+  margin: var(--input-margin);
 
   &:not(input[type="color"]):not(input[type="checkbox"]):not(input[type="radio"]) {
     width: 100%;
@@ -32,7 +32,7 @@ textarea {
 
   &:focus {
     border-color: var(--primary-color);
-    box-shadow: 0 0 0.2rem 0.1rem color-mix(in srgb, var(--primary-color) 50%, var(--transparent));
+    box-shadow: var(--input-box-shadow-focus);
     outline: none;
   }
 

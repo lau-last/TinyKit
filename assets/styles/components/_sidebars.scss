@@ -5,7 +5,7 @@ aside[data-position] {
   width: 30rem;
   height: 100vh;
   transition: transform .3s ease;
-  z-index: 200;
+  z-index: 100;
   display: flex;
   flex-direction: column;
   background-color: var(--bg-color);

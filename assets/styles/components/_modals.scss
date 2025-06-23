@@ -1,6 +1,6 @@
 .modal {
     background-color: color-mix(in srgb, var(--gray-1000) 90%, var(--transparent));
-    padding: var(--padding-modal);
+    padding: var(--modal-padding);
     display: none;
     position: fixed;
     left: 0;
@@ -9,7 +9,7 @@
     height: 100vh;
     justify-content: center;
     align-items: center;
-    z-index: 500;
+    z-index: 100;
 
     .modal-content-img {
         background-color: var(--transparent);
@@ -67,16 +67,16 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: var(--padding-modal-header);
+            padding: var(--modal-header-padding);
         }
 
         .modal-body {
-            padding: var(--padding-modal-body);
+            padding: var(--modal-body-padding);
         }
 
         .modal-footer {
             border-radius: 0 0 var(--border-radius) var(--border-radius);
-            padding: var(--padding-modal-footer);
+            padding: var(--modal-footer-padding);
         }
 
         &.modal-bordered {

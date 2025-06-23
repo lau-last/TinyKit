@@ -7,19 +7,13 @@ export default class CollapseEffectManager {
         return Math.max(min, Math.min(max, height * durationPerPixel));
     }
     ;
-    /**
-     * Expand l'élément avec animation ou instantanément.
-     * @param content L'élément HTML à développer.
-     * @param animate Si false, l'animation est désactivée.
-     * @param callback Fonction appelée après expansion instantanée (si animate = false).
-     */
     static expand(content, animate = true, callback) {
         const endHeight = content.scrollHeight;
         content.setAttribute('data-expanded', 'true');
         if (!animate) {
+            content.style.height = 'auto';
             if (callback)
                 callback();
-            content.style.height = 'auto';
             return;
         }
         const duration = this.getAnimationDuration(endHeight);
@@ -37,19 +31,17 @@ export default class CollapseEffectManager {
         };
     }
     ;
-    /**
-     * Réduit l'élément avec animation.
-     * @param content L'élément HTML à réduire.
-     */
-    static collapse(content, animate = true, callback) {
+    static collapse(content, animate = true, resetToCssDefaultAfterAnimation = false, callback) {
         const startHeight = content.scrollHeight;
         content.style.height = `${startHeight}px`;
+        const finalHeight = resetToCssDefaultAfterAnimation ? '' : '0px';
         if (!animate) {
             content.setAttribute('data-expanded', 'false');
-            content.style.height = '0px';
+            content.style.height = finalHeight;
+            if (callback)
+                callback();
             return;
         }
-        // Forcer reflow pour que l'animation soit prise en compte
         void content.offsetHeight;
         const duration = this.getAnimationDuration(startHeight);
         const animation = content.animate([
@@ -61,7 +53,7 @@ export default class CollapseEffectManager {
         });
         animation.onfinish = () => {
             content.setAttribute('data-expanded', 'false');
-            content.style.height = '0px';
+            content.style.height = finalHeight;
             if (callback)
                 callback();
         };

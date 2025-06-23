@@ -20,13 +20,13 @@
 
     .card-header {
         border-radius: var(--border-radius) var(--border-radius) 0 0;
-        padding: var(--padding-card-header);
+        padding: var(--card-header-padding);
     }
     .card-body {
-        padding: var(--padding-card-body);
+        padding: var(--card-body-padding);
     }
     .card-footer {
         border-radius: 0 0 var(--border-radius) var(--border-radius);
-        padding: var(--padding-card-footer);
+        padding: var(--card-footer-padding);
     }
 }

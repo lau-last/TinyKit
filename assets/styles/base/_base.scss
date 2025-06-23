@@ -103,6 +103,7 @@
   --table-bg-color-hover: rgba(0, 0, 0, 0.2);
 
   // Inputs
+  --input-box-shadow-focus: 0 0 0.2rem 0.1rem color-mix(in srgb, var(--primary-color) 50%, var(--transparent));
   --input-border-color: var(--gray-300);
   --input-bg-color: var(--gray-0);
   --input-placeholder-color: var(--gray-1000);
@@ -113,12 +114,11 @@
 
   // State
   --nav-link-bg-color-hover: color-mix(in srgb, var(--gray-300) 25%, var(--transparent));
-  --active-color: var(--gray-500);
   --bg-color: var(--gray-0);
   --button-color: var(--gray-100);
 
   // Components
-  --footer-muted: var(--gray-100);
+  --footer-muted-bg-color: var(--gray-100);
 
   // Carousel
   --carousel-dot-border-color: color-mix(in srgb, var(--gray-800) 50%, var(--transparent));
@@ -147,22 +147,28 @@
   // Border Radius
   --border-radius: .3rem;
 
+  // Tab
+  --tab-content-padding: 1rem;
+
+  // Dropdown
+  --dropdown-header-padding: 0.5rem 1rem;
+  --dropdown-body-padding: 1rem;
+
   // Scroll Indicator
   --progress-bar-sm: .20rem;
   --progress-bar-md: .40rem;
   --progress-bar-lg: .60rem;
 
   // Card
-  --padding-card-header: .5rem 1rem;
-  --padding-card-body: 1rem;
-  --padding-card-footer: .5rem 1rem;
+  --card-header-padding: .5rem 1rem;
+  --card-body-padding: 1rem;
+  --card-footer-padding: .5rem 1rem;
 
   // modal
-  --padding-modal: 2rem;
-  --padding-modal-header: 0.5rem 1rem;
-  --padding-modal-body: 0.5rem 1rem;
-  --padding-modal-footer: 0.5rem 1rem;
-
+  --modal-padding: 2rem;
+  --modal-header-padding: 0.5rem 1rem;
+  --modal-body-padding: 0.5rem 1rem;
+  --modal-footer-padding: 0.5rem 1rem;
 
   // Alerts
   --container-alert-top: 0.5rem;
@@ -193,6 +199,9 @@
   --navbar-min-height-xl: 4rem;
   --navbar-min-height-side: 4rem;
 
+  // Inputs-select-textarea
+  --input-padding: 0 1.5rem;
+  --input-margin: .5rem 0;
   // Inputs
   --input-height-sm: 2.5rem;
   --input-height-md: 3rem;
@@ -354,6 +363,7 @@
   --table-bg-color-hover: rgba(0, 0, 0, 0.4);
 
   // Inputs
+  --box-shadow-input-focus: 0 0 0.2rem 0.1rem color-mix(in srgb, var(--primary-color) 50%, var(--transparent));
   --input-border-color: var(--gray-600);
   --input-bg-color: var(--gray-600);
   --input-placeholder-color: var(--gray-0);
