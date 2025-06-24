@@ -1,49 +1,65 @@
 export default class TabsManager {
+
     init(): void {
-        const tabButtons = document.querySelectorAll<HTMLElement>('[data-toggle="tab"]');
+        this.initAllTabs();
+    };
 
-        tabButtons.forEach(button => {
-            button.addEventListener('click', () => {
-                const targetSelector = button.getAttribute('data-target');
-                if (!targetSelector) return;
 
-                const content = document.querySelector<HTMLElement>(targetSelector);
-                if (!content) return;
-
-                this.deactivateTabs();
-                this.hideAllContents();
-                this.clearActiveData();
-
-                this.activateTab(button);
-                this.showContent(content);
+    private initAllTabs(): void {
+        const tabs = document.querySelectorAll<HTMLElement>('[data-component="tabs"]');
+        if (!tabs) return;
+        tabs.forEach(tab => {
+            const tabButtons = tab.querySelectorAll<HTMLElement>('[data-action="toggle-tab"]');
+            this.initTab(tab);
+            tabButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    const targetSelector = button.getAttribute('data-target');
+                    if (!targetSelector) return;
+                    const content = document.querySelector<HTMLElement>(targetSelector);
+                    if (!content) return;
+                    this.removeAllClassActive(tab);
+                    this.removeAllDataActive(tab);
+                    this.addClassActive(button);
+                    this.addDataActive(content);
+                });
             });
         });
     };
 
-    private deactivateTabs(): void {
-        const buttons = document.querySelectorAll<HTMLElement>('[data-toggle="tab"]');
+    private initTab(tab: HTMLElement): void {
+        const tabContents = tab.querySelectorAll<HTMLElement>('.tab-content');
+        if (tabContents.length === 0) return;
+
+        const hasActive = Array.from(tabContents).some(content =>
+            content.hasAttribute('data-active')
+        );
+
+        if (!hasActive) {
+            tabContents[0].setAttribute('data-active', 'true');
+            tab.querySelectorAll('[data-action="toggle-tab"]')[0].classList.add('active');
+        }
+    }
+
+    private removeAllClassActive(tab: HTMLElement): void {
+        const buttons = tab.querySelectorAll<HTMLElement>('[data-action="toggle-tab"]');
         buttons.forEach(button => button.classList.remove('active'));
     };
 
-    private activateTab(button: HTMLElement): void {
+    private addClassActive(button: HTMLElement): void {
         button.classList.add('active');
     };
 
-    private hideAllContents(): void {
-        const contents = document.querySelectorAll<HTMLElement>('.tab-content');
+    private removeAllDataActive(tab: HTMLElement): void {
+        const contents = tab.querySelectorAll<HTMLElement>('.tab-content');
         contents.forEach(content => {
-            content.style.display = 'none';
-        });
-    };
-
-    private showContent(content: HTMLElement): void {
-        content.style.display = 'block';
-    };
-
-    private clearActiveData(): void {
-        const activeContents = document.querySelectorAll<HTMLElement>('.tab-content[data-active="true"]');
-        activeContents.forEach(content => {
             content.removeAttribute('data-active');
         });
     };
+
+    private addDataActive(content: HTMLElement): void {
+        content.setAttribute('data-active', 'true');
+    };
+
+
+
 }
