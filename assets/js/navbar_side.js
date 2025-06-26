@@ -23,9 +23,12 @@ export default class NavbarSideManager {
             const content = document.querySelector(targetSelector);
             if (!content)
                 return;
-            if (!content.hasAttribute('data-mode') && !content.hasAttribute('data-position')) {
+            const mode = content.dataset.mode;
+            const position = content.dataset.position;
+            const isValidMode = mode === 'overlay' || mode === 'push';
+            const isValidPosition = position === 'start' || position === 'end';
+            if (!isValidMode || !isValidPosition) {
                 content.style.display = 'none';
-                return;
             }
         });
     }
@@ -100,7 +103,7 @@ export default class NavbarSideManager {
                 const content = document.querySelector(target);
                 if (!content)
                     return;
-                const mode = this.getMode(content);
+                // const mode = this.getMode(content);
                 this.removeClass(button);
                 this.handleToggleClass(content);
                 this.handlePushMode(content);

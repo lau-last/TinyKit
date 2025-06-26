@@ -18,14 +18,22 @@ export default class NavbarSideManager {
     // Set display none to sidebar content if it don't have data-mode attribute
     private setFallbackDisplay(): void {
         const buttons = document.querySelectorAll<HTMLElement>('[data-action="toggle-sidebar"]');
+
         buttons.forEach(button => {
             const targetSelector = button.getAttribute('data-target');
             if (!targetSelector) return;
+
             const content = document.querySelector<HTMLElement>(targetSelector);
             if (!content) return;
-            if (!content.hasAttribute('data-mode') && !content.hasAttribute('data-position')) {
+
+            const mode = content.dataset.mode;
+            const position = content.dataset.position;
+
+            const isValidMode = mode === 'overlay' || mode === 'push';
+            const isValidPosition = position === 'start' || position === 'end';
+
+            if (!isValidMode || !isValidPosition) {
                 content.style.display = 'none';
-                return;
             }
         });
     }
@@ -102,7 +110,7 @@ export default class NavbarSideManager {
                 if (!target) return;
                 const content = document.querySelector<HTMLElement>(target);
                 if (!content) return;
-                const mode = this.getMode(content);
+                // const mode = this.getMode(content);
                 this.removeClass(button);
                 this.handleToggleClass(content);
                 this.handlePushMode(content);

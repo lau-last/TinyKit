@@ -13,6 +13,7 @@ import SettingManager  from "./js/setting.js";
 import AlertManager from "./js/alert.js";
 import ScrollIndicatorManager from "./js/scroll_indicator.js";
 import AnimationManager from "./js/animation.js";
+import KeepScrollViewManager from "./js/keep_scroll_view.js";
 
 
 
@@ -31,6 +32,7 @@ const setting = new SettingManager();
 const alert = new AlertManager();
 const scrollIndicator = new ScrollIndicatorManager();
 const animation = new AnimationManager();
+const keepScrollView = new KeepScrollViewManager();
 
 
 
@@ -50,4 +52,5 @@ document.addEventListener('DOMContentLoaded', function () {
     alert.init();
     scrollIndicator.init();
     animation.init();
+    keepScrollView.init();
 });

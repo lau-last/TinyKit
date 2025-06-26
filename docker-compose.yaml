@@ -1,6 +1,7 @@
 services:
   php:
     container_name: tiny-kit
+    restart: always
     build:
       context: .
       dockerfile: Dockerfile

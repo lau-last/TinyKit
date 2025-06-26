@@ -18,6 +18,7 @@ $shade-of-gray: (0, 50, 100, 150, 200, 250, 300, 350, 400, 450, 500, 550, 600, 6
 .bg {
   &-primary {
     background-color: var(--primary-color);
+
     &-force {
       background-color: var(--primary-color) !important;
     }
@@ -25,7 +26,7 @@ $shade-of-gray: (0, 50, 100, 150, 200, 250, 300, 350, 400, 450, 500, 550, 600, 6
     &.text-contrast {
       color: var(--text-on-primary);
 
-     &-child *{
+      &-child * {
         color: var(--text-on-primary);
       }
     }
@@ -420,56 +421,205 @@ $shade-of-gray: (0, 50, 100, 150, 200, 250, 300, 350, 400, 450, 500, 550, 600, 6
 
 // Text color
 .text {
+
+  &-on-primary {
+    color: var(--text-on-primary);
+
+    &-force {
+      color: var(--text-on-primary) !important;
+    }
+  }
+
   &-primary {
     color: var(--primary-color);
+
+    &-force {
+      color: var(--primary-color) !important;
+    }
+  }
+
+  &-on-secondary {
+    color: var(--text-on-secondary);
+
+    &-force {
+      color: var(--text-on-secondary) !important;
+    }
   }
 
   &-secondary {
     color: var(--secondary-color);
+
+    &-force {
+      color: var(--secondary-color) !important;
+    }
+  }
+
+  &-on-tertiary {
+    color: var(--text-on-tertiary);
+
+    &-force {
+      color: var(--text-on-tertiary) !important;
+    }
   }
 
   &-tertiary {
     color: var(--tertiary-color);
+
+    &-force {
+      color: var(--tertiary-color) !important;
+    }
+  }
+
+  &-on-success {
+    color: var(--text-on-success);
+
+    &-force {
+      color: var(--text-on-success) !important;
+    }
   }
 
   &-success {
     color: var(--success-color);
+
+    &-force {
+      color: var(--success-color) !important;
+    }
+  }
+
+  &-on-info {
+    color: var(--text-on-info);
+
+    &-force {
+      color: var(--text-on-info) !important;
+    }
   }
 
   &-info {
     color: var(--info-color);
+
+    &-force {
+      color: var(--info-color) !important;
+    }
+  }
+
+  &-on-warning {
+    color: var(--text-on-warning);
+
+    &-force {
+      color: var(--text-on-warning) !important;
+    }
   }
 
   &-warning {
     color: var(--warning-color);
+
+    &-force {
+      color: var(--warning-color) !important;
+    }
+  }
+
+  &-on-danger {
+    color: var(--text-on-danger);
+
+    &-force {
+      color: var(--text-on-danger) !important;
+    }
   }
 
   &-danger {
     color: var(--danger-color);
+
+    &-force {
+      color: var(--danger-color) !important;
+    }
+  }
+
+  &-on-neutral {
+    color: var(--text-on-neutral);
+
+    &-force {
+      color: var(--text-on-neutral) !important;
+    }
   }
 
   &-neutral {
     color: var(--neutral-color);
+
+    &-force {
+      color: var(--neutral-color) !important;
+    }
+  }
+
+  &-on-light {
+    color: var(--text-on-light);
+
+    &-force {
+      color: var(--text-on-light) !important;
+    }
   }
 
   &-light {
     color: var(--light-color);
+
+    &-force {
+      color: var(--light-color) !important;
+    }
+  }
+
+  &-on-dark {
+    color: var(--text-on-dark);
+
+    &-force {
+      color: var(--text-on-dark) !important;
+    }
   }
 
   &-dark {
     color: var(--dark-color);
+
+    &-force {
+      color: var(--dark-color) !important;
+    }
+  }
+
+  &-on-white {
+    color: var(--text-black);
+
+    &-force {
+      color: var(--text-black) !important;
+    }
   }
 
   &-white {
     color: var(--text-white);
+
+    &-force {
+      color: var(--text-white) !important;
+    }
+  }
+
+  &-on-black {
+    color: var(--text-white);
+
+    &-force {
+      color: var(--text-white) !important;
+    }
   }
 
   &-black {
     color: var(--text-black);
+
+    &-force {
+      color: var(--text-black) !important;
+    }
   }
 
   &-theme {
     color: var(--text-color);
+
+    &-force {
+      color: var(--text-color) !important;
+    }
   }
 }
 
@@ -734,11 +884,13 @@ a, button, .btn {
       background-color: color-mix(in srgb, var(--dark-color) 75%, var(--color-mix-dark));
       color: var(--text-on-dark);
     }
+
     &-theme:hover {
       background-color: color-mix(in srgb, var(--bg-color) 75%, var(--color-mix-dark));
       color: var(--text-color);
     }
   }
+
   // Outline
   &.outline {
     &-primary:hover {
@@ -1015,52 +1167,61 @@ table, thead, tbody, tfoot {
 }
 
 // Scroll Indicator
-.scroll-indicator{
+.scroll-indicator {
   &-primary {
     .progress-bar {
       background: var(--primary-color);
     }
   }
+
   &-secondary {
     .progress-bar {
       background: var(--secondary-color);
     }
   }
+
   &-tertiary {
     .progress-bar {
       background: var(--tertiary-color);
     }
   }
+
   &-success {
     .progress-bar {
       background: var(--success-color);
     }
   }
+
   &-info {
     .progress-bar {
       background: var(--info-color);
     }
   }
+
   &-warning {
     .progress-bar {
       background: var(--warning-color);
     }
   }
+
   &-danger {
     .progress-bar {
       background: var(--danger-color);
     }
   }
+
   &-neutral {
     .progress-bar {
       background: var(--neutral-color);
     }
   }
+
   &-light {
     .progress-bar {
       background: var(--light-color);
     }
   }
+
   &-dark {
     .progress-bar {
       background: var(--dark-color);
