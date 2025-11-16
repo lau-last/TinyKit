@@ -14,6 +14,7 @@ import AlertManager from "./js/alert.js";
 import ScrollIndicatorManager from "./js/scroll_indicator.js";
 import AnimationManager from "./js/animation.js";
 import KeepScrollViewManager from "./js/keep_scroll_view.js";
+import CarouselSlideManager from "./js/carousel_slide.js";
 
 
 
@@ -33,6 +34,7 @@ const alert = new AlertManager();
 const scrollIndicator = new ScrollIndicatorManager();
 const animation = new AnimationManager();
 const keepScrollView = new KeepScrollViewManager();
+const carouselSlide = new CarouselSlideManager();
 
 
 
@@ -53,4 +55,5 @@ document.addEventListener('DOMContentLoaded', function () {
     scrollIndicator.init();
     animation.init();
     keepScrollView.init();
+    carouselSlide.init();
 });

@@ -13,4 +13,18 @@ final class ComponentController extends AbstractController
     {
         return $this->render('component/index.html.twig');
     }
+
+
+    function twoSum($nums, $target) {
+        for ($i = 0; $i < count($nums); $i++) {
+            for ($j = 0; $j < count($nums); $j++) {
+                if ($nums[$i] === $nums[$j]) {
+                    $j++;
+                }
+                if ($nums[$i] + $nums[$j] === $target) {
+                    return [$i, $j];
+                }
+            }
+        }
+    }
 }
